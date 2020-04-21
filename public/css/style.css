@@ -1,0 +1,955 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 16px;
+}
+#page {
+    max-width: 1400px;
+    min-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+}
+
+/******************************HEADER*****************************/
+header {
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    color: #D59F33;
+    font-size: 4em;
+    font-weight: lighter;
+}
+.banner {
+    display: flex;
+    animation-name: slideBanner;
+    animation-delay: 0s;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+@keyframes slideBanner{
+    from{
+        margin-left: 100%;
+        width: 200%;
+    }
+    to{
+        margin-left: 0%;
+        width :100%
+    }
+}
+.logo {
+    width: 25%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+#small{
+    display: none;
+}
+.title {
+    padding: 2% 0 0 2%;
+    width: 75%;
+    text-align: center;
+    line-height: 0;
+}
+.title p {
+    background-color: #063630;
+    color: white;
+    width: inherit;
+    font-family: 'Alex Brush', cursive;
+    font-size: 1.9em;
+    line-height: 1.6;
+    margin: auto;
+}
+
+/**------------INTRO------------*/
+#intro{
+    margin: -3% 0 3% 0;
+    width: 100%;
+}
+svg {
+    width: 1136px;
+    height: 24px;
+}
+path {
+    stroke: #000000;
+    stroke-width: 2px;
+}
+#svg1 {
+    margin-bottom: 20px;
+    margin: auto;
+}
+#svg2{
+    display: none;
+}
+#strategy {
+    float: right;
+    margin: 0 14% 2% 0;
+}
+#strategy p {
+    font-size: 1.3em;
+    font-family: "Century Gothic", "Courier New";
+    text-align: center;
+}
+
+/****************************MAIN**************************/
+#main {
+    display: flex;
+    justify-content: space-between;
+    width: 94%;
+    margin: 0 3% 3% 3%;
+ }
+ 
+/*--------------------NAV------------------ */
+#mainMenu {
+    width: 23%;
+    font-family: "Century Gothic", "Courier New";
+}
+#mainMenu #menuMobile, #mainMenu .menuMobile{
+    display: none;
+}
+.menu {
+    padding: 0;
+    margin: auto;
+    height: 80px;
+}
+.menu li {
+    height: 100%;
+    line-height: normal;
+    overflow: hidden;
+    display: block;
+    background-color: #B46D51;
+    margin-bottom: 10%;
+    transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.menu li:last-child {
+    margin-bottom: 10px;
+}
+.menu li a {
+    text-align: center;
+    display: block;
+    height: 100%;
+    color: #063630;
+    position: relative;
+}
+#merch .menuContent, #tools .menuContent, #training .menuContent{
+    margin-top: -3%;
+}
+.menuContent {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    cursor: pointer;
+    text-align: center;
+}
+.menuTitle {
+    color: #063630;
+    font-size: 1.2em;
+    transition: all 300ms linear;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+}
+.menuSubtitle {
+    color: white;
+    font-weight: lighter;
+    margin-top: -2%;
+    font-size: 1.1em;
+    line-height: 1;
+    transition: all 300ms linear;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+}
+.menu li:hover {
+    background-color: #E6D9CB;
+}
+.menu li:hover .menuTitle {
+    color: #063630;
+    font-size: 0.9em;
+    font-weight: lighter;
+    margin-top: 5%;
+}
+.menu li:hover .menuSubtitle {
+    color: #B46D51;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.active {
+    background-color: #E6D9CB;
+    padding-top: 1%;
+}
+.active .menuTitle {
+    color: #063630;
+    margin-top: inherit;
+}
+.active .menuSubtitle {
+    color: #B46D51;
+}
+.menu2 {
+    width: 70%;
+    margin: -5% 15% 0 15%;
+    padding-inline-start: 0;
+    padding-bottom: 5%;
+}
+.menu2 li {
+    margin-bottom: 5%;
+    display: none;
+    line-height: 1.5;
+    padding: 2%;
+}
+.menu2 li:hover {
+    background-color: #E6D9CB;
+}
+.subMenu3, .subMenu4{
+    text-align: center;
+    position: relative;
+}
+/*------------------END NAV----------------*/
+
+/* -----------------MAIN CONTENT----------------- */
+#mainContent {
+    width: 75%;
+    position: relative;
+}
+/* ---slider--- */
+#slide {
+    width: 98%;
+    display: flex;
+    background-color: #E6D9CB;
+    margin: 0 0 5% 2%;
+}
+#slider{
+    display: inline-block;
+    margin: auto;
+    width: 66%;
+}
+#slide2 {
+    width: 100%;
+    margin: 4% 0 4% 0;
+    position: static;
+}
+#preview, #next{
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 2.3em;
+    color: #E6D9CB;
+    background-color: #000000;
+    opacity: 0.5;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+#preview{
+    left: 12%;
+    margin-top: 22%;
+}
+#next{
+    right: 10%;
+    margin-top: 22%;
+}
+/* ---end slider--- */
+
+/* ---content1--- */
+#content1 {
+    background-color: #B46D51;
+    color:black;
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    margin: 2% 0 5% 2%;    
+}
+#coaching {
+    height: 100%;
+    display: flex;
+    background-color: #E6D9CB;
+    margin: 0 2% 0 2%;
+
+}
+#coaching div{
+    width: 50%;
+    border-left: 1px solid black;
+    padding: 0 2% 0 2%;
+}
+ #coaching :first-child{
+    padding: 0 2% 0 2%;
+    border: none;
+}
+#coaching p{
+    text-align: left;
+}
+#cv{
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+/* ---content2--- */
+#content2 {
+    background-color: #063630;
+    color: white;
+    text-align: justify;
+    width: 98%;
+    margin-left: 2% ;
+    padding: 1% 0 2% 0;
+}
+#articles{
+    display: flex;
+    margin-top: 3%;
+    width: 98%;
+}
+.trust{
+    height: 100%;
+    width: 33%;
+    padding-left: 20px;
+}
+.trust :first-child{
+    border: none;
+    padding-left: 0;    
+}
+.trust p{
+    text-align: left;
+}
+.more{
+    padding: 5px;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3; 
+}
+.ref{
+    padding: 10px;
+    display: none;  
+}
+#content1 h2, #content2 h2{
+    margin: auto;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: "Century Gothic", "Courier New";
+    text-align: center;
+    margin: 2% 0;
+}
+#content1 h2{
+    line-height: 2;
+}
+#cv :last-child{
+    text-decoration: underline;
+    color: #063630;
+    font-weight: bold;
+} 
+
+/* ---------------Modal------------- */
+#lien_cvJs .modal{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);    
+}
+.modal-wrapper{
+    overflow: auto;
+    height:100%; 
+    width: inherit; 
+    max-width: calc(100vw - 20px);
+    max-width: calc(100vh - 20px);
+    background-image: url("../images/cvIsabellePhelippot.png");
+    background-repeat: no-repeat;
+}
+.js-modal{
+    width: 5%;
+    font-weight: bold;
+    color: #063630;
+    text-decoration: underline;
+}
+.js-modal-close{
+    position: sticky;
+    top: 17%;
+    left: 77%;
+    height: 50px;
+    width: 120px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-size: 1.3em;
+    color: #ffffff;
+    background-color: #000000;
+    opacity: 0.7;
+    cursor: pointer;
+}
+/* ------------End modal----------- */
+
+/* ******************************END MAIN*************************/
+
+
+/* ********************************FOOTER*************************/
+footer {
+    width: 94%;
+    margin: auto;
+}
+#footerContent{
+    display: flex;
+}
+#footerImage{
+    width: 25%;
+    margin: auto;
+}
+#footerImage img{
+    width: 100%;
+    margin: 0;
+}
+#blocContact {
+    width: 77%;
+    font-size: 16px;
+    display: flex;
+    margin-left: 5%;
+}
+#blocContact p{
+    margin-left: 18%;
+}
+#findMe {
+    width: 50%;
+    text-align: justify;
+    line-height: 1;
+    border: 5px solid lightgrey;
+    margin: 0 4% 0 5%;
+}
+#findMe :first-child{
+    font-size: 1.3em;
+    margin: 5% 0 0 14%;
+}
+#findMe p{
+    margin-top: 9%;
+}
+#findMe :last-child{
+    font-size: 1em;
+    margin: 12% 0 0 5%;
+}
+#findMe a{
+    color: black;
+    text-decoration: underline;
+}
+#svgTel{
+    width: 8%;
+    margin:  8% 0 0 3%;
+    float: left;
+}
+#svgLocation{
+    width: 10%;
+    margin: 5% 0 0 1%;
+    float: left;
+}
+#svgMail{
+    width: 10%;
+    margin: 5% 0 0 2%;
+    float: left;
+}
+#links{
+    width: 50%;
+    margin: auto;
+}
+#bubble{
+    display: flex;
+    justify-content: center;
+    margin-left: 7%;
+    border: 5px solid lightgrey;
+    border-bottom: transparent;
+    padding-top: 1%;
+}
+#bubble img{
+    width: 20%;
+}
+#links p{
+    line-height: 1.5;
+    font-size: 1.2em;
+    text-align: left;
+    margin-left: 5%;
+}
+#socialNetworks {
+    text-align: center;
+    margin-left: 7%;
+    border: 5px solid lightgrey;
+    border-top: transparent;
+}
+#socialNetworks img{
+    width: 12%;
+    margin: 3% 5% 3% 5%;
+}
+#infosSitemap {
+    font-size: 16px;
+    line-height: 50px;
+}
+#infosSitemap p {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+#backOnTop { 
+    position: fixed; 
+    width: 4%; 
+    bottom: 4%; 
+    left: 94%; 
+    border: 5px solid gray;
+    border-style: outset;
+  } 
+  #backOnTop img { 
+    width: 80%; 
+    margin-left: 11%;
+  }
+
+/* ************************************MEDIAQUERIES**************************** */
+
+@media screen and (min-width: 970px) and (max-width: 1170px){
+    svg{
+        width: 945px;
+        height: 24px;
+    }
+    #svg1{
+        display: none;
+    }
+    #svg2{
+        display: block;
+        margin-bottom: 20px;
+        margin: auto;
+    }
+    .menuTitle{
+        font-size: 1em;
+    }
+    .menuSubtitle {
+        font-size: 0.9em;
+    }
+    .menu li:hover .menuTitle{
+        font-size: 0.8em;
+    }
+    .menu li:hover .menuSubtitle{
+        font-size: 1em;
+    }
+    .menuTitle2{
+        font-size: 0.8em;
+    }
+    #slide{
+        margin: 0 0 7% 2%;
+    }
+    #content1{
+        margin: 2% 0 7% 2%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 970px){
+    header{
+        width: 100%;
+        margin: auto;
+    }
+    #intro{
+        margin-top: 20px;
+    }
+    .banner{
+        width: 100%;
+        margin: auto;
+    }
+    .logo{
+        width: 40%;
+    }
+    .title{
+        padding: 0 5% 0 0;
+        line-height: 0.5;
+    }
+    #svg1, #svg2{
+        display: none;
+    }
+    #strategy{
+        float: none;
+        margin: auto;
+    }
+    #main{
+        display: block;
+        text-align: center;
+        width: 90%;
+        margin:  20px auto;
+    }
+    #mainMenu{
+        position: relative;
+        display: inline-block;
+        width: 60%;
+        background-color: #e5eecc;
+        border: 2px solid #e5e6e1;
+    }
+    .menu {
+        display: none;
+    }
+    .menu li{
+        display: block;
+        width: 60%;
+        margin: 4% auto;
+        background-color: unset;
+        border-radius: unset;
+        height: unset;
+        font-size: 16px;
+        transition: none;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -ms-transition: none;
+        -o-transition: none;
+        -webkit-border-radius: unset;
+        -moz-border-radius: unset;
+        -ms-border-radius: unset;
+        -o-border-radius: unset;
+    }
+    #merch, #tools{
+        margin: 0 auto;
+    }
+    #training{
+        margin-top: 0;
+    }
+    .menu li:hover{
+        background-color: unset;
+    }
+    .menu li:last-child, .menu li:first-child{
+        line-height: 1.2;
+    }
+    .menu li:hover{
+        background-color: unset;
+    }
+    .menuTitle{
+        font-size: 16px;
+        transition: none;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -ms-transition: none;
+        -o-transition: none;
+        margin: 0;
+    }
+    #merch .menuContent, #tools .menuContent, #training .menuContent{
+        margin: 0;
+        padding: 0;
+    }
+    .menu2{
+        width: 90%;
+        margin: auto;
+    }
+    .menuTitle2{
+        font-size: 14px;
+        
+    }
+    .menu li:hover .menuTitle{
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0;
+    }
+    .menu2 li{
+        display: none;
+        line-height: 1;
+        padding: 0;
+    }
+    .menuSubtitle{
+        display: none;
+    }
+    #mainMenu .menuMobile{
+        display: block; 
+    }
+    #mainMenu #menuMobile:not(:checked),.menuMobile:checked{
+        position: absolute;
+        left: -9999px;
+    }
+    #mainMenu [type="checkbox"]:checked+label+ul{
+        display: block;
+        height: auto;
+        margin: auto;
+    }
+    .menuMobile img{
+        cursor: pointer;
+        width: 20%; 
+        display: inline-flex;
+        padding: 5%;
+    }
+    .active{
+        background-color: unset;
+    }
+    .active .menuTitle{
+        color: #2af501;
+    }
+    #mainContent{
+        margin: 30px  auto;
+        width: 100%;
+    }
+    #blocContact{
+        margin-left: 3%;
+    }
+    #findMe{
+        margin: 0;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 768px){
+    .banner{
+        display: block;
+        animation: none;
+        -webkit-animation: none;
+    }
+    .logo{
+        margin: auto;
+    }
+    #big{
+        display: none;
+    }
+    #small{
+        display: block;
+    }
+    .title{
+        display: block;
+        margin: auto;
+    }
+    .title h1{
+       font-size: 2.5em;
+       line-height: 1;
+       margin: auto;
+    }
+    .title p{
+        width: 100%;
+        margin: 15px auto;
+    }
+    #strategy{
+        float: none;
+        margin: auto;
+        font-size: 0.9em;
+    }
+    #svg1, #svg2{
+        display: none;
+    }
+    #main{
+        display: block;
+        text-align: center;
+    }
+    #slider{
+    display: none;
+    }
+    #mainMenu{
+        position: relative;
+        display: inline-block;
+        width: 60%;
+        background-color: #e5eecc;
+        border: 2px solid #e5e6e1;
+    }
+    .menu {
+        display: none;
+    }
+    .menu li{
+        display: block;
+        width: 60%;
+        margin: 4% auto;
+        background-color: unset;
+        border-radius: unset;
+        height: unset;
+        font-size: 16px;
+        transition: none;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -ms-transition: none;
+        -o-transition: none;
+        -webkit-border-radius: unset;
+        -moz-border-radius: unset;
+        -ms-border-radius: unset;
+        -o-border-radius: unset;
+    }
+    #merch, #tools{
+        margin: 0 auto;
+    }
+    #training{
+        margin-top: 0;
+    }
+    .menu li:hover{
+        background-color: unset;
+    }
+    .menuTitle{
+        font-size: 16px;
+        transition: none;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -ms-transition: none;
+        -o-transition: none;
+        margin: 0;
+    }
+    #merch .menuContent, #tools .menuContent, #training .menuContent{
+        margin: 0;
+        padding: 0;
+    }
+    .menu2{
+        width: 90%;
+        margin: auto;
+    }
+    .menuTitle2{
+        font-size: 14px;
+        
+    }
+    .menu li:hover .menuTitle{
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0;
+    }
+    .menu2 li{
+        display: none;
+        line-height: 1;
+    }
+    .menuSubtitle{
+        display: none;
+    }
+    #mainMenu .menuMobile{
+        display: block;         
+    }
+    #mainMenu #menuMobile:not(:checked),.menuMobile:checked{
+        position: absolute;
+        left: -9999px;
+    }
+    #mainMenu [type="checkbox"]:checked+label+ul{
+        display: block;
+        height: auto;
+        margin: auto;
+    }
+    .menuMobile img{
+        cursor: pointer;
+        width: 20%; 
+        display: inline-flex;
+        padding: 5%;
+    }
+    .active{
+        background-color: unset;
+    }
+    .active .menuTitle{
+        color: #2af501;
+    }
+    #mainContent{
+        width: 100%;
+    }
+    #content1{
+       margin: 15px auto;
+       padding-top: 10px; 
+    }
+    #content1 h2{
+        font-size: 1em;
+        line-height: 1;
+        margin: 10 auto;
+    }
+    #coaching{
+        padding-left: unset;
+    }
+    #coaching div{
+        margin: 0 10px 0 10px;
+    }
+    #content2{
+        margin: auto;
+    }
+    #content2 #articles{
+        display: block;
+        width: 100%;
+    }
+    .trust{
+        margin: 10px auto;
+        width: 60%;
+        padding: 0;
+    }
+    #footerImage{
+        width: 40%;
+    }
+    #footerContent, #blocContact{
+        display: block;
+        width: 100%;
+        margin: auto;
+    }
+    #findMe {
+        display: block;
+        width: 65%;
+        margin:  5% auto;
+        padding: 3% 0 5% 0;
+        line-height: 1.5;
+    }
+    #findMe p{
+        width: 100%; 
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    #findMe :first-child{
+        margin: unset;
+    }
+    #findMe :last-child{
+        margin: auto;
+    }
+    #svgTel, #svgLocation, #svgMail{
+        display: none;
+    }
+    #links{
+        width: 80%;
+        margin: auto;
+    }
+    #bubble{
+        display: block;
+        width: 100%;
+        margin: auto;   
+    }
+    #bubble, #links p{
+        margin-bottom: 0;
+    }
+    #bubble img{
+        position: absolute;
+        margin: 3% 10%;
+        width: 10%;
+    }
+    #bubble p{
+        position: relative;
+        left: 28%;
+    }
+    #socialNetworks{
+        width: 100%;
+        margin: auto;
+    }
+    #socialNetworks img{
+        width: 10%;
+    }
+    #infosSitemap{
+        font-size: 0.6em;
+        width: 90%;
+    }
+    #infosSitemap p{
+        text-align: left;
+        padding-left: 3%;
+    }
+    #backOnTop { 
+        position: fixed; 
+        width: 4%; 
+        bottom: 3%; 
+        left: 78%; 
+        border: 5px solid gray;
+        border-style: outset;
+        margin-top: 30%;
+      } 
+      #backOnTop img { 
+        width: 80%; 
+        margin-left: 11%;
+      }
+    
+}

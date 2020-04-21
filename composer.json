@@ -1,0 +1,16 @@
+{
+    "name": "macbooksonia/free-merch",
+    "description": "projet kercode 4",
+    "authors": [
+        {
+            "name": "soniabzh51",
+            "email": "sonia.bzh51@orange.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4" :{
+            "Freemerch\\" : "./app/"
+        }
+    },
+    "require": {}
+}

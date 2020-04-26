@@ -64,16 +64,6 @@ window.addEventListener('keydown', function (e) {
 //    ici la touche "Escape" ou "Esc" suivant les claviers, ou "esc" pour Mac ! 
 
 
-// ***********************MENU************************
-
-// $(document).click(function() {
-// 	$("#merch").mouseover(function(e) {
-// 		$(".subMenu3").show();
-// 	});
-// 	$(".subMenu").on("click",function(e) {
-// 		$(".subMenu3").hide();
-// 	});
-// });
 
 // ***********************MENU************************
 $(document).ready(function () {
@@ -87,7 +77,7 @@ $(document).ready(function () {
 
 // **********************SLIDER JS 1*********************
 
-let slide = ["public/images/slide_1.jpg", "public/images/slide_2.jpg", "public/images/slide_3.jpg", "public/images/slide_4.png"];
+let slide = ['app/public/images/slide_1.jpg', 'app/public/images/slide_2.jpg', 'app/public/images/slide_3.jpg', 'app/public/images/slide_4.png'];
 
 let i = 0;
 setInterval(function () {
@@ -108,26 +98,6 @@ function changeSlide(sens) {
 }
 
 
-// let caption = ["Le merchandising : combiner esthétisme et commercialité !", "Une identité visuelle forte !","Susciter de l'émotion pour atirer le client...", "La vitrine : véritable carte de visite du magasin !"];
-// let x =0;
-
-// setIntervalCaption(function(){
-//     document.getElementById("p2") = caption[x];
-//     x++;
-//     if (x == 4) x = 0;
-// }, 5000);
-
-// function changeCaption(sens) {     
-//     x = x + sens;
-//     if (x < 0)         
-//     x = caption.length - 1; 
-
-//     if (x > caption.length - 1)        
-//     x = 0; 
-
-// document.getElementById("p2") = caption[x];
-// }
-
 // *************ANIMATION CONTENT2***************
 
 $(document).ready(function () {
@@ -135,4 +105,3 @@ $(document).ready(function () {
         $(".ref").slideToggle("slow");
     });
 });
-

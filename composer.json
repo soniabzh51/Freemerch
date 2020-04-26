@@ -1,6 +1,6 @@
 {
-    "name": "macbooksonia/free-merch",
-    "description": "projet kercode 4",
+    "name": "macbooksonia/freemerch",
+    "description": "projet mvc",
     "authors": [
         {
             "name": "soniabzh51",
@@ -8,8 +8,8 @@
         }
     ],
     "autoload": {
-        "psr-4" :{
-            "Freemerch\\" : "./app/"
+        "psr-4": {
+            "Project\\" : "./app/"
         }
     },
     "require": {}

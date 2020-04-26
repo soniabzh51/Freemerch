@@ -3,40 +3,54 @@
 // Démarre une session
 session_start();
 
-// autoload.php generé avec composer
+// // autoload.php generé avec composer
 require_once __DIR__ . '/vendor/autoload.php';
 
-// Si l'action est diférente de NULL (isset), renvoie sur la méthode du contrôleur appelé
+// // Si l'action est diférente de NULL (isset), renvoie sur la méthode du contrôleur appelé
 try {
-    $controllerFront = new \freeMerch\controllers\ControllerFront();//objet controller
-
+    $controllerFront = new \Project\controllers\ControllerFront();//objet controller
+        // object controller
     if (isset($_GET['action'])) {      
-        if($_GET['action'] == 'about'){
-            $controllerFront->aboutFront();
+        if($_GET['action'] == 'home'){
+            // aboutFront est défini dans ControllerFront.php
+            $controllerFront -> homeFront();
         }
+        elseif($_GET['action'] == 'about'){
+            // merchFront est défini dans ControllerFront.php
+            $controllerFront -> aboutFront();
+        }
+
         elseif($_GET['action'] == 'merch'){
-            $controllerFront->merchFront();
+            // merchFront est défini dans ControllerFront.php
+            $controllerFront -> merchFront();
         }
         elseif($_GET['action'] == 'tools'){
-            $controllerFront->toolsFront();
+             // toolsFront est défini dans ControllerFront.php
+            $controllerFront -> toolsFront();
         }
         elseif($_GET['action'] == 'training'){
-            $controllerFront->trainingFront();
+            // trainingFront est défini dans ControllerFront.php
+            $controllerFront -> trainingFront();
         }
         elseif($_GET['action'] == 'portfolio'){
-            $controllerFront->portfolioFront();
+            // portfolioFront est défini dans ControllerFront.php
+            $controllerFront -> portfolioFront();
         }
         elseif($_GET['action'] == 'blog'){
-            $controllerFront->blogFront();
+            // blogFront est défini dans ControllerFront.php
+            $controllerFront -> blogFront();
         }
         elseif($_GET['action'] == 'contact'){
-            $controllerFront->contactFront();
+            // contactFront est défini dans ControllerFront.php
+            $controllerFront -> contactFront();
         }
 
     } else{
-        $controllerFront->home();
+        $controllerFront -> home();
     }
 
 } catch (Exception $e) {
-    require 'app/views/frontend/errorloading.php';
+    // require 'app/views/front/errorloading.php';
 }
+?>
+

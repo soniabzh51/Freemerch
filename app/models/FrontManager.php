@@ -1,6 +1,6 @@
 <?php
 
-namespace Freemerch\models;
+namespace Project\models;
 
 class FrontManager extends Manager{
 
@@ -9,8 +9,7 @@ class FrontManager extends Manager{
         //Appel de la bdd par la fonction dbConnect()
         $bdd = $this->dbConnect();  
         // Le modèle prépare la requête serveur
-        $req = $bdd->prepare('Votre Methode sql');
-        'Votre Methode sql';
+        $req = $bdd->prepare('Methode sql');
         $req->execute(array());
         return $req;
     }

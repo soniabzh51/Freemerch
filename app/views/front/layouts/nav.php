@@ -16,7 +16,7 @@
             </a>
         </li>
         <li>
-            <a href="index.php?action=about.php">
+            <a href="index.php?action=about">
                 <div class="menuContent">
                     <h2 class="menuTitle">A PROPOS</h2>
                     <h3 class="menuSubtitle">Découvrez qui je suis...</h3>
@@ -33,10 +33,10 @@
         </li>
         <ul class="menu2">
             <li class="subMenu3">
-                <a href="#" class="menuTitle2">Visuel merchandising</a>
+                <a href="index.php?action=erreur404" class="menuTitle2">Visuel merchandising</a>
             </li>
             <li class="subMenu3">
-                <a href="#" class="menuTitle2">Vitrine</a>
+                <a href="index.php?action=erreur404" class="menuTitle2">Vitrine</a>
             </li>
         </ul>
         <li id="tools">
@@ -52,11 +52,11 @@
                 <a href="#" class="menuTitle2"></a>
             </li> -->
             <li class="subMenu4">
-                <a href="#" class="menuTitle2">Bookmerchandising</a>
+                <a href="index.php?action=erreur404" class="menuTitle2">Bookmerchandising</a>
             </li>
         </ul>
         <li id="training">
-            <a href="index.php?action=training">
+            <a href="index.php?action=erreur404">
                 <div class="menuContent">
                     <h2 class="menuTitle">FORMATION</h2>
                     <h3 class="menuSubtitle">Une équipe performante est gage de réussite</h3>
@@ -64,7 +64,7 @@
             </a>
         </li>
         <li>
-            <a href="index.php?action=portfolio">
+            <a href="index.php?action=erreur404">
                 <div class="menuContent">
                     <h2 class="menuTitle">PORTFOLIO</h2>
                     <h3 class="menuSubtitle">Toutes mes réalisations...</h3>
@@ -74,7 +74,7 @@
         <li>
             <a href="index.php?action=blog">
                 <div class="menuContent">
-                    <h2 class="menuTitle">BLOG</h2>
+                    <h2 class="menuTitle">NEWS/BLOG</h2>
                     <h3 class="menuSubtitle">Le meilleur du merchandising</h3>
                 </div>
             </a>

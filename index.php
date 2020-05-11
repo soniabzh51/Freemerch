@@ -12,21 +12,24 @@ try {
         // object controller
     if (isset($_GET['action'])) {      
         if($_GET['action'] == 'home'){
-            // aboutFront est défini dans ControllerFront.php
+            // homeFront est défini dans ControllerFront.php
             $controllerFront -> homeFront();
         }
         elseif($_GET['action'] == 'about'){
-            // merchFront est défini dans ControllerFront.php
+            // aboutFront est défini dans ControllerFront.php
             $controllerFront -> aboutFront();
         }
-
-        elseif($_GET['action'] == 'merch'){
-            // merchFront est défini dans ControllerFront.php
-            $controllerFront -> merchFront();
+        elseif($_GET['action'] == 'visuelMerch'){
+            // visuelMerchFront est défini dans ControllerFront.php
+            $controllerFront -> visuelMerchFront();
         }
-        elseif($_GET['action'] == 'tools'){
-             // toolsFront est défini dans ControllerFront.php
-            $controllerFront -> toolsFront();
+        elseif($_GET['action'] == 'vitrine'){
+            // vitrineFront est défini dans ControllerFront.php
+            $controllerFront -> visuelMerchFront();
+        }
+        elseif($_GET['action'] == 'bookmerchandising'){
+             // bookmerchandisingFront est défini dans ControllerFront.php
+            $controllerFront -> bookmerchandisingFront();
         }
         elseif($_GET['action'] == 'training'){
             // trainingFront est défini dans ControllerFront.php
@@ -40,9 +43,33 @@ try {
             // blogFront est défini dans ControllerFront.php
             $controllerFront -> blogFront();
         }
+        elseif($_GET['action'] == 'article'){
+            // articleFront est défini dans ControllerFront.php
+            $controllerFront -> articleFront();
+        }
+        elseif($_GET['action'] == 'compte'){
+            // compteFront est défini dans ControllerFront.php
+            $controllerFront -> compteFront();
+        }
         elseif($_GET['action'] == 'contact'){
             // contactFront est défini dans ControllerFront.php
             $controllerFront -> contactFront();
+        }
+        elseif($_GET['action'] == 'erreur404'){
+            // erreur404Front est défini dans ControllerFront.php
+            $controllerFront -> erreur404Front();
+        }
+        elseif($_GET['action'] == 'rgpd'){
+            // rgpdFront est défini dans ControllerFront.php
+            $controllerFront -> rgpdFront();
+        }
+        elseif($_GET['action'] == 'mentionsLegales'){
+            // mentionsLegalesFront est défini dans ControllerFront.php
+            $controllerFront -> mentionsLegalesFront();
+        }
+        elseif($_GET['action'] == 'sitemap'){
+            // sitemapFront est défini dans ControllerFront.php
+            $controllerFront -> sitemapFront();
         }
 
     } else{

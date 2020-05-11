@@ -1,0 +1,43 @@
+#erreur404Content{
+    width: 96%;
+    margin:  2% auto;
+    padding: 5% 0;
+    border: 5px solid lightgrey;
+}
+#erreur404{
+    background-color: #E6D9CB;
+    width: 60%;
+    text-align: center;
+    margin: 5% auto;
+}
+#erreur404 h1{
+    padding-top: 10%;
+}
+#erreur404 p{
+    font-size: 1.3em;
+    padding: 3% 0;
+
+}
+#erreur404 :last-child{
+    padding-bottom: 15%;
+}
+#erreur404 a{
+    color: #B46D51;
+}
+
+@media screen and (min-width: 768px) and (max-width: 970px) {
+    #erreur404 h1{
+        font-size: 3.2em;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 768px) {
+    #erreur404Content{
+        padding: 1% 0;
+    }
+    #erreur404{
+        width: 80%;
+    }
+    #erreur404 h1{
+        font-size: 2em;
+    }
+}

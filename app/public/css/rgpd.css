@@ -1,0 +1,33 @@
+#rgpd{
+    width: 60%;
+    background-color: #E6D9CB;
+    padding: 2% 5%;
+}
+#rgpd h1{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+#rgpd p{
+    text-align: justify;
+}
+
+@media screen and (min-width: 768px) and (max-width: 970px) {
+    #rgpd{
+        width: 80%;
+        margin: 5% auto;
+    }
+    #rgpd h1{
+        font-size: 2.2em;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 768px) {
+    #rgpd{
+        width: 80%;
+        margin: 5% auto;
+    } 
+    #rgpd h1{
+        font-size: 2em;
+    }  
+}

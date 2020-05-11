@@ -1,0 +1,547 @@
+/* **************************PAGE HOME ADMIN********************* */
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 16px;
+}
+#page {
+    max-width: 1400px;
+    min-width: 400px;
+    width: 90%;
+    margin: 2% auto;
+}
+li{
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+h1 {
+    color: #D59F33;
+    font-size: 4em;
+    font-weight: lighter;
+}
+
+/*------------------------Header--------------------*/
+#homeAdminBanner{
+    display: flex;
+}
+#homeAdminTitle{
+    width: 60%;
+}
+#liensBlog{
+    width: 40%;
+    display: flex;
+}
+#lienCnx, #lienReg{
+    width: 40%;
+    font-size: 1.3em;
+    margin: auto;
+}
+#lienCnx .modal, #lienReg .modal{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);    
+}
+
+#déconnexion, #register{
+    text-align: center;
+    background-color: #063630;
+    padding: 2%;
+}
+#déconnexion a, #register a{
+    color: #ffffff;
+}
+/* *---------------------Modal connexion/ Modal register------------------*/
+.modal-wrapperCnx, .modal-wrapperReg{
+    overflow: auto;
+    height: 80%; 
+    width: inherit; 
+    max-width: calc(100vw - 20px);
+    max-width: calc(100vh - 20px);
+    padding: 2%;
+    font-size: 0.8em;
+}
+.modal-wrapperCnx, .modal-wrapperReg{
+    background-color: #E6D9CB;
+}
+#cnxForm, #regForm{
+    line-height: 0;
+}
+#cnxForm form, #regForm form{
+    display: block;
+    text-align: center;
+}
+#cnxForm input[type="text"], #cnxForm input[type="password"],
+#regForm input[type="text"], #regForm input[type="password"]{ 
+    width: 60%;
+    margin-bottom: 5%;
+    background-color: #ffffff;
+    border: 3px solid rgb(220, 199, 176);
+}
+#cnxForm input, #regForm input{
+    font-size: 1.3em;
+}
+#cnxForm input[type="submit"],#regForm input[type="submit"]{
+    width: 60%;
+    margin: 5% auto;
+    background-color: #B46D51;
+}
+#homeAdminBanner .messageConfirm, #homeAdminBanner .messageError{
+    font-size: 1.1em;
+}
+.js-modal-close{
+    position: sticky;
+    top: 17%;
+    left: 77%;
+    height: 8%;
+    width: 20%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-size: 1.3em;
+    color: #ffffff;
+    background-color: #000000;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+/* -------------------Menu homeAddmin------------------- */
+
+nav{
+    display: block;
+}
+.homeAdminMenu{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    background-color: #E6D9CB;
+    font-size: 1.5em;
+    line-height: 40px;
+    padding-inline-start: 0;
+}
+.homeAdminMenu li:last-child{
+    border-right: none;
+}
+.homeAdminMenu li{
+    width: 40%;
+    text-align: center;
+    border-right: 3px solid rgb(211, 162, 109);
+}
+.homeAdminMenu li a{
+    color: #000000;
+}
+h2{
+    text-align: center;
+    font-size: 1.7em;
+    line-height: 60px;
+}
+form{
+    display: block;
+}
+.messageConfirm, .messageError{
+    font-size: 1.1em;
+    line-height: 2;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+}
+.messageConfirm{
+    background-color: #2af501;
+    border: 3px solid #1dac00;
+}
+.messageError{
+    background-color: rgb(243, 53, 40);
+    border: 3px solid rgb(204, 27, 14); 
+}
+ input[type="text"], input[type="file"]{
+    height: 30px;
+    width: 50%;
+    display: block;
+    margin: 5% auto;
+    font-size: 1em;
+    border: 2px solid #D59F33;
+}
+input[type="file"]{
+    padding-top: 1%;
+    color: red;
+}
+#homeAdminPost textarea{
+    display: block;
+    min-height: 200px;
+    width: 90%;
+    margin: auto;
+    padding: 1%;
+    border: 2px solid #D59F33;
+    font-size: 1em;
+}
+.brownBtn{
+    display: block;
+    width: 15%;
+    font-size: 1.2em;
+    margin: 5% auto;
+    background-color: #B46D51;
+    border: 3px solid rgb(160, 96, 71);
+    cursor: pointer;
+}
+
+/* *****************************PAGE POSTS ADMIN*************************** */
+#postsSearchBar{
+    display: flex;
+    margin-top: 5%;
+}
+#postsSearchBar form{
+    width: 100%;
+}
+#postsSearchBar form input[type='text']{
+    width: 50%;
+    margin: auto;
+    position: absolute;
+    position: static;
+    border: 2px solid #D59F33;
+}
+#menuPosts{
+    width: 20%;
+    margin: auto;
+    text-align: justify;
+}
+#menuTri{
+    border: none;
+    margin: 5% auto;
+    padding-left: 30%;
+    position: static;
+}
+#menuTri ul{
+    background-color: #ffffff;
+    padding-inline-start: 0;
+}
+#menuTri ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+#menuTri a{
+    display: block;
+    color: #000000;
+}
+#menuTri a:hover{
+    color: #D59F33;
+}
+.sousMenuTri{
+    float: left;
+    text-align: center;
+    font-size: 1.2em;
+}
+.sousMenuTri > a::after{
+    content: " 🔽";
+}
+.tri{
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+.tri li {
+    font-size: 0.9em;
+    background-color: #E6D9CB;
+    width: 7%;
+    line-height: 1.8;
+}
+#menuTri > ul li:hover .tri{
+    display: block;
+}
+#postsSearchBar .brownBtn{
+    margin: 8% auto;
+}
+#showExtract{
+    margin: 5%auto;
+    width: 80%;
+    background-color: #E6D9CB;
+}
+#showExtract a{
+    color: #000000;
+}
+#showExtract p{
+    text-align: center;
+}
+/* ********************************* PAGE ARTICLEADMIN***************************** */
+#articleAdminMenu{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    padding-inline-start: 0;
+    position: static;
+}
+#articleAdminMenu ul{
+    background-color: #ffffff;
+    padding: 0; 
+    width: 100%;
+}
+#articleAdminMenu ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+#articleAdminMenu a{
+    display: block;
+    color: #000000;
+    font-size: 1.5em;
+}
+#articleAdminMenu a:hover{
+    color: #D59F33;
+}
+.sousMenuArticleAdmin{
+    float: left;
+    text-align: center;
+    justify-content: space-around;
+    background-color: #E6D9CB;
+    margin-bottom: 12%;
+    width: 49%;
+}
+.sousMenuArticleAdmin:first-child{
+    border-right: 3px solid #D59F33;
+}
+.sousMenuArticleAdmin > a::after{
+    content: "🔽";
+}
+.actionArticleAdmin{
+    display: none;
+    /* margin: 1% 0 2% 13%; */
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+.actionArticleAdmin li{
+    font-size: 0.8em;
+    width: 35%;
+    line-height: 1.8;
+}
+#articleAdminMenu > ul li:hover .actionArticleAdmin{
+    display: block;   
+}
+
+.blogAdminArticleContent{
+    width: 80%;
+    margin: 5% auto;
+    display: block;
+    background-color: #E6D9CB;
+    border: 3px solid rgb(220, 199, 176);
+}
+.imgArticleContent{
+    width: 50%; 
+    margin: auto;
+  }  
+.imgArticleContent img{
+    max-width: 526px;
+    width: 100%;
+    max-height: 394px;
+    margin-top: 10%;
+}
+.postArticleContent{
+    width: 90%;
+    margin: auto;
+}
+.postArticleContent .date, .postArticleContent h2{
+    text-align: center;
+}
+.articleP{
+    text-align: justify;
+}
+.comments{
+    width: 90%;
+    margin: auto;
+}
+.comments .date, .comments h2{
+    text-align: justify;
+}
+.blogAdminArticleContent form{
+    margin: 2% auto;
+    display: block;
+}
+.blogAdminArticleContent textarea{
+    /* width: 70%; */
+    min-height: 100px;
+    border: 3px solid rgb(220, 199, 176);
+    font-size: 1.5em;
+    text-align: justify;
+    margin: 2% auto;
+}
+.messageConfirm{
+    font-size: 1.1em;
+    line-height: 2;
+    text-align: center;
+    width: 60%;
+    background-color: #2af501;
+    border: 3px solid #1dac00;
+}
+
+/* ********************************PAGE USERSMANAGEMENT********************************** */
+#usersManagementSearchBar form{
+    width: 100%;
+    margin: 5% auto;
+}
+#usersManagementSearchBar form input[type='text']{
+    width: 50%;
+    margin: auto;
+    position: absolute;
+    position: static;
+    border: 2px solid #D59F33;
+}
+#menuUsersManagement{
+    width: 20%;
+    margin: auto;
+    text-align: justify;
+}
+#menuUsersTri{
+    border: none;
+    margin: 5% auto;
+    padding-left: 30%;
+    position: static;
+}
+#menuUsersTri ul{
+    background-color: #ffffff;
+    padding-inline-start: 0;
+}
+#menuUsersTri ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+#menuUsersTri a{
+    display: block;
+    color: #000000;
+}
+#menuUsersTri a:hover{
+    color: #D59F33;
+}
+.sousMenuUsersTri{
+    float: left;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20%;
+}
+.sousMenuUsersTri > a::after{
+    content: " 🔽";
+}
+.usersTri{
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+.usersTri li {
+    font-size: 0.9em;
+    background-color: #E6D9CB;
+    width: 7%;
+    line-height: 1.8;
+}
+.usersTri li:first-child{
+    margin-top: 1%;
+}
+#menuUsersTri > ul li:hover .usersTri{
+    display: block;
+}
+#showUser{
+    background-color: #E6D9CB;
+    width: 60%;
+    margin: auto;
+    padding: 1% 0;
+}
+#showUser p{
+    text-align: center;
+}
+#deleteUser input[type="submit"]{
+    display: block;
+    margin: 5% auto;
+    background-color: rgb(243, 53, 40);
+    border: 3px solid rgb(204, 27, 14);
+    font-size: 1.2em;
+    cursor: pointer;
+}
+/* ************************************MEDIAQUERIES******************************** */
+
+@media screen and (min-width: 970px) and (max-width: 1170px){
+
+    /* --------------------------------------Page homeAdmin-------------------------- */
+    #homeAdminBanner{
+        display: block;
+    }
+    #homeAdminTitle{
+        width: 80%;
+        margin: auto;
+    }
+    #homeAdminTitle h1{
+        text-align: center;
+    }
+    #liensBlog{
+        width: 80%;
+        margin: 5% auto;
+    }
+    li{
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 970px){
+
+    /* -----------------------------------Page homeAdmin------------------------------- */
+    #homeAdminBanner{
+        display: block;
+    }
+    #homeAdminTitle{
+        width: 80%;
+        margin: auto;
+    }
+    #homeAdminTitle h1{
+        text-align: center;
+    }
+    #liensBlog{
+        width: 80%;
+        margin: 5% auto;
+    }
+    li{
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 768px){
+    /* -----------------------------------Page homeAdmin------------------------------- */
+    #homeAdminBanner{
+        display: block;
+    }
+    #homeAdminTitle{
+        width: 80%;
+        margin: auto;
+    }
+    #homeAdminTitle h1{
+        text-align: center;
+        font-size: 2em;
+    }
+    #liensBlog{
+        width: 80%;
+        margin: 5% auto;
+    }
+    li{
+        width: 70%;
+    }
+    input[type="text"], input[type="file"]{
+        width: 75%;
+    }
+    #homeAdminPost textarea{
+        width: 90%;
+        margin: 2% 3% 2% 3%;
+    }
+}

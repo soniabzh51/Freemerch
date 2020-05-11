@@ -1,0 +1,37 @@
+#account{
+    width: 90%;
+    margin: 2% auto;
+}
+#account .backTop{
+    width: 25%;
+    padding: 1%;
+} 
+#welcome h2{
+    text-align: center;
+}
+.accountComments{
+    background-color: lightcoral;
+}
+
+/* ************************************MEDIAQUERIES******************************** */
+
+@media screen and (min-width: 970px) and (max-width: 1170px) {
+
+    #account .backTop{
+        width: 32%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 970px) {
+
+    #account .backTop{
+        width: 40%;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 768px) {
+
+    #account .backTop{
+        width: 70%;
+        margin: auto;
+    }
+
+}

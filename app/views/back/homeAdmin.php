@@ -2,7 +2,9 @@
 
 require_once 'app/views/back/layouts/headAdmin.php';
 include_once 'app/views/back/layouts/headerAdmin.php';
-
+if(!empty($_POST)) {
+    $errors = post_article();
+}
 ?>
 
         <main>
@@ -10,7 +12,7 @@ include_once 'app/views/back/layouts/headerAdmin.php';
                 <h2>Poster un article !</h2>
                 <form action="" method="POST" enctype="multipart/form-data">
 
-                    <?php
+                <?php
                 if(isset($errors)):
                     if($errors):
                         foreach($errors as $error):

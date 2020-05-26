@@ -37,7 +37,7 @@
     width: 40%;
     text-align: center;
     line-height: 3;
-    margin: 5% 0 5% 0;
+    margin: 5% auto;
 }
 
 #lienCnx .modal,
@@ -53,10 +53,21 @@
     background: rgba(0, 0, 0, 0.8);
 }
 
+#introBlog{
+    font-size: 1.5em;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 10%;
+}
+
+#introBlog p{
+    margin-bottom: 0;
+}
+
 #blogSearchBar {
     width: 100%;
     display: flex;
-    padding-bottom: 2%;
+    padding-top: 0;
 }
 
 form {
@@ -86,6 +97,7 @@ form input[type="submit"i] {
 
 #articles {
     width: 100%;
+    height: 700px;
     margin-top: 5%;
     display: block;
 }
@@ -189,6 +201,7 @@ form input[type="submit"i] {
     height: 10%;
 }
 
+/* ********************************* MEDIAQUERIES ******************************** */
 @media screen and (min-width: 768px) and (max-width: 970px) {
 
     #blogContent {

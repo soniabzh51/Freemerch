@@ -166,7 +166,7 @@ form{
     background-color: rgb(243, 53, 40);
     border: 3px solid rgb(204, 27, 14); 
 }
- input[type="text"], input[type="file"]{
+input[type="text"], input[type="file"]{
     height: 30px;
     width: 50%;
     display: block;
@@ -214,20 +214,22 @@ input[type="file"]{
 }
 #menuPosts{
     width: 20%;
-    margin: auto;
+    margin: 5%  auto;
     text-align: justify;
 }
 #menuTri{
+    width: 100%;
     border: none;
-    margin: 5% auto;
-    padding-left: 30%;
+    margin: 0 auto;
     position: static;
 }
-#menuTri ul{
+.orderBy{
+    width: 50%;
+    margin: auto;
     background-color: #ffffff;
     padding-inline-start: 0;
 }
-#menuTri ul::after{
+.orderBy::after{
     content: "";
     display: table;
     clear: both;
@@ -240,6 +242,7 @@ input[type="file"]{
     color: #D59F33;
 }
 .sousMenuTri{
+    width: 100%;
     float: left;
     text-align: center;
     font-size: 1.2em;
@@ -251,19 +254,20 @@ input[type="file"]{
     display: none;
     position: absolute;
     width: 100%;
+    padding-inline-start: 1%;
     z-index: 1000;
 }
 .tri li {
     font-size: 0.9em;
     background-color: #E6D9CB;
-    width: 7%;
+    width: 8%;
     line-height: 1.8;
 }
 #menuTri > ul li:hover .tri{
     display: block;
 }
 #postsSearchBar .brownBtn{
-    margin: 8% auto;
+    margin: 10% auto;
 }
 #showExtract{
     margin: 5%auto;
@@ -389,9 +393,12 @@ input[type="file"]{
 }
 
 /* ********************************PAGE USERSMANAGEMENT********************************** */
+#usersManagementSearchBar{
+   display: flex;
+    margin-top: 5% 
+}
 #usersManagementSearchBar form{
     width: 100%;
-    margin: 5% auto;
 }
 #usersManagementSearchBar form input[type='text']{
     width: 50%;
@@ -402,20 +409,22 @@ input[type="file"]{
 }
 #menuUsersManagement{
     width: 20%;
-    margin: auto;
+    margin: 5% auto;
     text-align: justify;
 }
 #menuUsersTri{
+    width: 100%;
     border: none;
     margin: 5% auto;
-    padding-left: 30%;
     position: static;
 }
-#menuUsersTri ul{
+.orderBy{
+    width: 50%;
+    margin: auto;
     background-color: #ffffff;
     padding-inline-start: 0;
 }
-#menuUsersTri ul::after{
+.orderBy::after{
     content: "";
     display: table;
     clear: both;
@@ -428,10 +437,10 @@ input[type="file"]{
     color: #D59F33;
 }
 .sousMenuUsersTri{
+    width: 100%;
     float: left;
     text-align: center;
     font-size: 1.2em;
-    margin-bottom: 20%;
 }
 .sousMenuUsersTri > a::after{
     content: " 🔽";
@@ -440,20 +449,22 @@ input[type="file"]{
     display: none;
     position: absolute;
     width: 100%;
+    padding-inline-start: 1%;
     z-index: 1000;
 }
 .usersTri li {
     font-size: 0.9em;
     background-color: #E6D9CB;
-    width: 7%;
+    width: 8%;
     line-height: 1.8;
-}
-.usersTri li:first-child{
-    margin-top: 1%;
 }
 #menuUsersTri > ul li:hover .usersTri{
     display: block;
 }
+#postsSearchBar .brownBtn, #deleteUser .redBtn{
+    margin: 10% auto;
+}
+
 #showUser{
     background-color: #E6D9CB;
     width: 60%;
@@ -463,12 +474,13 @@ input[type="file"]{
 #showUser p{
     text-align: center;
 }
-#deleteUser input[type="submit"]{
+#deleteUser .redBtn{
+    width: 20%;
     display: block;
+    font-size: 1.2em;
     margin: 5% auto;
     background-color: rgb(243, 53, 40);
     border: 3px solid rgb(204, 27, 14);
-    font-size: 1.2em;
     cursor: pointer;
 }
 /* ************************************MEDIAQUERIES******************************** */
@@ -490,13 +502,27 @@ input[type="file"]{
         width: 80%;
         margin: 5% auto;
     }
-    li{
+    .homeAdminMenu{
+        font-size: 1.3em;
+    }
+    .homeAdminMenu li{
         width: 30%;
+    } 
+    /* --------------------------------------Page postsAdmin-------------------------- */
+    #postsSearchBar .brownBtn{
+        width: 20%;
+        margin-top: 15%;
+    }
+        /* --------------------------------------Page usersManagement-------------------------- */
+    #usersManagementSearchBar .brownBtn{
+        width: 20%;
+    }
+    #deleteUser .redBtn{
+        width: 25%;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 970px){
-
     /* -----------------------------------Page homeAdmin------------------------------- */
     #homeAdminBanner{
         display: block;
@@ -512,8 +538,33 @@ input[type="file"]{
         width: 80%;
         margin: 5% auto;
     }
-    li{
+    .homeAdminMenu{
+        font-size: 1.3em;
+    }
+    .homeAdminMenu li{
         width: 40%;
+    }
+    #homeAdminPost h2{
+        font-size: 1.5em;
+    }
+    /* --------------------------------------Page postsAdmin-------------------------- */
+    .sousMenuTri{
+        font-size: 1.1em;
+    }
+    #postsSearchBar .brownBtn{
+        width: 25%;
+        margin-top: 18%;
+    }
+    /* --------------------------------------Page usersManagement-------------------------- */
+    .sousMenuUsersTri{
+        font-size: 1.1em;
+    }
+    #usersManagementSearchBar .brownBtn{
+        width: 25%;
+        margin-top: 10%;
+    }
+    #deleteUser .redBtn{
+        width: 30%;
     }
 }
 
@@ -534,14 +585,77 @@ input[type="file"]{
         width: 80%;
         margin: 5% auto;
     }
-    li{
-        width: 70%;
+    .homeAdminMenu{
+        width: 40%;
+        font-size: 1.1em;
+        display: block;
+        background-color: #ffffff;
     }
-    input[type="text"], input[type="file"]{
-        width: 75%;
+    .homeAdminMenu li{
+        width: 100%;
+        border: none;
+        background-color: #ffffff;
+        margin: 2% auto;
+    }
+    .homeAdminMenu li a{
+        background-color: rgb(186, 221, 153);
+        padding: 3%;
+    }
+    input[type="text"]{
+        font-size: 0.8em;
+    }
+    input[type="file"]{
+        font-size: 0.8em;
+        width: 65%;
     }
     #homeAdminPost textarea{
         width: 90%;
         margin: 2% 3% 2% 3%;
+    }
+    #homeAdminPost .brownBtn{
+        width: 22%;
+    }
+    /* --------------------------------------Page postsAdmin-------------------------- */
+    #postsSearchBar form input [type='text'] {
+        width: 70%;
+    }
+    .orderBy{
+        width: 85%;
+    }
+    .sousMenuTri{
+        font-size: 1em;
+    }
+    .tri li{
+        width: 15%;
+    }
+    #postsSearchBar .brownBtn{
+        width: 35%;
+        margin-top: 20%;
+        font-size: 1em;
+    }
+    /* --------------------------------------Page usersManagement-------------------------- */
+    #usersManagementSearchBar form input [type='text'] {
+        width: 70%;
+    }
+    .orderBy{
+        width: 85%;
+    }
+    .sousMenuUsersTri{
+        font-size: 1em;
+    }
+    .usersTri li{
+        width: 15%;
+    }
+    #usersManagementSearchBar .brownBtn{
+        width: 35%;
+        margin-top: 18%;
+        font-size: 1em;
+    }
+    #showUser{
+        font-size: 1em;
+    }
+    #deleteUser .redBtn{
+        width: 45%;
+        font-size: 1em;
     }
 }

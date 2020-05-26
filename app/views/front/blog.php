@@ -10,7 +10,7 @@ include_once 'app/views/front/layouts/nav.php';
     <section id="blogContent">
         <div id="blogBanner">
             <div id="blogTitle">
-                <h2>NEWS/BLOG</h2>
+                <h2>Bienvenue sur votre page news/blog !</h2>
             </div>
             <div id="liensBlog">
                 <!-- Modal Connexion-->
@@ -89,6 +89,12 @@ include_once 'app/views/front/layouts/nav.php';
                     </aside>
                 </div>
             </div>
+        </div>
+        <div id="introBlog">
+            <p>
+            Vous souhaitez poster des commentaires sur vos articles préférés ? <br>
+            Inscrivez-vous, connectez-vous !
+            </p>
         </div>
         <div id="blogSearchBar">
             <form method="POST" action="blog.php">

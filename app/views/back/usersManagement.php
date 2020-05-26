@@ -12,7 +12,7 @@ include_once 'app/views/back/layouts/headerAdmin.php';
                     <input type="text" name="query" placeholder="Rechercher un utilisateur...">
                     <div id="menuUsersManagement">
                         <nav id="menuUsersTri">
-                            <ul>
+                            <ul class="orderBy">
                                 <li class="sousMenuUsersTri"><a href="#">Trier par :</a>
                                     <ul class="usersTri">
                                         <li><a href="#">Id</a></li>
@@ -30,7 +30,7 @@ include_once 'app/views/back/layouts/headerAdmin.php';
                     <p>User pseudo : Zorro</p>
             </div>
             <div id="deleteUser">
-                <input type="submit"value="Supprimer le compte !"> 
+                <input type="submit"value="Supprimer le compte !" class="redBtn"> 
             </div>
         </main>
 

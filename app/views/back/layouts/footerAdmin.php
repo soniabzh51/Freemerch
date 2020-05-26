@@ -1,9 +1,9 @@
-<footer>
+    <footer>
 
-</footer>
-</div>
+    </footer>
+    </div>
 
-<script type="text/javascript" src="app/public/scripts/modal.js"></script>
+    <script type="text/javascript" src="app/public/scripts/modal.js"></script>
 
 </body>
 

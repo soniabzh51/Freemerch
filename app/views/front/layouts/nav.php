@@ -8,7 +8,7 @@
     </label>
     <ul class="menu">
         <li>
-            <a href="index.php?action=home" class="active">
+            <a href="index.php?action=home">
                 <div class="menuContent">
                     <h2 class="menuTitle">ACCUEIL</h2>
                     <h3 class="menuSubtitle">Bonjour et bienvenue chez vous</h3>
@@ -33,10 +33,10 @@
         </li>
         <ul class="menu2">
             <li class="subMenu3">
-                <a href="index.php?action=erreur404" class="menuTitle2">Visuel merchandising</a>
+                <a href="index.php?action=erreur404">Visuel merchandising</a>
             </li>
             <li class="subMenu3">
-                <a href="index.php?action=erreur404" class="menuTitle2">Vitrine</a>
+                <a href="index.php?action=erreur404">Vitrine</a>
             </li>
         </ul>
         <li id="tools">
@@ -52,10 +52,10 @@
                 <a href="#" class="menuTitle2"></a>
             </li> -->
             <li class="subMenu4">
-                <a href="index.php?action=erreur404" class="menuTitle2">Bookmerchandising</a>
+                <a href="index.php?action=erreur404">Bookmerchandising</a>
             </li>
         </ul>
-        <li id="training">
+        <li id="training"> 
             <a href="index.php?action=erreur404">
                 <div class="menuContent">
                     <h2 class="menuTitle">FORMATION</h2>

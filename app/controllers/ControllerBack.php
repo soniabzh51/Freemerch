@@ -33,14 +33,11 @@ class ControllerBack
         require 'app/views/back/articleAdmin.php';
     }
     // login admin
-    function login(){
-        global $bdd;
-    
+    function loginUser(){
         extract($_POST);
-    
         $error = "Ces identifiants ne correspondent pas à nos enregistrements !";
     
-        $login = $bdd->prepare('SELECT id, password FROM admins WHERE pseudo = ?');
+        $loginUser = new \Project\models\FrontManager();
         $login->execute([$pseudo]);
     
         $login = $login->fetch();
@@ -79,7 +76,7 @@ class ControllerBack
         }
         if($validation){
             $image = basename($_FILES['file']['name']);
-            move_uploaded_file($_FILES['file']['tmp_name'], '../img/' .$image);
+            move_uploaded_file($_FILES['file']['tmp_name'], 'app/public/images/' .$image);
         
             $post = $bdd->prepare("INSERT INTO articles(title, extract, content, image) VALUES(:title, :extract, :content, :image)");
             $post->execute([

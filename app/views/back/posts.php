@@ -11,7 +11,7 @@ include_once 'app/views/back/layouts/headerAdmin.php';
             <input type="text" name="query" placeholder="Rechercher un article...">
             <div id="menuPosts">
                 <nav id="menuTri">
-                    <ul>
+                    <ul class="orderBy">
                         <li class="sousMenuTri"><a href="#">Trier par :</a>
                             <ul class="tri">
                                 <li><a href="#">Id</a></li>

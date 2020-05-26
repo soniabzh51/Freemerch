@@ -21,7 +21,7 @@ try {
         }
         elseif($_GET['action'] == 'articleAdmin'){
             // articleAdminBackBack est défini dans ControllersBack.php
-            $controllerBack -> articleAdminBackBack();
+            $controllerBack -> articleAdminBack();
         }
         elseif($_GET['action'] == 'usersManagement'){
             $controllerBack -> usersManagementBack();

@@ -1,39 +1,22 @@
 <?php
 
 require_once 'app/views/front/layouts/head.php';
+require_once 'app/views/front/layouts/header.php'
 
 ?>
-
-<body>
-    <div id="page">
-
-        <!-- HEADER -->
-
-        <header>
-            <section class="banner">
-                <div class="logo">
-                    <a href="home" id="big"><img src="public/logos/logo_IP_style.png" alt="Bienvenue chez IPstyle"></a>
-                    <a href="home" id="small"><img src="public/logos/logo_IP_mini.png" alt="Bienvenue chez IPstyle"></a>
-                </div>
-                <div class="title">
-                    <h1>Isabelle Phelippot</h1>
-                    <p>Freelance Merchandiser</p>
-                </div>
-            </section>
-        </header>
 
         <!--  CONTENT -->
         <main>
 
-            <div id="blogBanner">
-                <div id="blogTitle">
-                    <h2>BLOG</h2>
+            <div id="compteBanner">
+                <div class="backTop">    
+                    <a href="index.php?action=blog">< Revenir à la page News/Blog</a>
                 </div>
                 <div id="liensBlog">
                     <!-- Modal Connexion-->
                     <div id="lienCnx">
                         <div id="connexion">
-                            <a href="#modal2" class="js-modal">Connexion</a>
+                            <a href="#modal2" class="js-modal">Déconnexion</a>
                         </div>
                         <aside id="modal2" class="modal" aria-hidden="true" role="dialog" aria_labelledby="Login"
                             style="display: none;">
@@ -80,11 +63,8 @@ require_once 'app/views/front/layouts/head.php';
                 </div>
             </div>
             <section id="account">
-                <div class="backTop">    
-                    <a href="index.php?action=blog">< Revenir à la page News/Blog</a>
-                </div>
                 <div id="welcome">
-                    <h2>Bienvenue <?= $infos['pseudo'] ?>Zorro !</h2>
+                    <h2>Bienvenue <?= $infos['pseudo'] ?>sur votre compte, Zorro !</h2>
                     <p>Adresse mail : <?= $infos['email'] ?></p>
                 </div>
                 <div class="accountComments">

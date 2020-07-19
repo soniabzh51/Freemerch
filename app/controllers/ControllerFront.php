@@ -19,9 +19,6 @@ class ControllerFront
         $accueil = $homeFront->viewFront();
         require 'app/views/front/home.php';
     }
-    function homeFront(){
-        require 'app/views/front/home.php';
-    }
     function aboutFront(){
         require 'app/views/front/about.php';
     }
@@ -40,20 +37,31 @@ class ControllerFront
     function portfolioFront(){
         require 'app/views/front/portfolio.php';
     }
+    public function newsFront(){
+        $newsFront = new \Project\models\FrontManager();
+        $articlesNews = $this->displayNews();
+        require 'app/views/front/news.php';
+    }
+    function displayNews(){
+        $newsArticle = new \Project\models\FrontManager();
+        $articleNews = $newsArticle->getArticleNews();
+        return $articleNews;
+    }
     function blogFront(){
         require 'app/views/front/blog.php';
     }
-    function articleFront(){
-        require 'app/views/front/article.php';
-    }
-    function compteFront(){
-        require 'app/views/front/compte.php';
-    }
-    function contacFront(){
+    function contactFront(){
+        // if(!empty($_POST)){
+        //     $contact = new \Project\controllers\ControllerFront();
+        //     $errors = $contact->contact();
+        // }
         require 'app/views/front/contact.php';
     }
-    function erreur404Front(){
-        require 'app/views/front/erreur404.php';
+    function accountFront(){
+        require 'app/views/front/account.php';
+    }
+    function error404Front(){
+        require 'app/views/front/error404.php';
     }
     function rgpdFront(){
         require 'app/views/front/rgpd.php';
@@ -65,58 +73,68 @@ class ControllerFront
         require 'app/views/front/sitemap.php';
     }
 
-    function register(){
-       
+    // function register : register new user
+    public function registerUser(){
         extract($_POST);
         $validation = true;
         $errors = [];
 
-        if(empty($pseudo) || empty($email) || empty($emailconf) || empty($password) || empty($passwordconf)){
+        if(empty($pseudo) || empty($email) || empty($password)){
             $validation = false;
             $errors[] = 'Tous les champs sont obligatoires !';
         }
+
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
             $validation = false;
             $errors = "L'adresse e-mail n'est pas valide !";
         }
-        if($emailconf != $email){
+
+        if(($passwordConf != $password)) {
             $validation = false;
-            $errors = "L'adresse e-mail de confirmation est incorrecte !";
+            $errors[] = 'Erreur dans le confirmation de votre email ou de votre mot de passe !';
         }
-        if($passwordconf != $password){
-            $validation = false;
-            $errors = "Le mot de passe de confirmation est incorrect !";
+
+        if ($pseudo){
+            $selectPseudo = new \Project\models\FrontManager();
+            $userPseudo = $selectPseudo->pseudo_user($pseudo);
+            if($userPseudo) {
+                $validation = false;
+                $errors[] = "Ce pseudo est déjà utilisé !";    
+            }
         }
-        if ($pseudo = $addPseudo){
-            $addPseudo = new \Project\models\FrontManager(pseudo_check($addPseudo));
-            $validation = false;
-            $errors[] = "Ce pseudo est déjà pris !";
-        }
+
         if($validation){
-            $register = new \Project\models\FrontManager(addUser($pseudo,$email,$password));
-            require 'app/views/front/compte.php';
+            $register = new \Project\models\FrontManager();
+            $userRegister = $register->register_user($pseudo,$email,$password);
+            // $loginUser = new \Project\models\FrontManager();
+            // $login = $loginUser->login_user($pseudo,$password);
+            // $_SESSION['users'] = $login['id'];
+
+            // $this->compteFront();
+
             unset($_POST['pseudo']);
             unset($_POST['email']);
-            unset($_POST['emailconf']);
+            unset($_POST['password']);
         }
-        return $errors;
+        // return $errors;
+        $this->accountFront();
+
     }
 
-    function login(){
-        global $bdd;
-    
+    // function loginUser : user connection
+    function loginUser(){
         extract($_POST);
-    
         $error = "Ces identifiants ne correspondent pas à nos enregistrements !";
     
-        $login = $bdd->prepare('SELECT id, password FROM users WHERE pseudo = ?');
-        $login->execute([$pseudo]);
+        $login = new \Project\models\FrontManager();
+        $login = $login->login_user($pseudo,$password);
     
-        $login = $login->fetch();
         if(password_verify($password, $login['password'])){
-            $_SESSION['user'] = $login['id'];
-            header("Location: compte.php");
+            $_SESSION['users'] = $login['id'];
+            $this->accountFront();
+            // header("Location: compte.php");
         }else{
+            $this->home();
             return $error;
         }
     }
@@ -124,47 +142,92 @@ class ControllerFront
             // si ok, on ouvre une session php pour se connecter au compte
         
     
-    
-    function logout(){
+    // function logout : disconnect user
+    function logoutUser(){
         unset($_SESSION['user']);
         session_destroy();
-        header('Location: blog.php');
+        $this->home();
     }
     
     // function infos(){
-    //     global $bdd;
-    
-    //     $infos = $bdd->prepare('SELECT email, pseudo FROM users WHERE id = ?');
-    //     $infos->execute([$_SESSION["user"]]);
-    
-    //     $infos = $infos->fetch();
-        
+    //     $infos_user = new \Project\models\FrontManager();
+    //     $infos = $infos_user->infos_user();
     //     return $infos;
     // }
 
-    function post_comment(){
-        if(isset($_SESSION['user'])){
-            global $bdd;
-            extract($_POST);
-            $error = '';
+    // function post_comment(){
+    //     if(isset($_SESSION['users'])){
+    //         extract($_POST);
+    //         $error = '';
     
-            if(!empty($commentaire)){
+    //         if(!empty($commentaire)){
                 
-                $id_article = (int)$_GET["id"];
-                $comment = $bdd->prepare('INSERT INTO comments(user_id, article_id, content) VALUES (:user_id, :article_id, :content) ');
-                $comment->execute([
-                    "user_id"=> $_SESSION['user'],
-                    "article_id" => $id_article,
-                    "comments" => nl2br(htmlentities($commentaire)),
-                ]);
-                header("Location: article.php?id=". $id_article);
-            }else{
-                $error .= 'Vous devez écrire du texte';
-            }
-            return $error;
-        }
-    }    
+    //             $id_article = (int)$_GET["id"];
+    //             $comment = $bdd->prepare('INSERT INTO comments(user_id, article_id, content) VALUES (:user_id, :article_id, :content) ');
+    //             $comment->execute([
+    //                 "user_id"=> $_SESSION['user'],
+    //                 "article_id" => $id_article,
+    //                 "comments" => nl2br(htmlentities($commentaire)),
+    //             ]);
+    //             header("Location: article.php?id=". $id_article);
+    //         }else{
+    //             $error .= 'Vous devez écrire du texte';
+    //         }
+    //         return $error;
+    //     }
+    // }    
+    // function visitorsMail : allows visitors sending mail to Admin
+    // public function contact(){
 
+    //     extract($_POST);
+    //     $validation = true;
+    //     $errors = [];
+
+    //     if (empty($name) || empty($firstName) || empty($email) || empty($address) || empty($subject) || empty($message)){
+    //         $validation = false;
+    //         $errors[] = "Tous les champs sont obligatoires !";
+        
+    //     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    //         $validation = false;
+    //         $errors[] = "L'adresse e-mail n'est pas valide !";
+    //     }elseif ($validation){
+    //         $to = 'ipstylefreemerch@gmail.com';
+    //         $intro = 'Vous avez un nouveau message de ' . $name . $firstName;
+    //         $content = '
+    //         <h2>Vous avez reçu un nouveau message de ' . $name . $firstName .'</h2>
+    //         <h2>Adresse e-mail: ' . $email .'</h2>
+    //         <h2>Objet: ' . nl2br($subject) .'</h2>
+    //         <p>' . nl2br($message) . '</p>';
+    //         $headers = 'From' . $name . $firstName . $email . "\r\n";
+    //         $headers .= 'MIME-Version: 1.0' . "\r\n";
+    //         $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+
+    //         mail($to, $intro, $content, $titles);
+
+    //         unset($_POST['name']);
+    //         unset($_POST['firstName']);
+    //         unset($_POST['email']);
+    //         unset($_POST['address']);
+    //         unset($_POST['subject']);
+    //         unset($_POST['message']);
+
+            // $contactAdmin = new \Project\models\FrontManager();
+            // $contactAdmin->visitors($name, $firstName, $email, $address, $subject, $message);
+        // }
+        // $this->contactFront();
+    //     return $errors;
+
+    // }
+
+    // public function formatage_date($publication){
+    //     $publication = explode(" ", $publication);
+    //     $date = explode('-', $publication[0]);
+    //     $hour = explode(':', $publication[1]);
+    //     $months = ['', 'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'novembre', 'décembre'];
+        
+    //     $resultat = $date[2] . ' ' . $months[(int)$date[1]] . ' ' . $date[0] . ' à ' . $hour[0] . 'h' . $hour[1];
+    //     return $resultat;
+    // }
 
 
 }

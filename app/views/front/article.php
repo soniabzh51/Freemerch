@@ -12,7 +12,7 @@ include_once 'app/views/front/layouts/header.php';
         </div> 
         <div class="blogArticleContent">
             <div class="imgArticleContent">
-                <img src="img/<?=$article['image']?>" title="<?= $article['title']?>">
+                <img src="<?=$article['image']?>" title="<?= $article['title']?>">
             </div>
             <div class="postArticleContent">
                 <P class="date">Posté le <time datetime=" ">20 octobre 2015 à 20:29<?=formatage_date($article['created_at']) ?></time></P>

@@ -4,32 +4,19 @@ require_once 'app/views/back/layouts/headAdmin.php';
 include_once 'app/views/back/layouts/headerAdmin.php';
 
 ?>
-
 <main>
-    <div id="postsSearchBar">
-        <form method="POST" action="postsAdmin.php">
-            <input type="text" name="query" placeholder="Rechercher un article...">
-            <div id="menuPosts">
-                <nav id="menuTri">
-                    <ul class="orderBy">
-                        <li class="sousMenuTri"><a href="#">Trier par :</a>
-                            <ul class="tri">
-                                <li><a href="#">Id</a></li>
-                                <li><a href="#">Titre</a></li>
-                                <li><a href="#">Date</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <input type="submit" value="Go !" class="brownBtn">
-        </form>
-    </div>
-    <div>
-        
-    </div>
+    <section id="posts">
+        <h2>Depuis cette page, vous pouvez :</h2>
+            <h3>Supprimer un article</h3>
+            
+            <h3>Changer l'image d'un article</h3>
+            <h3>Modifier le titre d'un article</h3>
+            <h3>Modifier le texte d'un article</h3>
+    
+    </section>
 </main>
 </div>
+
 
 <?php
     include_once 'app/views/back/layouts/footerAdmin.php';

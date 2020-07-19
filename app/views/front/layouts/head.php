@@ -13,14 +13,18 @@
     <!------------------------ css --------------------------->
     <link rel="stylesheet" href="app/public/css/home.css">
     <link rel="stylesheet" href="app/public/css/about.css">
+    <link rel="stylesheet" href="app/public/css/about.css">
+    <link rel="stylesheet" href="app/public/css/news.css">
     <link rel="stylesheet" href="app/public/css/blog.css">
+    <link rel="stylesheet" href="app/public/css/contact.css">
     <link rel="stylesheet" href="app/public/css/article.css">
-    <link rel="stylesheet" href="app/public/css/compte.css">
-    <link rel="stylesheet" href="app/public/css/erreur404.css">
+    <link rel="stylesheet" href="app/public/css/account.css">
+    <link rel="stylesheet" href="app/public/css/error404.css">
     <link rel="stylesheet" href="app/public/css/rgpd.css">
     <link rel="stylesheet" href="app/public/css/mentionsLegales.css">
     <link rel="stylesheet" href="app/public/css/sitemap.css">
 
     <!----------------------- fonts -------------------------->
     <link href="https://fonts.googleapis.com/css?family=Alex+Brush&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app/public/fonts">
 </head>

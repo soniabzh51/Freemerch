@@ -1,0 +1,86 @@
+#newsContent{
+    width: 68%;
+}
+#newsSearchBar{
+    width: 100%;
+    display: flex;
+    padding-bottom: 2%;
+}
+form{
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 1%;
+}
+#newsSearchBar form input[type="text"]{
+    width: 70%;
+    font-size: 1.5em;
+    padding-left: 1%;
+    border: 3px solid rgb(220, 199, 176);
+    background-color: #E6D9CB;
+    
+}
+#newsSearchBar form input[type="submit"]{
+    background-color: #B46D51;
+    border: 3px solid rgb(160, 96, 71);
+    width: 15%;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+#articles{
+   width: 100%;
+   margin-top: 2%; 
+   display: block;
+}
+.newsFront{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.newsArticles{
+    width: 44%;
+    padding: 2%;
+    background-color: #E6D9CB;
+    border: 3px solid rgb(220, 199, 176);
+    margin: 1% 0; 
+}
+.articleImg{
+    max-width: 395px;
+    width: 100%;
+    max-height: 320px;
+   
+}
+.newsArticles a{
+    color: #000000;
+}
+
+/* ************************************MEDIAQUERIES******************************** */
+
+@media screen and (min-width: 768px) and (max-width: 970px){
+
+    #newsContent{
+    padding: 5% 0 5% 0;
+    width: 100%;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 768px){
+
+    #newsContent{
+        padding: 5% 0 5% 0;
+        width: 100%;
+    }
+    #newsSearchBar form input[type="text"], #newsSearchBar form input[type="submit"]{
+        font-size: 1.3em;
+    }
+    .newsFront{
+        display: block;
+    }
+    .newsArticles{
+        width: 95%;
+    }
+    .newsFront :first-child{
+        margin-bottom: 5%;
+    }
+}

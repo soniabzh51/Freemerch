@@ -6,8 +6,8 @@ include_once 'app/views/front/layouts/header.php';
 // include_once 'app/views/front/layouts/nav.php';
 
 ?>
-    <section id="erreur404Content">
-        <div id="erreur404">
+    <section id="error404Content">
+        <div id="error404">
             <h1> Oups ! <br> Erreur 404</h1>
 
             <p>

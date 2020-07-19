@@ -8,14 +8,14 @@
                     <div id="findMe">
                         <p><strong>IP Style</strong></p>
                         <img src="app/public/logos/tel.svg" alt="logo tel mobile" id="svgTel">
-                        <p> 06 12 81 00 25</p>
+                        <p> XX XX XX XX XX</p>
 
                         <img src="app/public/logos/location.svg" alt="logo localisation adresse" id="svgLocation">
-                        <p> 19 rue du Verger <br>
-                            56340 Carnac
+                        <p> 20 rue Winston Churchill <br>
+                            56000 Vannes
                         </p>
                         <img src="app/public/logos/mail.svg" alt="logo mail" id="svgMail">
-                        <p><a href="mailto:ipstylemerchandiser@gmail.com"> ipstylemerchandiser@gmail.com</a></p>
+                        <p><a href="mailto:ipstylemerchandiser@gmail.com"> ipstylefreemerch@gmail.com</a></p>
                     </div>
                     <div id="links">
                         <div id="bubble">
@@ -42,7 +42,7 @@
                 </div>
             </section>
             <section id="infosSitemap">
-                <p>@Copyright 2020 IP Style - <a href="index.php?action=rgpd">RGPD</a> - <a href="index.php?action=mentionsLegales">Mentions Légales</a> - <a href="index.php?action=sitemap.php">Sitemap</a></p>
+                <p>@Copyright 2020 IP Style - <a href="index.php?action=rgpd">RGPD</a> - <a href="index.php?action=mentionsLegales">Mentions Légales</a> - <a href="index.php?action=sitemap">Sitemap</a></p>
             </section>
             <div id="backOnTop"> 
                 <a href="#top"><img src="app/public/logos/top.png" alt="Retour haut de page" /></a> 
@@ -56,7 +56,9 @@
     <script type="text/javascript" src="app/public/scripts/menu.js"></script>
     <script type="text/javascript" src="app/public/scripts/anim.js"></script>
     <script type="text/javascript" src="app/public/scripts/modal.js"></script>
-   
+    <script type="text/javascript" src="app/public/scripts/contact.js"></script>
+    <script type="text/javascript" src="app/public/scripts/api.js"></script>
+    <!-- <script src="app/public/js/apigeo.js"></script> -->
 </body>
 
 </html>

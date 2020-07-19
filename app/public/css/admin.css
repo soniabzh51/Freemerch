@@ -1,4 +1,4 @@
-/* **************************PAGE HOME ADMIN********************* */
+/* ************************** ADMIN ********************* */
 body,
 html {
     margin: 0;
@@ -25,23 +25,35 @@ h1 {
     font-weight: lighter;
 }
 
-/*------------------------Header--------------------*/
-#homeAdminBanner{
+/*------------------------ HeaderAdmin --------------------*/
+#homeAdminTitle, #introAdmin{
+    text-align: center;
+}
+#introAdmin p{
+    font-size: 1.2em;
+    margin: 5% auto;
+}
+
+/*------------------------PAGE LOGIN ADMIN--------------------*/
+
+#spaceAdmin{
     display: flex;
 }
-#homeAdminTitle{
-    width: 60%;
+#lienAdminCnx, #disconnectAdmin, #lienAdminReg{
+    width: 10%;
+    margin: 5% auto;
+    background-color: #063630;
+    text-align: center;
+    padding: 1%;
+    justify-content: space-between;
 }
-#liensBlog{
-    width: 40%;
-    display: flex;
+#cnxAdmin a, #disconnectAdmin a, #regAdmin a{
+    color: #ffffff;
+    line-height: 2;
+    font-weight: bold;
 }
-#lienCnx, #lienReg{
-    width: 40%;
-    font-size: 1.3em;
-    margin: auto;
-}
-#lienCnx .modal, #lienReg .modal{
+
+#lienAdminCnx .modal, #lienAdminReg .modal{
     position: fixed;
     display: flex;
     justify-content: center;
@@ -53,56 +65,78 @@ h1 {
     background: rgba(0, 0, 0, 0.8);    
 }
 
-#déconnexion, #register{
-    text-align: center;
-    background-color: #063630;
-    padding: 2%;
-}
-#déconnexion a, #register a{
-    color: #ffffff;
-}
 /* *---------------------Modal connexion/ Modal register------------------*/
-.modal-wrapperCnx, .modal-wrapperReg{
+.modal-wrapperCnx, 
+.modal-wrapperReg{
     overflow: auto;
     height: 80%; 
     width: inherit; 
     max-width: calc(100vw - 20px);
     max-width: calc(100vh - 20px);
     padding: 2%;
-    font-size: 0.8em;
-}
-.modal-wrapperCnx, .modal-wrapperReg{
     background-color: #E6D9CB;
+} 
+
+#cnxForm h2{
+    font-size: 1.7em;
+    font-weight: bold;
 }
-#cnxForm, #regForm{
+
+#regForm h2{
+    margin: 1% 0 5% 0;
     line-height: 0;
 }
-#cnxForm form, #regForm form{
+#cnxForm form, 
+#regForm form{
     display: block;
     text-align: center;
 }
-#cnxForm input[type="text"], #cnxForm input[type="password"],
-#regForm input[type="text"], #regForm input[type="password"]{ 
+
+#cnxForm input[type="text"], 
+#cnxForm input[type="password"]{
+    width: 60%;
+    margin-top: 7%;
+    border: 3px solid rgb(220, 199, 176);
+    font-size: 1.3em;
+}
+
+#regForm input[type="text"],
+#regForm input[type="password"]{ 
     width: 60%;
     margin-bottom: 5%;
     background-color: #ffffff;
     border: 3px solid rgb(220, 199, 176);
-}
-#cnxForm input, #regForm input{
     font-size: 1.3em;
 }
-#cnxForm input[type="submit"],#regForm input[type="submit"]{
+
+.messageError {
+    font-size: 1.3em;
+    line-height: 2;
+    text-align: center;
     width: 60%;
-    margin: 5% auto;
+    margin: auto;
+    background-color: rgb(243, 53, 40);
+    border: 3px solid rgb(204, 27, 14);
+}
+
+#cnxForm input[type="submit"],
+#regForm input[type="submit"]{
+    width: 60%;
     background-color: #B46D51;
+    border: 3px solid rgb(160, 96, 71);
+    font-size: 1.3em;
 }
-#homeAdminBanner .messageConfirm, #homeAdminBanner .messageError{
-    font-size: 1.1em;
+
+#cnxForm input[type="submit"]{
+    margin: 12% auto;
+    }
+  
+#regForm input[type="submit"]{
+    margin: 12% 0 5% 0;
 }
+    
 .js-modal-close{
-    position: sticky;
-    top: 17%;
-    left: 77%;
+    left: 37%;
     height: 8%;
     width: 20%;
     border-radius: 10px;
@@ -116,6 +150,8 @@ h1 {
     opacity: 0.7;
     cursor: pointer;
 }
+
+/*------------------------PAGE HOME ADMIN--------------------*/
 
 /* -------------------Menu homeAddmin------------------- */
 
@@ -166,7 +202,7 @@ form{
     background-color: rgb(243, 53, 40);
     border: 3px solid rgb(204, 27, 14); 
 }
-input[type="text"], input[type="file"]{
+.formInput input[type="text"], input[type="file"]{
     height: 30px;
     width: 50%;
     display: block;
@@ -198,7 +234,7 @@ input[type="file"]{
 }
 
 /* *****************************PAGE POSTS ADMIN*************************** */
-#postsSearchBar{
+/* #postsSearchBar{
     display: flex;
     margin-top: 5%;
 }
@@ -211,11 +247,15 @@ input[type="file"]{
     position: absolute;
     position: static;
     border: 2px solid #D59F33;
-}
-#menuPosts{
+} */
+#posts{
     width: 20%;
     margin: 5%  auto;
     text-align: justify;
+}
+#posts h3{
+    text-align: center;
+    margin-bottom: 20%;
 }
 #menuTri{
     width: 100%;
@@ -266,13 +306,14 @@ input[type="file"]{
 #menuTri > ul li:hover .tri{
     display: block;
 }
-#postsSearchBar .brownBtn{
+/* #postsSearchBar .brownBtn{
     margin: 10% auto;
-}
-#showExtract{
+} */
+.showResult{
     margin: 5%auto;
+    height: 200px;
     width: 80%;
-    background-color: #E6D9CB;
+    background-color: lightgray;
 }
 #showExtract a{
     color: #000000;

@@ -3,153 +3,125 @@
 namespace Project\controllers;
 class ControllerBack
 {
-    function homeAdmin(){
+    public function login(){
 
-        // Appel du modèle que l'on stocke dans une variable ($homeFront)
-
-        $homeAdminBack = new \Project\models\BackManager();
-        
-        /* 
+        $loginBack = new \Project\models\BackManager();
+         /* 
         Appel de la méthode du modèle viewFront
         La variable $accueil stocke les données récupérées dans la
         méthode du modèle (bdd). Cette variable sera ensuite injectée
         dans la view pour afficher les données
         */
         
-        $accueilAdmin = $homeAdminBack->viewBack();
+        $accueilBack = $loginABack->viewBack();
 
+        require 'app/views/back/loginAdmin.php';
+    }
+    public function loginAdminBack(){
+        require 'app/views/back/loginAdmin.php';
+    }
+    public function homeAdminBack(){
         require 'app/views/back/homeAdmin.php';
     }
-    function homeAdminBack(){
-        require 'app/views/back/homeAdmin.php';
+    public function register(){
+        require 'app/views/back/loginAdmin.php';
     }
-    function postsBack(){
+    public function postsBack(){
+
         require 'app/views/back/posts.php';
     }
-    function usersManagementBack(){
-        require 'app/views/back/usersManagement.php';
-    }
-    function articleAdminBack(){
-        require 'app/views/back/articleAdmin.php';
-    }
-    // login admin
-    function loginUser(){
-        extract($_POST);
-        $error = "Ces identifiants ne correspondent pas à nos enregistrements !";
-    
-        $loginUser = new \Project\models\FrontManager();
-        $login->execute([$pseudo]);
-    
-        $login = $login->fetch();
-        if(password_verify($password, $login['password'])){
-            $_SESSION['user'] = $login['id'];
-            header("Location: blog.php");
-        }else{
-            return $error;
-        }
-    }
-            // Verif mdp formulaire avec mdp base de données
-            // si ok, on ouvre une session php pour se connecter au compte
-    
-    // logout admin
-    function logout(){
-        unset($_SESSION['admin']); /********  A FINIR  *****************/ 
-        session_destroy();
-       
-    }
-    
-    // post article admin
-    function post_article(){
-        global $bdd;
-    
+    // function registerAdmin : register new admin
+    public function registerAdmin(){
         extract($_POST);
         $validation = true;
         $errors = [];
-    
-        if(empty($titre) || empty($contenu)){
+
+        if(empty($pseudo) || empty($email) || empty($password)) {
             $validation = false;
-            $errors[] = 'Tous les champs sont obligatoires !'; 
+            $errors[] = 'Tous les champs sont obligatoires !';
         }
-        if(!isset($_FILES["file"]) || $_FILES['file']['error'] > 0){
+        
+        if(($passwordConf != $password) || ($emailConf != $email)) {
             $validation = false;
-            $errors[] = "L'image est obligatoire !";
+            $errors[] = 'Erreur dans le confirmation de votre email ou de votre mot de passe !';
         }
+
         if($validation){
-            $image = basename($_FILES['file']['name']);
-            move_uploaded_file($_FILES['file']['tmp_name'], 'app/public/images/' .$image);
-        
-            $post = $bdd->prepare("INSERT INTO articles(title, extract, content, image) VALUES(:title, :extract, :content, :image)");
-            $post->execute([
-                "title" => htmlentities($titre),
-                "extract" => substr(htmlentities($contenu), 0,150 ),
-                "content" => htmlentities($contenu),
-                "image" => htmlentities($image)
-            ]);
-            unset($_POST['titre']);
-            unset($_POST['contenu']);
-        
-            return $errors;
+            $register = new \Project\models\BackManager();
+            $register = $register->register_Admin($pseudo,$email,$password);
+            unset($_POST['pseudo']);
+            unset($_POST['email']);
         }
+        $this->homeAdminBack();
     }
 
-    // select chosen elements from  ordered articles 
-    function posts(){
-        global $bdd;
-    
-        $posts = $bdd->query("SELECT id, title FROM articles ORDER BY id DESC");
-        $posts = $posts->fetchAll();
-    
-        return $posts;
-    }
-
-    function delete(){
-        global $bdd;
-    
-        $id = (int)$_GET['id'];
-    
-        $image = $bdd->prepare("SELECT image FROM articles WHERE id = ?");
-        $image->execute(["$id"]);
-        $image = $image->fetch()['image'];
-    
-        unlink("../img/" . $image);
-    
-        $delete = $bdd->prepare("DELETE FROM articles WHERE id = ?");
-    
-        $delete->execute([$id]);
-    }
-    
-    function post(){
-        global $bdd;
-        $id = (int)$_GET["id"];
-    
-        $post = $bdd->prepare("SELECT title, content FROM articles WHERE id = ?");
-        $post->execute([$id]);
-        $post = $post->fetch();
-    
-        return $post;
-    }
-     
-    /*   PEUT ETRE DOUBLON AVEC FONCTION POST_ARTICLE !
-    function update(){
-        global $bdd;
-        $errors = '';
+    // login admin
+    public function loginAdmin(){
         extract($_POST);
-
-        $id = (int)$_GET["id"];
-        if(!empty($titre) AND !empty($contenu)){
-            $update = $bdd->prepare("UPDATE articles SET title = :title, extract = :extract, content = :content WHERE id = :id");
-            $update->execute([
-                "title" => htmlentities($titre),
-                "extract" => substr(htmlentities($contenu), 0,150),
-                "content" => nl2br(htmlentities($contenu)),
-                "id" => $id
-            ]);
-        }else{
-            $errors .= "Les champs ne doivent pas être vide !";
-        }
-        return $errors;
-    }
-    */
+        $error = "Ces identifiants ne correspondent pas à nos enregistrements !";
     
+        $loginAdmin = new \Project\models\BackManager();
+        $login = $loginAdmin->login_admin($pseudo,$password);
+       
+        if(password_verify($password, $login['password'])){
+            $_SESSION['admins'] = $login['id'];
+            // $_SESSION['pseudo'] = $login['pseudo'];
+            $this->homeAdminBack();
+        }else{
+            return $error;
+        }
+        if($password && $pseudo){
+            $_SESSION['admins'] = $login['id'];
+        }
+            // return $error;
+        else{
+            return $error;
+        }
+    }
 
+    // logout admin
+    function logoutAdmin(){
+        unset($_SESSION['admins']); /********  A FINIR  *****************/ 
+        session_destroy();
+        $this->loginAdmin();
+    }
+
+    function setArticle(){
+        require 'app/views/back/postArticle.php';
+    }
+    // post article admin 
+    function admin_post_article(){
+        // if(isset($_SESSION['admins'])) {
+    
+            extract($_POST);
+            $validation = true;
+            $errors = [];
+            $upload_imgs = "app/public/images/";
+            $upload_img = $upload_imgs.basename($_FILES["image"]["name"]);
+            $uploadOK = 1;
+            $imageFileType = strtolower(pathinfo($upload_img, PATHINFO_EXTENSION));
+
+            if(empty($title) || empty($content)){
+                $validation = false;
+                $errors[] = 'Tous les champs sont obligatoires !'; 
+            }elseif ($validation){
+                $article = new \Project\models\BackManager();
+                $article->post_article($title,$extract,$content,$upload_img);
+
+                header('Location: indexAdmin.php?action=backHome');
+
+            }
+    }
+
+    public function deleteArticle(){
+        $destroyArticle = new \Project\models\BackManager();
+        $id = $_SESSION['admins'];
+        $delete_article = $destroyArticle->deleteArticle($id);
+        return $delete_article;
+    }
+    public function usersManagementBack(){
+        require 'app/views/back/usersManagement.php';
+    }
+
+    
 }

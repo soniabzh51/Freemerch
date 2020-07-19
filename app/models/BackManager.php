@@ -13,8 +13,7 @@ class BackManager extends Manager{
         $req->execute(array());
         return $req;
     }
-
-    // function register admin 
+    // function register admin : add admin
     public function register_admin($pseudo,$email,$password){
         $bdd = $this->dbConnect();
         $register_admin = $bdd->prepare('INSERT INTO admins(email, pseudo, password) VALUES (:email, :pseudo, :password)');
@@ -26,6 +25,16 @@ class BackManager extends Manager{
         return $register_admin;
     }
 
+    // function login admin : admin connection
+    public function login_admin($pseudo,$password){
+        $bdd = $this->dbConnect();
+        $login = $bdd->prepare('SELECT id, password FROM admins WHERE pseudo = ?');
+        $login->execute([$pseudo]);
+        $login = $login->fetch();
+        return $login;        
+    }
+
+
     public function delete_admin(){
         $bdd = $this->dbConnect();
         $id = (int)$_GET['id'];
@@ -34,103 +43,130 @@ class BackManager extends Manager{
         return $delete_admin;
     }
 
-    public function login_admin(){
-        $bdd = $this->dbConnect();
-        $login_admin = $bdd->prepare('SELECT id, password FROM admins WHERE pseudo = ?');
-        $login_admin->execute([$pseudo]);
-        $login_admin = $login_admin->fetch();
-        return $login_admin;        
-    }
 
-    public function logout_admin(){
-        unset($_SESSION['admin']);
-        session_destroy();
-        header('Location: homeAdmin.php');
-    }
+    // public function logout_admin(){
+    //     unset($_SESSION['admins']);
+    //     session_destroy();
+    //     header('Location: homeAdmin.php');
+    // }
 
     public function infos_admin(){
         $bdd = $this->dbConnect();
         $infos_admin = $bdd->prepare('SELECT email, pseudo FROM admins WHERE id = ?');
-        $infos_admin->execute([$_SESSION["admin"]]);
+        $infos_admin->execute([$_SESSION["admins"]]);
         $infos_admin = $infos_admin->fetch();
         return $infos_admin;
     }
 
-    public function post_article(){
+    // OK
+    public function post_article($title,$extract,$content,$upload_img){
         $bdd = $this->dbConnect();
-        $post_article = $bdd->prepare("INSERT INTO articles(title, extract, content, image) VALUES(:title, :extract, :content, :image)");
+        $post_article = $bdd->prepare("INSERT INTO articles(title, extract, content, image, admin_id) VALUES(:title, :extract, :content, :image, :admin_id)");
         $post_article->execute([
-            "title" => htmlentities($titre),
-            "extract" => substr(htmlentities($contenu), 0,150 ),
-            "content" => htmlentities($contenu),
-            "image" => htmlentities($image)
+            "admin_id" => $_SESSION['admins'],
+            "title" => htmlentities($title),
+            "extract" => substr(htmlentities($content), 0,150 ),
+            "content" => htmlentities($content),
+            "image" => htmlentities($upload_img)
+
         ]);
         return $post_article;
     }
+    public function get_last_article(){
+        $bdd = $this->dbConnect();
+        $lastArticle = $bdd->query("SELECT articles.*, id, title, extract, content, image, created_at FROM articles ORDER BY created_at DESC LIMIT 1");
+        $lastArticle = $lastArticle->fetchAll();
+        return $lastArticle;
+    }
 
-    public function delete_article(){
+    public function delete_article($id){
         $bdd = $this->dbConnect();
         $id = (int)$_GET['id'];
-        $delete_article = $bdd->prepare("DELETE article.* from articles WHERE id = ?");
-        $delete_article->execute([$id]);
+        $delete_article = $bdd->prepare("DELETE FROM articles WHERE id = ?");
+        $delete_article->execute(["$id"]);
         return $delete_article;
     }
 
-    public function update_article(){
-        $bdd = $this->dbConnect();
-        $id = (int)$_GET["id"];
-        $update_article = $bdd->prepare("UPDATE articles SET title = :title, extract = :extract, content = :content, image = :image, WHERE id = :id");
-        $update_article->execute([
-            "title" => htmlentities($titre),
-            "extract" => substr(htmlentities($contenu), 0,150),
-            "content" => nl2br(htmlentities($contenu)),
-            "image" => htmlentities($image),
-            "id" => $id
-        ]);
-        return $update_article;
-    }
 
-    public function get_articles_admin(){
-        $bdd = $this->dbConnect();
-        $articles_admin = $bdd->query("SELECT id, title FROM articles ORDER BY id DESC");
-        $articles_admin = $articles_admin->fetchAll();
-        return $articles_admin;
-    }
-
-    public function get_article_admin(){
-        $bdd = $this->dbConnect();
-        $id = (int)$_GET["id"];
-        $article_admin = $bdd->prepare("SELECT ");
-        $article_admin->execute([$id]);
-        $article_admin = $article_admin->fetch();
-        return $article_admin;
-    }
-
-    public function post_comment_admin(){
-    $bdd = $this->dbConnect();
-    $id_article = (int)$_GET["id"];
-    $post_comment_admin = $bdd->prepare("INSERT INTO comments(admin_id, article_id, content) VALUES (:admin_id, :article_id, :content) ");
-    $post_comment_admin->execute([
-    "admin_id" => $_SESSION['admin'],
-    "article_id" => $id_article,
-    "admin_comments" => nl2br(htmlentities($commentaire_admin)),
-    ]);
-    return $post_comment_admin;
-    }
+    // public function update_article(){
+    //     $bdd = $this->dbConnect();
+    //     $id = (int)$_GET["id"];
+    //     $update_article = $bdd->prepare("UPDATE articles SET title = :title, extract = :extract, content = :content, image = :image, WHERE id = :id");
+    //     $update_article->execute([
+    //         "title" => htmlentities($titre),
+    //         "extract" => substr(htmlentities($contenu), 0,150),
+    //         "content" => nl2br(htmlentities($contenu)),
+    //         "image" => htmlentities($image),
+    //         "id" => $id
+    //     ]);
+    //     return $update_article;
+    // }
     
-    public function delete_comment(){
-        $bdd = $this->dbConnect();
-        $id = (int)$_GET["id"];
-        $delete_comment = $bdd->prepare("DELETE comment FROM comments WHERE id = ?");
-        $delete_comment->execute([$id]);
-        return $delete_comment;
-    }
+    // get all articles
+    // public function get_article(){
+    //     $bdd = $this->dbConnect();
+    //     $get_article = $bdd->query("SELECT title, extract, created_at FROM articles ORDER BY DESC 3");
+    //     $get_article = $get_article->fetchAll();
+    //     return $get_article;
+    // }
+    // get one article (by id)
+    // public function get_article(){
+    //     $bdd = $this->dbConnect();
+    //     $id = (int)$_GET['id'];
+    //     $article = $bdd->prepare("SELECT articles.*,  users.id FROM users INNER JOIN  comments ON  users.pseudo =  comments.pseudo  WHERE articles.id = ?");
+    //     $article->execute([$id]);
+    //     $article = $article->fetch();
+    //     return $article;
+    // }
+    // get articles (by id, PAGE POSTS)
+    // public function get_articles_by_id(){
+    //     $bdd = $this->dbConnect();
+    //     $lastArticle = $bdd->prepar("SELECT id, title, extract, created_at FROM articles ORDER BY id DESC LIMIT 20");
+    //     $alastArticle = $lastArticle->fetchAll();
+    //     return $lastArticle;
+    // }
+    // get articles (by date, PAGE POSTS)
+    // public function get_articles_by_date(){
+    //     $bdd = $this->dbConnect();
+    //     $lastArticle = $bdd->query("SELECT id, title, extract, created_at FROM articles ORDER BY created_at DESC LIMIT 20");
+    //     $lastArticle = $lastArticle->fetchAll();
+    //     return $lastArticle;
+    // }
 
-    public function get_comments_admin(){
-        $bdd = $this->dbConnect();
-        $comments_admin = $bdd->query("SELECT comments.*, articles.title FROM comments INNER JOIN articles ON comments.article_id = articles.id AND comments.user_id = ?");
-        $comments_admin = $comments_admin->fetchAll();
-        return $comments_admin;
-    }
+    // public function get_article_admin(){
+    //     $bdd = $this->dbConnect();
+    //     $id = (int)$_GET["id"];
+    //     $article_admin = $bdd->prepare("SELECT ");
+    //     $article_admin->execute([$id]);
+    //     $article_admin = $article_admin->fetch();
+    //     return $article_admin;
+    // }
+
+    // public function post_comment_admin(){
+    // $bdd = $this->dbConnect();
+    // $id_article = (int)$_GET["id"];
+    // $post_comment_admin = $bdd->prepare("INSERT INTO comments(admin_id, article_id, content) VALUES (:admin_id, :article_id, :content) ");
+    // $post_comment_admin->execute([
+    // "admin_id" => $_SESSION['admin'],
+    // "article_id" => $id_article,
+    // "admin_comments" => nl2br(htmlentities($commentaire_admin)),
+    // ]);
+    // return $post_comment_admin;
+    // }
+    
+    // public function delete_comment(){
+    //     $bdd = $this->dbConnect();
+    //     $id = (int)$_GET["id"];
+    //     $delete_comment = $bdd->prepare("DELETE comment FROM comments WHERE id = ?");
+    //     $delete_comment->execute([$id]);
+    //     return $delete_comment;
+    // }
+
+    // public function get_comments_admin(){
+    //     $bdd = $this->dbConnect();
+    //     $comments_admin = $bdd->query("SELECT comments.*, articles.title FROM comments INNER JOIN articles ON comments.article_id = articles.id AND comments.user_id = ?");
+    //     $comments_admin = $comments_admin->fetchAll();
+    //     return $comments_admin;
+    // }
 
 }

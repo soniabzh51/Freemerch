@@ -2,17 +2,16 @@
 
 require_once 'app/views/front/layouts/head.php';
 include_once 'app/views/front/layouts/header.php';
-include_once 'app/viewsfront/layouts/intro.php';
 include_once 'app/views/front/layouts/nav.php';
 
 ?>
 
     <section id="blogContent">
-        <div id="blogBanner">
-            <div id="blogTitle">
-                <h2>Bienvenue sur votre page news/blog !</h2>
-            </div>
-            <div id="liensBlog">
+       
+        <div id="blogTitle">
+            <h2>Bienvenue sur votre blog !</h2>
+        </div>
+            <div id="blogBanner">
                 <!-- Modal Connexion-->
                 <div id="lienCnx">
                     <div id="connexion">
@@ -23,9 +22,9 @@ include_once 'app/views/front/layouts/nav.php';
                         <div class="modal-wrapperCnx js-modal-stop">
                             <div id="cnxForm">
                                 <h2>Connectez-vous !</h2>
-                                <form action="index.php?action=compte" method="POST">
-                                    <input type="text" name="pseudo" placeholder="Pseudo *" value="<?php if(isset($_POST['pseudo'])) echo $_POST['pseudo'] ?>">
-                                    <input type="password" name="password" placeholder="Mot de passe *">
+                                <form action="index.php?action=userCnc" method="POST">
+                                    <input type="text" name="pseudo" placeholder="Pseudo *" value="<?php if (isset($_POST['pseudo'])) echo $_POST['pseudo'] ?>" required>
+                                    <input type="password" name="password" placeholder="Mot de passe *" value="<?php if(isset($_POST['password'])) echo $_POST['password'] ?>" required>
 
                                 <?php
                                 if(isset($error)) :
@@ -54,12 +53,12 @@ include_once 'app/views/front/layouts/nav.php';
                         <div class="modal-wrapperReg js-modal-stop">
                             <div id="regForm">
                                 <h2>Inscrivez-vous !</h2>
-                                <form action="index.php?action=compte" method="POST">
-                                    <input type="text" name="pseudo" placeholder="Pseudo *" value="<?php if(isset($_POST['pseudo'])) echo $_POST['pseudo'] ?>">
-                                    <input type="text" name="email" placeholder="Adresse e-mail *" value="<?php if(isset($_POST['email'])) echo $_POST['email'] ?>">
-                                    <input type="text" name="emailConf" placeholder="Confirmation e-mail *" value="<?php if(isset($_POST['emailconf'])) echo $_POST['emailconf'] ?>">
-                                    <input type="password" name="password" placeholder="Mot de passe *">
-                                    <input type="password" name="passwordConf" placeholder="Confirmation mot de passe *">
+                                <form method="POST" action="index.php?action=userReg" >
+                                    <input type="text" name="pseudo" placeholder="Pseudo *" value="<?php if(isset($_POST['pseudo'])) echo $_POST['pseudo'] ?>" required>
+                                    <input type="text" name="email" placeholder="Adresse e-mail *" value="<?php if(isset($_POST['email'])) echo $_POST['email'] ?>" required>
+                                    <input type="text" name="emailConf" placeholder="Confirmation e-mail *" required>
+                                    <input type="password" name="password" placeholder="Mot de passe *" required>
+                                    <input type="password" name="passwordConf" placeholder="Confirmation mot de passe *" required>
 
                                 <?php
                                 if(isset($errors)) :
@@ -89,7 +88,7 @@ include_once 'app/views/front/layouts/nav.php';
                     </aside>
                 </div>
             </div>
-        </div>
+        
         <div id="introBlog">
             <p>
             Vous souhaitez poster des commentaires sur vos articles préférés ? <br>

@@ -13,6 +13,30 @@ class FrontManager extends Manager{
         $req->execute(array());
         return $req;
     }
+    // Get a single article
+    public function article(){
+        $bdd = $this->dbConnect();
+        $id = (int)$_GET['id'];
+        $article = $bdd->prepare('SELECT id, title, extract, content, image, created_at FROM articles WHERE id=? ');
+        $article->execute([$id]);
+        $article = $article->fetch();
+    
+        if(empty($article)){
+            header('Location: index.php');
+        }else
+       
+        return $article;
+    }
+    // get last 4 articles for page News
+    public function getArticleNews(){
+        $bdd = $this->dbConnect();
+        // $id = (int)$_GET['id'];
+        // $articleNews = $bdd->query("SELECT id, title, extract, image, created_at FROM articles ORDER BY created_at ASC LIMIT 4");
+        $articleNews = $bdd->query("SELECT articles.*, admins.pseudo FROM articles INNER JOIN admins ON articles.admin_id = admins.id ORDER BY created_at DESC LIMIT 4");
+        // $articleNews->execute([$id]);
+        $articleNews = $articleNews->fetchAll();
+        return $articleNews;
+    }
 
     // function register_user : add user
     public function register_user($pseudo,$email,$password){
@@ -45,75 +69,42 @@ class FrontManager extends Manager{
         return $login;
     }
 
-    // function infos_user : 
+    // get user infos : 
     public function infos_user(){
         $bdd = $this->dbConnect();
-        $infos = $bdd->prepare('SELECT id, email, pseudo, password FROM users WHERE id = ?');
+        $infos = $bdd->prepare('SELECT id, email, pseudo FROM users WHERE id = ?');
         $infos ->execute([$_SESSION['users']]);
         $infos = $infos->fetch();
         return $infos;
     }
 
-    function article(){
+    // delete user
+    public function delete_user($id){
         $bdd = $this->dbConnect();
         $id = (int)$_GET['id'];
-        $article = $bdd->prepare('SELECT id, title, extract, content, image, created_at FROM articles WHERE id=? ');
-        $article->execute([$id]);
-        $article = $article->fetch();
-    
-        if(empty($article)){
-            header('Location: index.php');
-        }else
-       
-        return $article;
-    
+        $userDelete = $bdd->prepare('DELETE users.* FROM users WHERE id = ?');
+        $userDelete->execute([$id]);
+        return $userDelete;
     }
-    
 
-    // public function articles(){
-    //     $bdd = $this->dbConnect();
-    //     // $articles = $bdd->prepare('SELECT articles.*, admin.pseudo FROM articles INNER JOIN admins ON articles.admin_id = admin.id');
-    //     // $articles = $bdd->prepare("SELECT id, title, extract, content, image, created_at FROM articles ORDER BY created_date DESC LIMIT 4");
-    //     $articles = $bdd->query("SELECT id, title, extract, content, image, created_at FROM articles ORDER BY created_date DESC LIMIT 4");
-    //     // $articles->execute();
-    //     $articles = $articles->fetchAll();
-    //     return $articles;
-    // }
-
-    public function getArticleNews(){
+    // user new password
+    public function changeUserPassword($newPassword){
         $bdd = $this->dbConnect();
-        // $id = (int)$_GET['id'];
-        // $articleNews = $bdd->query("SELECT id, title, extract, image, created_at FROM articles ORDER BY created_at ASC LIMIT 4");
-        $articleNews = $bdd->query("SELECT articles.*, admins.pseudo FROM articles INNER JOIN admins ON articles.admin_id = admins.id ORDER BY created_at DESC LIMIT 4");
-        // $articleNews->execute([$id]);
-        $articleNews = $articleNews->fetchAll();
-        return $articleNews;
+        $changePassword = $bdd->prepare('UPDATE users SET password = password  WHERE id = id');
+        $changePassword->execute([
+            'password' => password_hash($newPassword, PASSWORD_DEFAULT),
+            'id' => $_SESSION['users']
+        ]);
+        return $changePassword;
+        
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // function display_article : 
-    // public function display_article(){
-    //    $bdd = $this->dbConnect();
-    //    $displayArticle = $bdd->prepare('SELECT articles.*, admin.pseudo FROM articles INNER JOIN admins ON articles.admin_id = admin_id');
-    //    $displayArticle->execute();
-    //    $displayArticle = $displayArticle->fetchAll();
-    //    return $displayArticle;
+    // public function new_password_conf(){
+    //     $bdd = $this->dbConnect();
+    //     $password_conf = $bdd->prepare('SELECT password FROM users WHERE id = ?');
+    //     $password_conf->execute([$_SESSION['users']]);
+    //     $password_conf = $password_conf->fetch();
+    //     return $password_conf['password'];
     // }
+
 }

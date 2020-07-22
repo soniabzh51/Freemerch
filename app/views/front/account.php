@@ -8,16 +8,23 @@ require_once 'app/views/front/layouts/header.php'
         <!--  CONTENT -->
         <main>
             <div id="compteBanner">
-                <div class="backTop">    
-                    <a href="index.php?action=blog">Revenir à la page Blog</a>
+                <!-- <div class="backTop">    
+                    <a href="index.php?action=blog"> < Revenir à la page Blog</a>
                 </div>
                 <div class="disconnect">
                     <a href="index.php?action=home">Déconnexion</a>
+                </div> -->
+                <div class="deleteUser">
+                    <a href="index.php?action=deleteUser&id=<?= $infos['id'] ?>">Supprimer mon compte</a>
                 </div>
+                <!-- <div class="modifyPassword">
+                    <a href="index.php?action=userModifyPassword">Modifier mon mot de passe</a>
+                </div> -->
+
             </div>
             <section id="account">
                 <div id="welcome">
-                    <h2>Bienvenue sur votre compte, <?= $infos['pseudo'] ?> !</h2>
+                    <h2>Bienvenue sur votre compte <?= $infos_user['pseudo'] ?> !</h2>
                     <p>Adresse mail : <?= $infos['email'] ?></p>
                 </div>
                 <div class="accountComments">
@@ -42,10 +49,9 @@ require_once 'app/views/front/layouts/header.php'
 <?php else : ?>
         <main>
             <div id=noLogin>
-                <h2>Vous devez d'abord créer un compte pour poster vos commentaires !</h2>
-                <div class="backTop"> 
+                <!-- <div class="backTop"> 
                     <a href="index.php?action=blog">Revenir à la page Blog</a>   
-                </div>
+                </div> -->
             </div>
         </main>    
 <?php endif ?>

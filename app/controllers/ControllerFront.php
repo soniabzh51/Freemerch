@@ -50,6 +50,17 @@ class ControllerFront
     function blogFront(){
         require 'app/views/front/blog.php';
     }
+    // function pageDeleteUser(){
+    //     $this->deleteUser();
+    //     $this->home();
+    // }
+    // OK
+    public function userModifyPasswordFront(){
+        if(!empty($_Post['password']) || !empty($_POST['newPassword']) || !empty($_POST['newPasswordConf'])){
+            $this->modifyPassword();
+        }
+        require 'app/views/front/userModifyPassword.php';
+    }
     function contactFront(){
         // if(!empty($_POST)){
         //     $contact = new \Project\controllers\ControllerFront();
@@ -58,6 +69,7 @@ class ControllerFront
         require 'app/views/front/contact.php';
     }
     function accountFront(){
+        $infos = $this->infos();
         require 'app/views/front/account.php';
     }
     function error404Front(){
@@ -91,7 +103,7 @@ class ControllerFront
 
         if(($passwordConf != $password)) {
             $validation = false;
-            $errors[] = 'Erreur dans le confirmation de votre email ou de votre mot de passe !';
+            $errors[] = 'Erreur dans la confirmation de votre mot de passe !';
         }
 
         if ($pseudo){
@@ -106,18 +118,13 @@ class ControllerFront
         if($validation){
             $register = new \Project\models\FrontManager();
             $userRegister = $register->register_user($pseudo,$email,$password);
-            // $loginUser = new \Project\models\FrontManager();
-            // $login = $loginUser->login_user($pseudo,$password);
-            // $_SESSION['users'] = $login['id'];
-
-            // $this->compteFront();
 
             unset($_POST['pseudo']);
             unset($_POST['email']);
             unset($_POST['password']);
         }
         // return $errors;
-        $this->accountFront();
+        $this->blogFront();
 
     }
 
@@ -131,30 +138,65 @@ class ControllerFront
     
         if(password_verify($password, $login['password'])){
             $_SESSION['users'] = $login['id'];
+            $_SESSION['pseudo'] = $login['pseudo'];
             $this->accountFront();
-            // header("Location: compte.php");
         }else{
             $this->home();
             return $error;
         }
     }
-            // Verif mdp formulaire avec mdp base de données
-            // si ok, on ouvre une session php pour se connecter au compte
-        
-    
-    // function logout : disconnect user
+            
+    // Disconnect user
     function logoutUser(){
-        unset($_SESSION['user']);
+        unset($_SESSION['users']);
         session_destroy();
         $this->home();
     }
-    
-    // function infos(){
-    //     $infos_user = new \Project\models\FrontManager();
-    //     $infos = $infos_user->infos_user();
-    //     return $infos;
-    // }
 
+    // Display user infos
+    function infos(){
+        $userInfos = new \Project\models\FrontManager();
+        $infos = $userInfos->infos_user();
+        return $infos;
+    }
+
+    // Delete user
+    public function deleteUser(){
+        $user = new \Project\models\FrontManager();
+        $userDelete = $user->delete_user();
+        unset($_SESSION['users']);
+        session_destroy();
+        // return $userDelete;
+        $this->home();
+    }
+
+    
+    // Get new user pasword from the form in page userModifyPassword.php
+    public function modifyPassword(){
+
+        if(isset($_SESSION['users'])) {
+            extract($_POST);
+            $validation = true;
+            $errors = [];
+            
+            if(empty($password) || empty($newPassword) || empty($newPasswordConf)){
+                $validation = false;
+                $errors[] = 'Tous les champs sont obligatoires !';
+            }
+
+            if($newPasswordConf != $newPassword) {
+                $validation = false;
+                $errors[] = 'Erreur dans la confirmation de votre mot de passe!';
+            }
+
+            if($validation) {
+                $changePassword = new \Project\models\FrontManager();
+                $passwordChange= $changePassword->changeUserPassword($newPassword);
+                $this->accountFront();
+            }
+            return $errors;
+        }
+    }
     // function post_comment(){
     //     if(isset($_SESSION['users'])){
     //         extract($_POST);

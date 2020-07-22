@@ -4,15 +4,28 @@ require_once 'app/views/back/layouts/headAdmin.php';
 include_once 'app/views/back/layouts/headerAdmin.php';
 
 ?>
-<main>
+<main id="pagePosts">
     <section id="posts">
-        <h2>Depuis cette page, vous pouvez :</h2>
-            <h3>Supprimer un article</h3>
-            
-            <h3>Changer l'image d'un article</h3>
-            <h3>Modifier le titre d'un article</h3>
-            <h3>Modifier le texte d'un article</h3>
-    
+        <h2> Liste de tous vos articles :</h2>
+
+        <?php foreach ($articlesBack as $articleBack): ?>
+
+        <div class="articlesBack">
+            <h3><?= $articleBack['title'] ?></h3>
+            <p><?= $articleBack['extract'] ?></p>
+            <p>Posté par : <?= $articleBack['pseudo'] ?></p>
+        </div>
+        <div class="modif_sup">
+            <div class="brownBtn">
+            <a href="indexAdmin.php?action=modifyArticle&id=<?=$articleBack['id'] ?>">Modifier !</a>
+            </div>
+            <div class="brownBtn">
+            <a href="indexAdmin.php?action=deleteArticle&id=<?=$articleBack['id'] ?>">Supprimer !</a>
+            </div>
+        </div>
+
+        <?php endforeach ; ?>
+
     </section>
 </main>
 </div>

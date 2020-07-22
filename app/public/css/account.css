@@ -7,16 +7,16 @@
     font-weight: bold;
     border: none;
 }
-#compteBanner .disconnect, #compteBanner .backTop{
+#compteBanner .disconnect, #compteBanner .backTop, #compteBanner .deleteUser, #compteBanner .modifyPassword{
     width: 15%;
     text-align: center;
     line-height: 3;
     margin: 5% auto;
 }
-#compteBanner .disconnect{
+#compteBanner .disconnect, #compteBanner .deleteUser, #compteBanner .modifyPassword{
     background-color: #063630;
 }
-.disconnect a{
+.disconnect a, .deleteUser a, .modifyPassword a{
     color: #ffffff;
 }
 #account{
@@ -35,14 +35,14 @@
 
 @media screen and (min-width: 970px) and (max-width: 1170px) {
 
-    #compteBanner .disconnect, #compteBanner .backTop{
+    #compteBanner .disconnect, #compteBanner .backTop, #compteBanner .deleteUser, #compteBanner .modifyPassword{
         width: 30%;
         margin: 5% auto;
     }
 }
 @media screen and (min-width: 768px) and (max-width: 970px) {
 
-    #compteBanner .disconnect, #compteBanner .backTop{
+    #compteBanner .disconnect, #compteBanner .backTop, #compteBanner .deleteUser, #compteBanner .modifyPassword{
         width: 35%;
         margin: 5% auto;
         font-size: 1.1em;
@@ -54,7 +54,7 @@
     #compteBanner{
         justify-content: space-between;
     }
-    #compteBanner .disconnect, #compteBanner .backTop{
+    #compteBanner .disconnect, #compteBanner .backTop, #compteBanner .deleteUser, #compteBanner .modifyPassword{
         font-size: 1.1em;
         line-height: 2;
         margin: 5% auto;

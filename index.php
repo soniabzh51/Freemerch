@@ -18,52 +18,71 @@ try {
         // object controller
     if (isset($_GET['action'])) {      
         if($_GET['action'] == 'home'){
-            // homeFront est défini dans ControllerFront.php
+            // homeFront is defined in ControllerFront.php
             $controllerFront->home();
         }
         elseif($_GET['action'] == 'about'){
-            // aboutFront est défini dans ControllerFront.php
+            // aboutFront is defined in ControllerFront.php
             $controllerFront->aboutFront();
         }
         elseif($_GET['action'] == 'visuelMerch'){
-            // visuelMerchFront est défini dans ControllerFront.php
+            // visuelMerchFront is defined in ControllerFront.php
             $controllerFront->visuelMerchFront();
         }
         elseif($_GET['action'] == 'vitrine'){
-            // vitrineFront est défini dans ControllerFront.php
+            // vitrineFront is defined in ControllerFront.php
             $controllerFront->visuelMerchFront();
         }
         elseif($_GET['action'] == 'bookmerchandising'){
-             // bookmerchandisingFront est défini dans ControllerFront.php
+             // bookmerchandisingFront is defined in ControllerFront.php
             $controllerFront->bookmerchandisingFront();
         }
         elseif($_GET['action'] == 'training'){
-            // trainingFront est défini dans ControllerFront.php
+            // trainingFront is defined in ControllerFront.php
             $controllerFront->trainingFront();
         }
         elseif($_GET['action'] == 'portfolio'){
-            // portfolioFront est défini dans ControllerFront.php
+            // portfolioFront is defined in ControllerFront.php
             $controllerFront->portfolioFront();
         }
         elseif($_GET['action'] == 'news'){
-            // newsFront est défini dans ControllerFront.php
+            // newsFront is defined in ControllerFront.php
             $controllerFront->newsFront();
         }
         elseif($_GET['action'] == 'displayNews'){
+            // displayFront is defined in ControllerFront.php
             $controllerFront->displayNews();
         }
         elseif($_GET['action'] == 'blog'){
-            // blogFront est défini dans ControllerFront.php
+            // blogFront is defined in ControllerFront.php
             $controllerFront->blogFront();
         }
+        elseif($_GET['action'] == 'userReg'){
+            // userReg is defined in ControllerFront.php 
+            $controllerFront->registerUser();
+        }
         elseif($_GET['action'] == 'userCnc'){
+            // loginUser is defined in ControllerFront.php
             $controllerFront->loginUser();
         }
         elseif($_GET['action'] == 'userDis'){
+            // logoutUser is defined in ControllerFront.php
             $controllerFront->logoutUser();
         }
-        elseif($_GET['action'] == 'userReg'){
-            $controllerFront->registerUser();
+            // OK
+        // elseif($_GET['action'] == 'userModifyPassword'){
+        //     $controllerFront->userModifyPasswordFront();
+        // }
+        elseif($_GET['action'] == 'backAccount'){
+            $controllerFront->accountFront();
+        }
+        // elseif($_GET['action'] == 'updatePassword'){
+        //     $controllerFront->updatePassword();
+        // }
+        elseif($_GET['action'] == 'deleteUser'){
+            // pageDeleteUser is defined in ControllerFront.php
+            // $controllerFront->pageDeleteUser();
+            $controllerFront->deleteUser();
         }
         elseif($_GET['action'] == 'contact'){
             // contactFront est défini dans ControllerFront.php

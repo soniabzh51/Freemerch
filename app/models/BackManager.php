@@ -38,7 +38,7 @@ class BackManager extends Manager{
     public function delete_admin(){
         $bdd = $this->dbConnect();
         $id = (int)$_GET['id'];
-        $delete_admin = $bdd->prepare("DELETE admin.* from admins WHERE id = ?");
+        $delete_admin = $bdd->prepare("DELETE admins.* FROM admins WHERE id = ?");
         $delete_admin->execute([$id]);
         return $delete_admin;
     }
@@ -58,7 +58,7 @@ class BackManager extends Manager{
         return $infos_admin;
     }
 
-    // OK
+    // OK : Post a single article
     public function post_article($title,$extract,$content,$upload_img){
         $bdd = $this->dbConnect();
         $post_article = $bdd->prepare("INSERT INTO articles(title, extract, content, image, admin_id) VALUES(:title, :extract, :content, :image, :admin_id)");
@@ -72,6 +72,36 @@ class BackManager extends Manager{
         ]);
         return $post_article;
     }
+
+    // Get a single article
+    public function get_article(){
+        $bdd = $this->dbConnect();
+        $id = (int)$_GET['id'];
+        $$articleBack = $bdd->prepare("SELECT articles.*, admins.pseudo FROM articles INNER JOIN admins ON articles.admins_id = admins.id WHERE articles.id = ?");
+        $articleBack ->execute['id'];
+        $articleBack = $articleBack->fetch();
+        return $articleBack;
+    }
+
+    // Get all articles
+    public function get_articles(){
+        $bdd = $this->dbConnect();
+        $id = (int)$_GET['id'];
+        $articlesBack = $bdd->query("SELECT id, title, extract , content, image, created_at FROM articles ORDER BY created_at DESC");
+        $articlesBack = $articlesBack->fetchAll();
+        return $articlesBack;
+    }
+
+    // Get  article title and content for adminModify.php
+    // public function getShortArticle(){
+    //     $bdd = $this->dbConnect();
+    //     $shortArticles = $bdd->prepare("SELECT articles.*, FROM articles INNER JOIN admins ON articles.admins_id = admins.id AND articles.admins_id = ? ORDER BY created_at DESC");
+    //     $shortArticles->execute[$_SESSION['admins']];
+    //     $shortArticles = $shortArticles->fetchAll();
+    //     return $shortArticles;
+    // }
+
+    // Get last 4 articles for page News
     public function get_last_article(){
         $bdd = $this->dbConnect();
         $lastArticle = $bdd->query("SELECT articles.*, id, title, extract, content, image, created_at FROM articles ORDER BY created_at DESC LIMIT 1");
@@ -79,68 +109,44 @@ class BackManager extends Manager{
         return $lastArticle;
     }
 
-    public function delete_article($id){
+    public function delete_article(){
         $bdd = $this->dbConnect();
         $id = (int)$_GET['id'];
-        $delete_article = $bdd->prepare("DELETE FROM articles WHERE id = ?");
+        $delete_article = $bdd->prepare("DELETE articles.* FROM articles WHERE id = ?");
         $delete_article->execute(["$id"]);
         return $delete_article;
     }
 
+    public function modify_article($title,$content){
+        $bdd = $this->dbConnect();
+        $id = (int)$_GET['id'];
+        $article_modify = $bdd->prepare("UPDATE articles SET title = :title, extract = :extract, content = :content WHERE id = :id");
+        $article_modify->execute([
+            // "admin_id" => $_SESSION['admins'],
+            "title" => htmlentities($title),
+            "extract" => substr(htmlentities($content), 0,150 ),
+            "content" => htmlentities($content),
+            // "image" => htmlentities($upload_img),
+            "id" => $id
+        ]);
+        return $article_modify;
+    }
 
-    // public function update_article(){
-    //     $bdd = $this->dbConnect();
-    //     $id = (int)$_GET["id"];
-    //     $update_article = $bdd->prepare("UPDATE articles SET title = :title, extract = :extract, content = :content, image = :image, WHERE id = :id");
-    //     $update_article->execute([
-    //         "title" => htmlentities($titre),
-    //         "extract" => substr(htmlentities($contenu), 0,150),
-    //         "content" => nl2br(htmlentities($contenu)),
-    //         "image" => htmlentities($image),
-    //         "id" => $id
-    //     ]);
-    //     return $update_article;
-    // }
+
+    public function update_article(){
+        $bdd = $this->dbConnect();
+        $id = (int)$_GET["id"];
+        $update_article = $bdd->prepare("UPDATE articles SET title = :title, extract = :extract, content = :content, image = :image, WHERE id = :id");
+        $update_article->execute([
+            "title" => htmlentities($titre),
+            "extract" => substr(htmlentities($contenu), 0,150),
+            "content" => nl2br(htmlentities($contenu)),
+            "image" => htmlentities($image),
+            "id" => $id
+        ]);
+        return $update_article;
+    }
     
-    // get all articles
-    // public function get_article(){
-    //     $bdd = $this->dbConnect();
-    //     $get_article = $bdd->query("SELECT title, extract, created_at FROM articles ORDER BY DESC 3");
-    //     $get_article = $get_article->fetchAll();
-    //     return $get_article;
-    // }
-    // get one article (by id)
-    // public function get_article(){
-    //     $bdd = $this->dbConnect();
-    //     $id = (int)$_GET['id'];
-    //     $article = $bdd->prepare("SELECT articles.*,  users.id FROM users INNER JOIN  comments ON  users.pseudo =  comments.pseudo  WHERE articles.id = ?");
-    //     $article->execute([$id]);
-    //     $article = $article->fetch();
-    //     return $article;
-    // }
-    // get articles (by id, PAGE POSTS)
-    // public function get_articles_by_id(){
-    //     $bdd = $this->dbConnect();
-    //     $lastArticle = $bdd->prepar("SELECT id, title, extract, created_at FROM articles ORDER BY id DESC LIMIT 20");
-    //     $alastArticle = $lastArticle->fetchAll();
-    //     return $lastArticle;
-    // }
-    // get articles (by date, PAGE POSTS)
-    // public function get_articles_by_date(){
-    //     $bdd = $this->dbConnect();
-    //     $lastArticle = $bdd->query("SELECT id, title, extract, created_at FROM articles ORDER BY created_at DESC LIMIT 20");
-    //     $lastArticle = $lastArticle->fetchAll();
-    //     return $lastArticle;
-    // }
-
-    // public function get_article_admin(){
-    //     $bdd = $this->dbConnect();
-    //     $id = (int)$_GET["id"];
-    //     $article_admin = $bdd->prepare("SELECT ");
-    //     $article_admin->execute([$id]);
-    //     $article_admin = $article_admin->fetch();
-    //     return $article_admin;
-    // }
 
     // public function post_comment_admin(){
     // $bdd = $this->dbConnect();

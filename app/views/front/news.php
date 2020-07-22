@@ -19,6 +19,7 @@ include_once 'app/views/front/layouts/nav.php';
 
     <div id="articles">
         <div class="newsFront">
+        
             <?php foreach ($articlesNews as $articleNews): ?>
 
             <article class="newsArticles">

@@ -234,92 +234,31 @@ input[type="file"]{
 }
 
 /* *****************************PAGE POSTS ADMIN*************************** */
-/* #postsSearchBar{
-    display: flex;
+#pagePosts{
+    width: 100%;
+}
+#posts{
+    width: 80%;
+    margin: 5%  auto;
+    text-align: center;
+}
+#posts h2{
+    background-color: #D59F33;
+    width: 50%;
+    margin: auto;
+}
+.articlesBack{
     margin-top: 5%;
 }
-#postsSearchBar form{
-    width: 100%;
-}
-#postsSearchBar form input[type='text']{
-    width: 50%;
-    margin: auto;
-    position: absolute;
-    position: static;
-    border: 2px solid #D59F33;
-} */
-#posts{
-    width: 20%;
-    margin: 5%  auto;
-    text-align: justify;
-}
 #posts h3{
-    text-align: center;
-    margin-bottom: 20%;
-}
-#menuTri{
-    width: 100%;
-    border: none;
-    margin: 0 auto;
-    position: static;
-}
-.orderBy{
-    width: 50%;
-    margin: auto;
-    background-color: #ffffff;
-    padding-inline-start: 0;
-}
-.orderBy::after{
-    content: "";
-    display: table;
-    clear: both;
-}
-#menuTri a{
-    display: block;
-    color: #000000;
-}
-#menuTri a:hover{
-    color: #D59F33;
-}
-.sousMenuTri{
-    width: 100%;
-    float: left;
-    text-align: center;
-    font-size: 1.2em;
-}
-.sousMenuTri > a::after{
-    content: " 🔽";
-}
-.tri{
-    display: none;
-    position: absolute;
-    width: 100%;
-    padding-inline-start: 1%;
-    z-index: 1000;
-}
-.tri li {
-    font-size: 0.9em;
     background-color: #E6D9CB;
-    width: 8%;
-    line-height: 1.8;
-}
-#menuTri > ul li:hover .tri{
-    display: block;
-}
-/* #postsSearchBar .brownBtn{
-    margin: 10% auto;
-} */
-.showResult{
-    margin: 5%auto;
-    height: 200px;
-    width: 80%;
-    background-color: lightgray;
-}
-#showExtract a{
-    color: #000000;
-}
-#showExtract p{
+    width: 30%;
+    margin: auto;
     text-align: center;
+}
+#posts a{
+    color: black;
+    font-size: 0.8em;
 }
 /* ********************************* PAGE ARTICLEADMIN***************************** */
 #articleAdminMenu{
@@ -364,7 +303,6 @@ input[type="file"]{
 }
 .actionArticleAdmin{
     display: none;
-    /* margin: 1% 0 2% 13%; */
     position: absolute;
     width: 100%;
     z-index: 1000;
@@ -549,11 +487,6 @@ input[type="file"]{
     .homeAdminMenu li{
         width: 30%;
     } 
-    /* --------------------------------------Page postsAdmin-------------------------- */
-    #postsSearchBar .brownBtn{
-        width: 20%;
-        margin-top: 15%;
-    }
         /* --------------------------------------Page usersManagement-------------------------- */
     #usersManagementSearchBar .brownBtn{
         width: 20%;
@@ -589,12 +522,8 @@ input[type="file"]{
         font-size: 1.5em;
     }
     /* --------------------------------------Page postsAdmin-------------------------- */
-    .sousMenuTri{
-        font-size: 1.1em;
-    }
-    #postsSearchBar .brownBtn{
-        width: 25%;
-        margin-top: 18%;
+    #posts h2{
+        width: 70%;
     }
     /* --------------------------------------Page usersManagement-------------------------- */
     .sousMenuUsersTri{
@@ -657,22 +586,15 @@ input[type="file"]{
         width: 22%;
     }
     /* --------------------------------------Page postsAdmin-------------------------- */
-    #postsSearchBar form input [type='text'] {
-        width: 70%;
+    #posts h2{
+        width: 90%;
+        font-size: 1.5em;
     }
-    .orderBy{
-        width: 85%;
+    #posts h3{
+        width: 50%;
     }
-    .sousMenuTri{
-        font-size: 1em;
-    }
-    .tri li{
-        width: 15%;
-    }
-    #postsSearchBar .brownBtn{
-        width: 35%;
-        margin-top: 20%;
-        font-size: 1em;
+    .brownBtn{
+        width: 25%;
     }
     /* --------------------------------------Page usersManagement-------------------------- */
     #usersManagementSearchBar form input [type='text'] {

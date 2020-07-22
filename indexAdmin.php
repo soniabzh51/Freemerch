@@ -31,6 +31,13 @@ try {
         elseif($_GET['action'] == 'backHome'){
             $controllerBack -> homeAdminBack();
         }
+        elseif($_GET['action'] == 'adminDcn'){
+            $controllerBack -> logoutAdmin();
+        }
+        // action vue articleAdmin
+        // elseif($_GET['action'] == 'showArticle'){
+        //     $controllerBack->articleAdmin();
+        // }
         // OK
         elseif($_GET['action'] == 'setArticle'){
             $controllerBack->setArticle();
@@ -53,6 +60,15 @@ try {
         // OK
         elseif($_GET['action'] == 'AdminPostArticle'){
             $controllerBack->admin_post_article();
+        }
+        elseif($_GET['action'] == 'displayAllArticles'){
+            $controllerBack->articles();
+        }
+        elseif($_GET['action'] == 'modifyArticle'){
+            $controllerBack->AdminModifyArticle();
+        }
+        elseif($_GET['action'] == 'deleteArticle'){
+            $controllerBack->pageDeleteArticle();
         }
        elseif($_GET['action'] == 'postsBack'){
            $controllerBack->postsBack();

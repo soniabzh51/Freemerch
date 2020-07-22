@@ -56,7 +56,7 @@
     <script type="text/javascript" src="app/public/scripts/menu.js"></script>
     <script type="text/javascript" src="app/public/scripts/anim.js"></script>
     <script type="text/javascript" src="app/public/scripts/modal.js"></script>
-    <script type="text/javascript" src="app/public/scripts/contact.js"></script>
+    <script type="text/javascript" src="app/public/scripts/regex.js"></script>
     <script type="text/javascript" src="app/public/scripts/api.js"></script>
     <!-- <script src="app/public/js/apigeo.js"></script> -->
 </body>

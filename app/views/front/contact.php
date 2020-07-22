@@ -77,7 +77,8 @@ include_once 'app/views/front/layouts/nav.php';
                     </textarea>
                 </p>
             </fieldset>
-            <p class="buttons"> <input id="send"type="submit" value="Envoyer">
+            <p class="buttons">
+                 <input id="send"type="submit" value="Envoyer">
                 <input type="reset" value="Annuler">
             </p>
         </form>

@@ -15,3 +15,5 @@ function verifyContact(value, span, regex){
      }  
     
 }
+
+// regex modal register, modal connection, modify password: not ready

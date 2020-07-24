@@ -214,6 +214,10 @@ input[type="file"]{
     padding-top: 1%;
     color: red;
 }
+
+
+
+
 #homeAdminPost textarea{
     display: block;
     min-height: 200px;
@@ -371,6 +375,19 @@ input[type="file"]{
     border: 3px solid #1dac00;
 }
 
+/* ********************************PAGE ADMINMODIFY********************************** */
+#titleArea, #contentArea{
+    display: block;
+    width: 60%;
+    margin: 5% auto;
+    padding: 1%;
+    border: 2px solid #D59F33;
+    font-size: 1em;
+}
+#contentArea{
+    min-height: 300px;
+    width: 60%;
+}
 /* ********************************PAGE USERSMANAGEMENT********************************** */
 #usersManagementSearchBar{
    display: flex;
@@ -494,6 +511,10 @@ input[type="file"]{
     #deleteUser .redBtn{
         width: 25%;
     }
+        /* --------------------------------------Page adminModify-------------------------- */
+    #contentArea{
+        min-height: 400px;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 970px){
@@ -525,6 +546,11 @@ input[type="file"]{
     #posts h2{
         width: 70%;
     }
+    /* --------------------------------------Page adminModify-------------------------- */
+    #contentArea{
+        min-height: 400px;
+    }
+
     /* --------------------------------------Page usersManagement-------------------------- */
     .sousMenuUsersTri{
         font-size: 1.1em;
@@ -596,6 +622,15 @@ input[type="file"]{
     .brownBtn{
         width: 25%;
     }
+    /* --------------------------------------Page AdminModify-------------------------- */
+
+    #titleArea, #contentArea{
+        width: 80%;
+    }
+    #contentArea{
+        min-height: 400px;
+    }
+
     /* --------------------------------------Page usersManagement-------------------------- */
     #usersManagementSearchBar form input [type='text'] {
         width: 70%;

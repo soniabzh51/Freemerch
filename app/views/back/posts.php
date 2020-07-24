@@ -13,11 +13,12 @@ include_once 'app/views/back/layouts/headerAdmin.php';
         <div class="articlesBack">
             <h3><?= $articleBack['title'] ?></h3>
             <p><?= $articleBack['extract'] ?></p>
+            <p><?= $articleBack['content'] ?></p>
             <p>Posté par : <?= $articleBack['pseudo'] ?></p>
         </div>
         <div class="modif_sup">
             <div class="brownBtn">
-            <a href="indexAdmin.php?action=modifyArticle&id=<?=$articleBack['id'] ?>">Modifier !</a>
+            <a href="indexAdmin.php?action=setModifyArticle">Modifier !</a>
             </div>
             <div class="brownBtn">
             <a href="indexAdmin.php?action=deleteArticle&id=<?=$articleBack['id'] ?>">Supprimer !</a>

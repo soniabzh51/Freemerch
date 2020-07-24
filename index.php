@@ -70,9 +70,12 @@ try {
             $controllerFront->logoutUser();
         }
             // OK
-        // elseif($_GET['action'] == 'userModifyPassword'){
-        //     $controllerFront->userModifyPasswordFront();
-        // }
+        elseif($_GET['action'] == 'modifyPassword'){
+            $controllerFront->modifyPassword();
+        }
+        elseif($_GET['action'] == 'changePassword'){
+            $controllerFront->changePassword();
+        }
         elseif($_GET['action'] == 'backAccount'){
             $controllerFront->accountFront();
         }

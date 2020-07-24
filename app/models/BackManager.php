@@ -77,7 +77,7 @@ class BackManager extends Manager{
     public function get_article(){
         $bdd = $this->dbConnect();
         $id = (int)$_GET['id'];
-        $$articleBack = $bdd->prepare("SELECT articles.*, admins.pseudo FROM articles INNER JOIN admins ON articles.admins_id = admins.id WHERE articles.id = ?");
+        $$articleBack = $bdd->prepare("SELECT id, title, extract, content, image, crated_at FROM articles WHERE id = ?");
         $articleBack ->execute['id'];
         $articleBack = $articleBack->fetch();
         return $articleBack;
@@ -87,19 +87,10 @@ class BackManager extends Manager{
     public function get_articles(){
         $bdd = $this->dbConnect();
         $id = (int)$_GET['id'];
-        $articlesBack = $bdd->query("SELECT id, title, extract , content, image, created_at FROM articles ORDER BY created_at DESC");
+        $articlesBack = $bdd->query("SELECT id, title, extract, content, image, created_at FROM articles ORDER BY created_at DESC");
         $articlesBack = $articlesBack->fetchAll();
         return $articlesBack;
     }
-
-    // Get  article title and content for adminModify.php
-    // public function getShortArticle(){
-    //     $bdd = $this->dbConnect();
-    //     $shortArticles = $bdd->prepare("SELECT articles.*, FROM articles INNER JOIN admins ON articles.admins_id = admins.id AND articles.admins_id = ? ORDER BY created_at DESC");
-    //     $shortArticles->execute[$_SESSION['admins']];
-    //     $shortArticles = $shortArticles->fetchAll();
-    //     return $shortArticles;
-    // }
 
     // Get last 4 articles for page News
     public function get_last_article(){
@@ -117,12 +108,12 @@ class BackManager extends Manager{
         return $delete_article;
     }
 
-    public function modify_article($title,$content){
+    public function modify_article($title,$extract,$content){
         $bdd = $this->dbConnect();
         $id = (int)$_GET['id'];
-        $article_modify = $bdd->prepare("UPDATE articles SET title = :title, extract = :extract, content = :content WHERE id = :id");
-        $article_modify->execute([
-            // "admin_id" => $_SESSION['admins'],
+        $modify_article = $bdd->prepare("UPDATE articles SET title = title, extract = extract, content = content WHERE id = id");
+        $modify_article->execute([
+            "admin_id" => $_SESSION['admins'],
             "title" => htmlentities($title),
             "extract" => substr(htmlentities($content), 0,150 ),
             "content" => htmlentities($content),
@@ -133,19 +124,19 @@ class BackManager extends Manager{
     }
 
 
-    public function update_article(){
-        $bdd = $this->dbConnect();
-        $id = (int)$_GET["id"];
-        $update_article = $bdd->prepare("UPDATE articles SET title = :title, extract = :extract, content = :content, image = :image, WHERE id = :id");
-        $update_article->execute([
-            "title" => htmlentities($titre),
-            "extract" => substr(htmlentities($contenu), 0,150),
-            "content" => nl2br(htmlentities($contenu)),
-            "image" => htmlentities($image),
-            "id" => $id
-        ]);
-        return $update_article;
-    }
+    // public function update_article(){
+    //     $bdd = $this->dbConnect();
+    //     $id = (int)$_GET["id"];
+    //     $update_article = $bdd->prepare("UPDATE articles SET title = :title, extract = :extract, content = :content, image = :image, WHERE id = :id");
+    //     $update_article->execute([
+    //         "title" => htmlentities($titre),
+    //         "extract" => substr(htmlentities($contenu), 0,150),
+    //         "content" => nl2br(htmlentities($contenu)),
+    //         "image" => htmlentities($image),
+    //         "id" => $id
+    //     ]);
+    //     return $update_article;
+    // }
     
 
     // public function post_comment_admin(){

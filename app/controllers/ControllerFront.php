@@ -55,10 +55,7 @@ class ControllerFront
     //     $this->home();
     // }
     // OK
-    public function userModifyPasswordFront(){
-        if(!empty($_Post['password']) || !empty($_POST['newPassword']) || !empty($_POST['newPasswordConf'])){
-            $this->modifyPassword();
-        }
+    public function modifyPassword(){
         require 'app/views/front/userModifyPassword.php';
     }
     function contactFront(){
@@ -172,7 +169,7 @@ class ControllerFront
 
     
     // Get new user pasword from the form in page userModifyPassword.php
-    public function modifyPassword(){
+    public function changePassword(){
 
         if(isset($_SESSION['users'])) {
             extract($_POST);
@@ -188,11 +185,19 @@ class ControllerFront
                 $validation = false;
                 $errors[] = 'Erreur dans la confirmation de votre mot de passe!';
             }
-
+            if (!empty($password)) {
+                $id = $_SESSION['users'];
+                $testPassword = new \Project\models\FrontManager();
+                $passwordCheck = $testPassword-> passwordCheck();
+                if (!password_verify($password, $passwordCheck)) {
+                    $validation = false;
+                    $errors[] = "Ce mot de passe est déjà utilisé !";
+                }
+            }
             if($validation) {
                 $changePassword = new \Project\models\FrontManager();
                 $passwordChange= $changePassword->changeUserPassword($newPassword);
-                $this->accountFront();
+                $this->blogFront();
             }
             return $errors;
         }

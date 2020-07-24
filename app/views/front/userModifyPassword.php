@@ -2,20 +2,20 @@
 
 require_once 'app/views/front/layouts/head.php';
 require_once 'app/views/front/layouts/header.php';
-// if (!empty($_POST)) {
-//     $login = new \Projet\controllers\ControllerFront();
-//     $error = $login->modifyPassword();
-// }
+if (!empty($_POST)) {
+    $login = new \Project\controllers\ControllerFront();
+    $error = $login->changePassword();
+}
 
 ?>
 <!--  CONTENT -->
 <main>
-    <div class="backTop">
+    <!-- <div class="backTop">
         <a href="index.php?action=blog">Revenir à la page Blog</a>
-    </div> 
+    </div>  -->
 
     <section id="modifyPassword">
-        <form id="changePassword" action="index.php?action=modifyPassword" method='POST' name="changePassword">
+        <form id="changePassword" action="" method='POST' name="changePassword">
             <label for="password">Mot de passe actuel :</label>
             <input type="password" name="password" id="actualPassword" placeholder="Entrez votre mot de passe actuel" required>
             <label for="newPassword">Nouveau mot de passe :</label>
@@ -26,7 +26,7 @@ require_once 'app/views/front/layouts/header.php';
             <div id="validNewPasswordOrNot">
                 <input type="submit" class="brownBtn" value="Valider">
                 <div class="brownBtn">
-                    <a href="index.php?action=backAccount">Annuler</a>
+                    <!-- <a href="index.php?action=backAccount">Annuler</a> -->
                  </div>
             </div>
         </form>

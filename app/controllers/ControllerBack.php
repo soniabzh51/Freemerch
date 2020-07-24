@@ -31,22 +31,34 @@ class ControllerBack
         $articlesBack = $this->displayArticles();
         require 'app/views/back/posts.php';
     }
-    function pageDeleteArticle(){
+
+    public function pageDeleteArticle(){
         $this->deleteArticle();
         $this->homeAdminBack();
     }
+
+    // public function setModifyArticle(){
+    //     $this->adminModifyArticle();
+    //     // $this->homeAdminBack();
+    // }
 
     public function usersManagementBack(){
         require 'app/views/back/usersManagement.php';
     }
 
     public function adminModifyArticle(){
-        $articlesBack = $this->displayArticle();
+        // $this->modifyArticle();
+        $this->homeAdminBack();
+        $articleBack = $this->displayArticle();
         
         if(!empty($_POST)){
             $modifyArticle = new \Project\controllers\ControllerBack();
             $errors = $modifyArticle->modifyArticle();
         }
+        // require 'app/views/back/adminModify.php';
+    }
+
+    public function setModifyArticle(){
         require 'app/views/back/adminModify.php';
     }
 
@@ -100,13 +112,13 @@ class ControllerBack
     }
 
     // logout admin
-    function logoutAdmin(){
+    public function logoutAdmin(){
         unset($_SESSION['admins']); /********  A FINIR  *****************/ 
         session_destroy();
         $this->loginAdminBack();
     }
 
-    function setArticle(){
+    public function setArticle(){
         require 'app/views/back/postArticle.php';
     }
 
@@ -172,20 +184,16 @@ class ControllerBack
         extract($_POST);
         $validation = true;
         $errors = [];
-        // $upload_imgs = "app/public/images/";
-        // $upload_img = $upload_imgs.basename($_FILES["image"]["name"]);
-        // $uploadOK = 1;
-        // $imageFileType = strtolower(pathinfo($upload_img, PATHINFO_EXTENSION));
 
         if(empty($title) || empty($content)){
             $validation = false;
             $errors[] = 'Tous les champs sontt obligatoires !'; 
         }elseif ($validation){
             $modifyArticle = new \Project\models\BackManager();
-            $article_modify = $modifyArticle->modify_article($title,$content);
+            $modify_article = $modifyArticle->modify_article($title,$extract,$content);
 
             // $this->homeAdminBack();
-            // header('Location: indexAdmin.php?action=backHome');
+            header('Location: indexAdmin.php?action=setModifyArticle');
         }
         return $errors;
     }

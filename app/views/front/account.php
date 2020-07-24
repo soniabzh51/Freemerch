@@ -17,9 +17,9 @@ require_once 'app/views/front/layouts/header.php'
                 <div class="deleteUser">
                     <a href="index.php?action=deleteUser&id=<?= $infos['id'] ?>">Supprimer mon compte</a>
                 </div>
-                <!-- <div class="modifyPassword">
-                    <a href="index.php?action=userModifyPassword">Modifier mon mot de passe</a>
-                </div> -->
+                <div class="modifyPassword">
+                    <a href="index.php?action=modifyPassword">Modifier mon mot de passe</a>
+                </div>
 
             </div>
             <section id="account">

@@ -20,7 +20,7 @@ try {
         if ($_GET['action'] == 'loginAdmin'){
             $controllerBack->loginAdminBack();
         }     
-        if($_GET['action'] == 'adminCnc'){
+        elseif($_GET['action'] == 'adminCnc'){
             // homeAdminBack est défini dans ControllerBack.php
             $controllerBack->loginAdmin();
         }
@@ -64,8 +64,11 @@ try {
         elseif($_GET['action'] == 'displayAllArticles'){
             $controllerBack->articles();
         }
-        elseif($_GET['action'] == 'modifyArticle'){
-            $controllerBack->AdminModifyArticle();
+        elseif($_GET['action'] == 'setModifyArticle'){
+            $controllerBack->setModifyArticle();
+        }
+        elseif($_GET['action'] == 'adminModifyArticle'){
+            $controllerBack->adminModifyArticle();
         }
         elseif($_GET['action'] == 'deleteArticle'){
             $controllerBack->pageDeleteArticle();

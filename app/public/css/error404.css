@@ -1,43 +1,43 @@
-#error404Content{
+.error404Content{
     width: 96%;
     margin:  2% auto;
     padding: 5% 0;
     border: 5px solid lightgrey;
 }
-#error404{
+.error404{
     background-color: #E6D9CB;
     width: 60%;
     text-align: center;
     margin: 5% auto;
 }
-#error404 h1{
+.error404 h1{
     padding-top: 10%;
 }
-#error404 p{
+.error404 p{
     font-size: 1.3em;
     padding: 3% 0;
 
 }
-#error404 :last-child{
+.error404 :last-child{
     padding-bottom: 15%;
 }
-#error404 a{
+.error404 a{
     color: #B46D51;
 }
 
 @media screen and (min-width: 768px) and (max-width: 970px) {
-    #error404 h1{
+    .error404 h1{
         font-size: 3.2em;
     }
 }
 @media screen and (min-width: 400px) and (max-width: 768px) {
-    #error404Content{
+    .error404Content{
         padding: 1% 0;
     }
-    #error404{
+    .error404{
         width: 80%;
     }
-    #error404 h1{
+    .error404 h1{
         font-size: 2em;
     }
 }

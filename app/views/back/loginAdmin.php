@@ -19,11 +19,6 @@ include_once 'app/views/back/layouts/headerAdmin.php';
                         <input type="text" name="pseudo" placeholder="Pseudo *"
                             value="<?php if(isset($_POST['pseudo'])) echo $_POST['pseudo'] ?>" required>
                         <input type="password" name="password" placeholder="Mot de passe *" required>
-
-                        <?php if(isset($error)) : ?>
-                        <div class="messageError"><?= $error ?></div>
-                        <?php endif ?>
-
                         <input type="submit" value="Me connecter !">
                     </form>
                 </div>
@@ -52,27 +47,6 @@ include_once 'app/views/back/layouts/headerAdmin.php';
                         <input type="text" name="emailConf" placeholder="Confirmation e-mail *" required>
                         <input type="password" name="password" placeholder="Mot de passe *" required>
                         <input type="password" name="passwordConf" placeholder="Confirmation mot de passe *" required>
-
-                        <?php
-                                if(isset($errors)) :
-                                if($errors) :
-                                foreach($errors as $error) :
-                                ?>
-
-                        <div class="messageError"><?= $error ?></div>
-
-                        <?php
-                                endforeach;
-                                else :
-                                ?>
-
-                        <p>Votre inscription est confirmée !</p>
-
-                        <?php
-                                endif;
-                                endif
-                                ?>
-
                         <input type="submit" value="M'inscrire !">
                     </form>
                 </div>

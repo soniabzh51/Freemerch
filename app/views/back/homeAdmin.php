@@ -16,9 +16,6 @@ include_once 'app/views/back/layouts/headerAdmin.php';
         <li>
             <a href="indexAdmin.php?action=postsBack">Gérer les posts</a>
         </li>
-        <li>
-            <a href="indexAdmin.php?action=usersManagement">Gérer les utilisateurs</a>
-        </li>
     </ul>
 </nav>
 

@@ -2,7 +2,7 @@
         <footer>
             <section id="footerContent">
                 <figure id="footerImage">
-                    <img src="app/public/images/isa.jpg" alt="Photo Isabelle Phelippot">
+                    <img src="app/public/images/isa.jpg" alt="Photo Isabelle ">
                 </figure>
                 <div id="blocContact">
                     <div id="findMe">
@@ -15,7 +15,7 @@
                             56000 Vannes
                         </p>
                         <img src="app/public/logos/mail.svg" alt="logo mail" id="svgMail">
-                        <p><a href="mailto:ipstylemerchandiser@gmail.com"> ipstylefreemerch@gmail.com</a></p>
+                        <p><a href="mailto:ipstylefreemerch@gmail.com"> ipstylefreemerch@gmail.com</a></p>
                     </div>
                     <div id="links">
                         <div id="bubble">
@@ -29,13 +29,13 @@
 
                         </div>
                         <div id="socialNetworks">
-                            <a href="https://www.facebook.com/isabelle.phelippot.1" target="_blank"><img
+                            <a href="https://www.facebook.com/" target="_blank"><img
                                     src="app/public/logos/facebook3d.png" alt="logo facebook 3D" id="fb3d"></a>
-                            <a href="https://www.instagram.com/ipstylemerchandiser" target="_blank"><img
+                            <a href="https://www.instagram.com/" target="_blank"><img
                                     src="app/public/logos/instagram.png" alt="logo instagram" id="insta"></a>
-                            <a href="https://www.linkedin.com/in/isabelle-phelippot-6924aa13b" target="_blank"><img
+                            <a href="https://www.linkedin.com/" target="_blank"><img
                                     src="app/public/logos/linkedin.png" alt="logo linkedin"></a>
-                            <a href="https://www.pinterest.com/ipstylemerchandiser" target="_blank"><img
+                            <a href="https://www.pinterest.com/" target="_blank"><img
                                     src="app/public/logos/pinterest.png" alt="logo pinterest" id="pint"></a>
                         </div>
                     </div>

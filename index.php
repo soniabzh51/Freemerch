@@ -21,10 +21,6 @@ try {
             // homeFront is defined in ControllerFront.php
             $controllerFront->home();
         }
-        elseif($_GET['action'] == 'about'){
-            // aboutFront is defined in ControllerFront.php
-            $controllerFront->aboutFront();
-        }
         elseif($_GET['action'] == 'visuelMerch'){
             // visuelMerchFront is defined in ControllerFront.php
             $controllerFront->visuelMerchFront();
@@ -79,9 +75,6 @@ try {
         elseif($_GET['action'] == 'backAccount'){
             $controllerFront->accountFront();
         }
-        // elseif($_GET['action'] == 'updatePassword'){
-        //     $controllerFront->updatePassword();
-        // }
         elseif($_GET['action'] == 'deleteUser'){
             // pageDeleteUser is defined in ControllerFront.php
             // $controllerFront->pageDeleteUser();

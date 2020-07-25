@@ -12,13 +12,12 @@
         content="Ce que je peux vous apporter : techniques de présentation, élaboration et réalisation de vitrine, mise en place signalétique, analyse du comportement client, accompagnement des magasins en affiliation et franchisés, recrutement, formation, accompagnement des équipes, préparation et animation de reunions. Une expertise merchandising qui saura booster votre entreprise !">
     <!------------------------ css --------------------------->
     <link rel="stylesheet" href="app/public/css/home.css">
-    <link rel="stylesheet" href="app/public/css/about.css">
-    <link rel="stylesheet" href="app/public/css/about.css">
     <link rel="stylesheet" href="app/public/css/news.css">
     <link rel="stylesheet" href="app/public/css/blog.css">
     <link rel="stylesheet" href="app/public/css/contact.css">
     <link rel="stylesheet" href="app/public/css/article.css">
     <link rel="stylesheet" href="app/public/css/account.css">
+    <link rel="stylesheet" href="app/public/css/modifyPassword.css">
     <link rel="stylesheet" href="app/public/css/error404.css">
     <link rel="stylesheet" href="app/public/css/rgpd.css">
     <link rel="stylesheet" href="app/public/css/mentionsLegales.css">

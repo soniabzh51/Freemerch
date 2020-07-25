@@ -8,15 +8,15 @@ require_once 'app/views/front/layouts/header.php'
         <!--  CONTENT -->
         <main>
             <div id="compteBanner">
-                <!-- <div class="backTop">    
+                <div class="backTop">    
                     <a href="index.php?action=blog"> < Revenir à la page Blog</a>
                 </div>
                 <div class="disconnect">
                     <a href="index.php?action=home">Déconnexion</a>
-                </div> -->
-                <div class="deleteUser">
-                    <a href="index.php?action=deleteUser&id=<?= $infos['id'] ?>">Supprimer mon compte</a>
                 </div>
+                <!-- <div class="deleteUser">
+                    <a href="index.php?action=deleteUser&id=<?= $infos['id'] ?>">Supprimer mon compte</a>
+                </div> -->
                 <div class="modifyPassword">
                     <a href="index.php?action=modifyPassword">Modifier mon mot de passe</a>
                 </div>
@@ -32,9 +32,6 @@ require_once 'app/views/front/layouts/header.php'
                     <?php
                     foreach($comments as $comment) :
                 ?>
-                <!-- <p>
-                    Dolor commodo fugiat minim eiusmod culpa fugiat sint incididunt irure exercitation pariatur. Labore deserunt duis veniam ut occaecat nostrud exercitation aute. Pariatur occaecat dolor culpa enim officia eiusmod dolor do incididunt consectetur. Lorem sit reprehenderit irure nostrud et sunt consequat aliquip elit laboris cillum dolor nulla ipsum. Elit eiusmod cillum incididunt et eu id in nulla incididunt duis duis dolor quis. Eiusmod in Lorem fugiat deserunt.
-                </p> -->
                 <p class="lastComments">Posté le <time datetime="<?= $comments['created_at'] ?>"><?= formatage_date($comments['created_at']) ?></time>
                 sur l'article <?= $comment['title'] ?></p>
                 <p><?= $comment['content'] ?></p> 
@@ -47,13 +44,7 @@ require_once 'app/views/front/layouts/header.php'
             </section>
         </main>
 <?php else : ?>
-        <main>
-            <div id=noLogin>
-                <!-- <div class="backTop"> 
-                    <a href="index.php?action=blog">Revenir à la page Blog</a>   
-                </div> -->
-            </div>
-        </main>    
+    
 <?php endif ?>
 <?php
 require_once 'app/views/front/layouts/footer.php';

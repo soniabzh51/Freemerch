@@ -86,7 +86,6 @@ include_once 'app/views/front/layouts/nav.php';
 
 
     <div id="plan">
-        <!--ajout d'une map google'-->
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.9201977217913!2d-2.7750476492653675!3d47.64711757908518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48101c1e45bf9d89%3A0xf1b4ec0fcc4d768d!2s20%20Rue%20Winston%20Churchill%2C%2056000%20Vannes!5e0!3m2!1sfr!2sfr!4v1573737540240!5m2!1sfr!2sfr"
             width="825" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>

@@ -444,7 +444,7 @@ path {
     width: inherit;
     max-width: calc(100vw - 20px);
     max-width: calc(100vh - 20px);
-    background-image: url("../images/cvIsabellePhelippot.png");
+    background-image: url("../");
     background-repeat: no-repeat;
 }
 

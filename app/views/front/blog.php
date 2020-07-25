@@ -95,12 +95,12 @@ include_once 'app/views/front/layouts/nav.php';
             Inscrivez-vous, connectez-vous !
             </p>
         </div>
-        <div id="blogSearchBar">
+        <!-- <div id="blogSearchBar">
             <form method="POST" action="blog.php">
                 <input type="text" name="query" placeholder="Rechercher un article..." value="<?php if(isset($_POST['query'])) echo $_POST['query'] ?>">
                 <input type="submit" value="Go !">
             </form>
-        </div>
+        </div> -->
 
         <?php
         if(isset($_POST['query'])):

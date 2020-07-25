@@ -4,7 +4,6 @@ namespace Project\controllers;
 class ControllerBack
 {
     public function login(){
-
         $loginBack = new \Project\models\BackManager();
          /* 
         Appel de la méthode du modèle viewFront
@@ -12,9 +11,7 @@ class ControllerBack
         méthode du modèle (bdd). Cette variable sera ensuite injectée
         dans la view pour afficher les données
         */
-        
         $accueilBack = $loginABack->viewBack();
-
         require 'app/views/back/loginAdmin.php';
     }
     public function loginAdminBack(){
@@ -26,104 +23,67 @@ class ControllerBack
     public function register(){
         require 'app/views/back/loginAdmin.php';
     }
-
     public function postsBack(){
         $articlesBack = $this->displayArticles();
         require 'app/views/back/posts.php';
     }
-
     public function pageDeleteArticle(){
         $this->deleteArticle();
         $this->homeAdminBack();
     }
-
-    // public function setModifyArticle(){
-    //     $this->adminModifyArticle();
-    //     // $this->homeAdminBack();
-    // }
-
-    public function usersManagementBack(){
-        require 'app/views/back/usersManagement.php';
-    }
-
-    public function adminModifyArticle(){
-        // $this->modifyArticle();
-        $this->homeAdminBack();
-        $articleBack = $this->displayArticle();
-        
-        if(!empty($_POST)){
-            $modifyArticle = new \Project\controllers\ControllerBack();
-            $errors = $modifyArticle->modifyArticle();
-        }
-        // require 'app/views/back/adminModify.php';
-    }
-
-    public function setModifyArticle(){
-        require 'app/views/back/adminModify.php';
-    }
-
-    // function registerAdmin : register new admin
+    // Register new admin
     public function registerAdmin(){
         extract($_POST);
         $validation = true;
         $errors = [];
-
         if(empty($pseudo) || empty($email) || empty($password)) {
             $validation = false;
             $errors[] = 'Tous les champs sont obligatoires !';
         }
-        
         if(($passwordConf != $password) || ($emailConf != $email)) {
             $validation = false;
             $errors[] = 'Erreur dans le confirmation de votre email ou de votre mot de passe !';
         }
-
         if($validation){
             $register = new \Project\models\BackManager();
             $register = $register->register_Admin($pseudo,$email,$password);
             unset($_POST['pseudo']);
             unset($_POST['email']);
+            $this->homeAdminBack();
+        }else{
+            $this->loginAdminBack();
         }
-        $this->homeAdminBack();
     }
-
-    // login admin
+    // Admin connection
     public function loginAdmin(){
         extract($_POST);
         $error = "Ces identifiants ne correspondent pas à nos enregistrements !";
-    
         $loginAdmin = new \Project\models\BackManager();
         $login = $loginAdmin->login_admin($pseudo,$password);
-       
         if(password_verify($password, $login['password'])){
             $_SESSION['admins'] = $login['id'];
-            // $_SESSION['pseudo'] = $login['pseudo'];
             $this->homeAdminBack();
         }else{
-            return $error;
+            $this->loginAdminBack();
         }
         if($password && $pseudo){
             $_SESSION['admins'] = $login['id'];
         }
-            // return $error;
         else{
-            return $error;
+            $this->loginAdminBack();
         }
     }
-
-    // logout admin
+    // Disconnect admin
     public function logoutAdmin(){
-        unset($_SESSION['admins']); /********  A FINIR  *****************/ 
+        unset($_SESSION['admins']);
         session_destroy();
         $this->loginAdminBack();
     }
-
     public function setArticle(){
         require 'app/views/back/postArticle.php';
     }
-
-    // post article admin 
-    function admin_post_article(){    
+    // Post article admin 
+    public function admin_post_article(){    
             extract($_POST);
             $validation = true;
             $errors = [];
@@ -131,72 +91,32 @@ class ControllerBack
             $upload_img = $upload_imgs.basename($_FILES["image"]["name"]);
             $uploadOK = 1;
             $imageFileType = strtolower(pathinfo($upload_img, PATHINFO_EXTENSION));
-
             if(empty($title) || empty($content)){
                 $validation = false;
                 $errors[] = 'Tous les champs sont obligatoires !'; 
             }elseif ($validation){
                 $article = new \Project\models\BackManager();
                 $article->post_article($title,$extract,$content,$upload_img);
-
                 header('Location: indexAdmin.php?action=backHome');
-                // $this->homeAdminBack();
             }
             return $errors;
     }
-
-    // public function articleAdminBack(){
-    //     $articleAdminBack = new \Project\models\BackManager();
-    //     $articlesBack = $this->displayArticle();
-    //     require 'app/views/back/articleAdmin.php';
-    // }
-
+    // Display a single article
     public function displayArticle(){
         $backArticle = new \Project\models\BackManager();
         $articleBack = $backArticle->get_article();
         return $articleBack;
     }
-
     // Display all articles
     public function displayArticles(){
         $backArticles = new \Project\models\BackManager();
         $articlesBack = $backArticles->get_articles();
         return $articlesBack;
     }
-
-    // Display article title and content for adminModify.php
-    // public function displayshortArticle(){
-    //     $shortArticle = new \Project\models\BackManager();
-    //     $articleShort = $shortArticle->get_title_content();
-    //     return $articleShort;
-    // }
-
     // Delete article
     public function deleteArticle(){
         $destroyArticle = new \Project\models\BackManager();
-        // $id = $_SESSION['admins'];
         $delete_article = $destroyArticle->delete_article();
         return $delete_article;
     }
-
-    // Change  article content
-    public function modifyArticle(){
-        extract($_POST);
-        $validation = true;
-        $errors = [];
-
-        if(empty($title) || empty($content)){
-            $validation = false;
-            $errors[] = 'Tous les champs sontt obligatoires !'; 
-        }elseif ($validation){
-            $modifyArticle = new \Project\models\BackManager();
-            $modify_article = $modifyArticle->modify_article($title,$extract,$content);
-
-            // $this->homeAdminBack();
-            header('Location: indexAdmin.php?action=setModifyArticle');
-        }
-        return $errors;
-    }
-
-    
 }

@@ -10,12 +10,12 @@ include_once 'app/views/front/layouts/nav.php';
 <!--  CONTENT -->
 
 <section id="newsContent">
-    <div id="newsSearchBar">
+    <!-- <div id="newsSearchBar">
         <form method="POST" action="">
             <input type="text" name="query" placeholder="Rechercher un article...">
             <input type="submit" value="Go !">
         </form>
-    </div>
+    </div> -->
 
     <div id="articles">
         <div class="newsFront">
@@ -35,49 +35,6 @@ include_once 'app/views/front/layouts/nav.php';
             <?php endforeach ; ?>
 
         </div>
-        <!-- <div class="rows">
-            <article class="newsArticles">
-                <img src="public/images/blogStaggy.jpg" alt="">
-                <P class="date">
-                    "Posté le "
-                    <time></time>
-                </P>
-                <h2>bla bla</h2>
-                <p>        
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <a href="article2.html">Lire l'article ></a> -->
-        <!-- <a href="article.php?id=2">Lire l'article</a> -->
-        <!-- </article>
-        </div>
-        <div class="rows">
-            <article class="newsArticles">
-                <img src="public/images/blogEram.jpg" alt="">
-                <P class="date">
-                    "Posté le "
-                    <time></time>
-                </P>
-                <h2></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <a href="article3.html">Lire l'article ></a>  -->
-        <!-- <a href="article.php?id=3">Lire l'article</a> -->
-        <!-- </article>
-        </div>
-        <div class="rows">
-            <article class="newsArticles">
-                <img src="public/images/blogGemo.jpg" alt="">
-                <P class="date">
-                    "Posté le "
-                    <time></time>
-                </P>
-                <h2></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <a href="article1.html">Lire l'article ></a> -->
-        <!-- <a href="article.php?id=4">Lire l'article</a> -->
-        <!-- </article>
-        </div> -->
 
     </div>
 </section>

@@ -2,12 +2,10 @@
 
 require_once 'app/views/front/layouts/head.php';
 include_once 'app/views/front/layouts/header.php';
-// include_once 'app/views/front/layouts/intro.php';
-// include_once 'app/views/front/layouts/nav.php';
 
 ?>
-    <section id="error404Content">
-        <div id="error404">
+    <section class="error404Content">
+        <div class="error404">
             <h1> Oups ! <br> Erreur 404</h1>
 
             <p>

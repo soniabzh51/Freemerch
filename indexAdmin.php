@@ -21,54 +21,25 @@ try {
             $controllerBack->loginAdminBack();
         }     
         elseif($_GET['action'] == 'adminCnc'){
-            // homeAdminBack est défini dans ControllerBack.php
             $controllerBack->loginAdmin();
         }
         elseif($_GET['action'] == 'adminReg'){
             $controllerBack->registerAdmin();
         }
-        // OK
         elseif($_GET['action'] == 'backHome'){
             $controllerBack -> homeAdminBack();
         }
         elseif($_GET['action'] == 'adminDcn'){
             $controllerBack -> logoutAdmin();
         }
-        // action vue articleAdmin
-        // elseif($_GET['action'] == 'showArticle'){
-        //     $controllerBack->articleAdmin();
-        // }
-        // OK
         elseif($_GET['action'] == 'setArticle'){
             $controllerBack->setArticle();
         }
-        // elseif($_GET['action'] == 'lastArticlesPost'){
-        //     $controllerBack -> getArticlesById();
-        // }
-        // elseif($_GET['action'] == 'getArticlesById'){
-        //     $controllerBack -> getArticlesById();
-        // }
-        // elseif($_GET['action'] == 'getArticlesByDate'){
-        //     $controllerBack -> getArticlesByDate();
-        // }
-
-        // Affiche un article
-        // elseif($_GET['action'] == 'showArticleAdmin'){
-        //     // articleAdminBackBack est défini dans ControllersBack.php
-        //     $controllerBack -> showArticleAdmin();
-        // }
-        // OK
         elseif($_GET['action'] == 'AdminPostArticle'){
             $controllerBack->admin_post_article();
         }
         elseif($_GET['action'] == 'displayAllArticles'){
             $controllerBack->articles();
-        }
-        elseif($_GET['action'] == 'setModifyArticle'){
-            $controllerBack->setModifyArticle();
-        }
-        elseif($_GET['action'] == 'adminModifyArticle'){
-            $controllerBack->adminModifyArticle();
         }
         elseif($_GET['action'] == 'deleteArticle'){
             $controllerBack->pageDeleteArticle();
@@ -76,20 +47,6 @@ try {
        elseif($_GET['action'] == 'postsBack'){
            $controllerBack->postsBack();
        }
-        // elseif($_GET['action'] == 'posts'){
-        //     $controllerBack->getArticle();
-        // }
-        // elseif($_GET['action'] == 'usersManagement'){
-        //     $controllerBack->usersManagementBack();
-        // }
-        // // action de suppression d'article depuis la page "posts.php"
-        // elseif($_GET['action'] == 'delete'){
-        //     $controllerBack->postsBack();
-        // }
-        // elseif($_GET['action'] == 'adminDcn'){
-        //     $controllerBack->logoutAdmin();
-        // }
-
     }else{
         $controllerBack->login();
     }

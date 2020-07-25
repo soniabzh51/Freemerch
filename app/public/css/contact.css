@@ -10,6 +10,9 @@
 #contactForm form{
     display: block;
 }
+#contactForm ul li:hover{
+    cursor: pointer;
+}
 .buttons{
 text-align: center;
 }

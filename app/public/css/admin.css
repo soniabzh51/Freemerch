@@ -24,7 +24,6 @@ h1 {
     font-size: 4em;
     font-weight: lighter;
 }
-
 /*------------------------ HeaderAdmin --------------------*/
 #homeAdminTitle, #introAdmin{
     text-align: center;
@@ -33,9 +32,7 @@ h1 {
     font-size: 1.2em;
     margin: 5% auto;
 }
-
 /*------------------------PAGE LOGIN ADMIN--------------------*/
-
 #spaceAdmin{
     display: flex;
 }
@@ -52,7 +49,6 @@ h1 {
     line-height: 2;
     font-weight: bold;
 }
-
 #lienAdminCnx .modal, #lienAdminReg .modal{
     position: fixed;
     display: flex;
@@ -64,7 +60,6 @@ h1 {
     height: 100%;
     background: rgba(0, 0, 0, 0.8);    
 }
-
 /* *---------------------Modal connexion/ Modal register------------------*/
 .modal-wrapperCnx, 
 .modal-wrapperReg{
@@ -76,12 +71,10 @@ h1 {
     padding: 2%;
     background-color: #E6D9CB;
 } 
-
 #cnxForm h2{
     font-size: 1.7em;
     font-weight: bold;
 }
-
 #regForm h2{
     margin: 1% 0 5% 0;
     line-height: 0;
@@ -91,7 +84,6 @@ h1 {
     display: block;
     text-align: center;
 }
-
 #cnxForm input[type="text"], 
 #cnxForm input[type="password"]{
     width: 60%;
@@ -99,7 +91,6 @@ h1 {
     border: 3px solid rgb(220, 199, 176);
     font-size: 1.3em;
 }
-
 #regForm input[type="text"],
 #regForm input[type="password"]{ 
     width: 60%;
@@ -108,7 +99,6 @@ h1 {
     border: 3px solid rgb(220, 199, 176);
     font-size: 1.3em;
 }
-
 .messageError {
     font-size: 1.3em;
     line-height: 2;
@@ -118,7 +108,6 @@ h1 {
     background-color: rgb(243, 53, 40);
     border: 3px solid rgb(204, 27, 14);
 }
-
 #cnxForm input[type="submit"],
 #regForm input[type="submit"]{
     width: 60%;
@@ -126,7 +115,6 @@ h1 {
     border: 3px solid rgb(160, 96, 71);
     font-size: 1.3em;
 }
-
 #cnxForm input[type="submit"]{
     margin: 12% auto;
     }
@@ -134,7 +122,6 @@ h1 {
 #regForm input[type="submit"]{
     margin: 12% 0 5% 0;
 }
-    
 .js-modal-close{
     left: 37%;
     height: 8%;
@@ -150,11 +137,9 @@ h1 {
     opacity: 0.7;
     cursor: pointer;
 }
-
 /*------------------------PAGE HOME ADMIN--------------------*/
 
 /* -------------------Menu homeAddmin------------------- */
-
 nav{
     display: block;
 }
@@ -214,10 +199,6 @@ input[type="file"]{
     padding-top: 1%;
     color: red;
 }
-
-
-
-
 #homeAdminPost textarea{
     display: block;
     min-height: 200px;
@@ -236,7 +217,6 @@ input[type="file"]{
     border: 3px solid rgb(160, 96, 71);
     cursor: pointer;
 }
-
 /* *****************************PAGE POSTS ADMIN*************************** */
 #pagePosts{
     width: 100%;
@@ -319,7 +299,6 @@ input[type="file"]{
 #articleAdminMenu > ul li:hover .actionArticleAdmin{
     display: block;   
 }
-
 .blogAdminArticleContent{
     width: 80%;
     margin: 5% auto;
@@ -359,7 +338,6 @@ input[type="file"]{
     display: block;
 }
 .blogAdminArticleContent textarea{
-    /* width: 70%; */
     min-height: 100px;
     border: 3px solid rgb(220, 199, 176);
     font-size: 1.5em;
@@ -375,112 +353,7 @@ input[type="file"]{
     border: 3px solid #1dac00;
 }
 
-/* ********************************PAGE ADMINMODIFY********************************** */
-#titleArea, #contentArea{
-    display: block;
-    width: 60%;
-    margin: 5% auto;
-    padding: 1%;
-    border: 2px solid #D59F33;
-    font-size: 1em;
-}
-#contentArea{
-    min-height: 300px;
-    width: 60%;
-}
-/* ********************************PAGE USERSMANAGEMENT********************************** */
-#usersManagementSearchBar{
-   display: flex;
-    margin-top: 5% 
-}
-#usersManagementSearchBar form{
-    width: 100%;
-}
-#usersManagementSearchBar form input[type='text']{
-    width: 50%;
-    margin: auto;
-    position: absolute;
-    position: static;
-    border: 2px solid #D59F33;
-}
-#menuUsersManagement{
-    width: 20%;
-    margin: 5% auto;
-    text-align: justify;
-}
-#menuUsersTri{
-    width: 100%;
-    border: none;
-    margin: 5% auto;
-    position: static;
-}
-.orderBy{
-    width: 50%;
-    margin: auto;
-    background-color: #ffffff;
-    padding-inline-start: 0;
-}
-.orderBy::after{
-    content: "";
-    display: table;
-    clear: both;
-}
-#menuUsersTri a{
-    display: block;
-    color: #000000;
-}
-#menuUsersTri a:hover{
-    color: #D59F33;
-}
-.sousMenuUsersTri{
-    width: 100%;
-    float: left;
-    text-align: center;
-    font-size: 1.2em;
-}
-.sousMenuUsersTri > a::after{
-    content: " 🔽";
-}
-.usersTri{
-    display: none;
-    position: absolute;
-    width: 100%;
-    padding-inline-start: 1%;
-    z-index: 1000;
-}
-.usersTri li {
-    font-size: 0.9em;
-    background-color: #E6D9CB;
-    width: 8%;
-    line-height: 1.8;
-}
-#menuUsersTri > ul li:hover .usersTri{
-    display: block;
-}
-#postsSearchBar .brownBtn, #deleteUser .redBtn{
-    margin: 10% auto;
-}
-
-#showUser{
-    background-color: #E6D9CB;
-    width: 60%;
-    margin: auto;
-    padding: 1% 0;
-}
-#showUser p{
-    text-align: center;
-}
-#deleteUser .redBtn{
-    width: 20%;
-    display: block;
-    font-size: 1.2em;
-    margin: 5% auto;
-    background-color: rgb(243, 53, 40);
-    border: 3px solid rgb(204, 27, 14);
-    cursor: pointer;
-}
 /* ************************************MEDIAQUERIES******************************** */
-
 @media screen and (min-width: 970px) and (max-width: 1170px){
 
     /* --------------------------------------Page homeAdmin-------------------------- */
@@ -550,7 +423,6 @@ input[type="file"]{
     #contentArea{
         min-height: 400px;
     }
-
     /* --------------------------------------Page usersManagement-------------------------- */
     .sousMenuUsersTri{
         font-size: 1.1em;
@@ -563,7 +435,6 @@ input[type="file"]{
         width: 30%;
     }
 }
-
 @media screen and (min-width: 400px) and (max-width: 768px){
     /* -----------------------------------Page homeAdmin------------------------------- */
     #homeAdminBanner{
@@ -630,7 +501,6 @@ input[type="file"]{
     #contentArea{
         min-height: 400px;
     }
-
     /* --------------------------------------Page usersManagement-------------------------- */
     #usersManagementSearchBar form input [type='text'] {
         width: 70%;

@@ -56,8 +56,8 @@ include_once 'app/views/front/layouts/nav.php';
             <div id="lien_cvJs">
                 <div id="cv">
                     Et si la curiosité vous pousse un peu plus, jetez un œuil à
-                    <a href="#modal1" class="js-modal">mon CV,</a> ou téléchargez-le en
-                    <a href="app/public/images/cvIsabelle_Phelippot.pdf" target="_blank">version pdf.</a>
+                    <a href="" class="js-modal">mon CV,</a> ou téléchargez-le en
+                    <a href="">version pdf.</a>
                 </div>
                 <aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria_labelledby="Login"
                     style="display: none;">
@@ -82,7 +82,7 @@ include_once 'app/views/front/layouts/nav.php';
                             compétences, ils furent tous menés à bien.»
                         </p>
                         <p>
-                            <strong>Yousra Guille,</strong>
+                            <strong>Valérie Xxxxxx,</strong>
                         </p>
                         <p>
                             <strong>Chef de secteur chez Marionnaud</strong>.
@@ -103,7 +103,7 @@ include_once 'app/views/front/layouts/nav.php';
                             !»
                         </p>
                         <p>
-                            <strong>Elise Ménager Durand,</strong>
+                            <strong>Marie Xxxxx-Xxxxxx,</strong>
                         </p>
                         <p>
                             <strong>Chargée de Communication Transition énergétique et
@@ -134,7 +134,7 @@ include_once 'app/views/front/layouts/nav.php';
                             personne opérationnelle et créative, idéale pour donner de l’énergie et des idées !»
                         </p>
                         <p>
-                            <strong>Céline Verand,<br>Directrice commerciale</strong>.
+                            <strong>Cécile Xxxxxx,<br>Directrice commerciale</strong>.
                         </p> 
                     </div>
                 </article>

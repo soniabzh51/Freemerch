@@ -49,7 +49,7 @@ En l'état actuel du projet, vous touverez :
 composer install
 
 <<<<<<< HEAD
-3. Importez le fichier   sql -> [DataBase](app/public/sql/freemerch.sql)    
+3. Importez le fichier   sql -> [DataBase](app/public/sql/Freemerch.sql)    
 
 dans votre phpMyAdmin (ou autre application de gestion de base de données).
 

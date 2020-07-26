@@ -1,15 +1,15 @@
-# Freemerch
+# freemerch
 
-![Screenshot website](./.github/image/screenshotFreemerch.png)
+![Screenshot website](./.github/image/screenshotfreemerch.png)
 
 ## Codeclimate
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/e2028f61a225ec867f94/maintainability)](https://codeclimate.com/github/soniabzh51/Freemerch/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e2028f61a225ec867f94/maintainability)](https://codeclimate.com/github/soniabzh51/freemerch/maintainability)
 
 
 ### Introduction
 
-Freemerch est un projet qui à terme, servira de site vitrine pour un freelance-merchandiser.
+freemerch est un projet qui à terme, servira de site vitrine pour un freelance-merchandiser.
 Il est destiné à un large public, allant du simple particulier (Home Staging) ainsi qu'aux professionnels (type commerçants) mais aussi aux entreprises et groupes commerciaux plus importants qui souhaitent former leurs équipes.
 En l'état actuel du projet, vous touverez :
 
@@ -23,7 +23,7 @@ En l'état actuel du projet, vous touverez :
 
  ### Nom du projet
 
- Freemerch
+ freemerch
 
  ### Technologies utilisées
 
@@ -40,7 +40,7 @@ En l'état actuel du projet, vous touverez :
 
  1. Cloner le dépot en vous rendant à l'adresse suivante : 
 
-  https://github.com/soniabzh51/Freemerch 
+  https://github.com/soniabzh51/freemerch 
 
   et cliquez sur le bouton vert "Code".
 
@@ -49,7 +49,7 @@ En l'état actuel du projet, vous touverez :
 composer install
 
 <<<<<<< HEAD
-3. Importez le fichier   sql -> [DataBase](app/public/sql/Freemerch.sql)    
+3. Importez le fichier   sql -> [DataBase](app/public/sql/freemerch.sql)    
 
 dans votre phpMyAdmin (ou autre application de gestion de base de données).
 
@@ -66,9 +66,9 @@ Puis vous pourrez soit vous inscrire,
 soit vous connecter avec les identifiants suivants :
 
 Pseudo : yza56
-Mot de passe : yza56Freemerch
+Mot de passe : yza56freemerch
 
-Vous pouvez également voir le site à l'adresse : (https://Freemerch.fr/)           
+Vous pouvez également voir le site à l'adresse : (https://freemerch.fr/)           
 
 ### Auteure 
 

@@ -1,0 +1,37 @@
+/* ***************************PAGE SITEMAP**************************** */
+#sitemap{
+    margin: 5% 0 10% 0;
+    text-align: center;
+    
+}
+#sitemap h2{
+    text-align: center;
+    background-color: rgb(220, 199, 176);
+    margin: 0 20% ;
+    padding: 1% 0;
+}
+#sitemap ul{
+    padding-inline-start: 0;
+    margin-top: 5%;
+    padding: 2% 0;
+    background-color: #E6D9CB;
+}
+#sitemap li{
+    list-style-type: none;
+    margin-bottom: 1%;
+}
+#sitemap a{
+    color: rgb(160, 96, 71);
+}
+
+/* ********************************* MEDIAQUERIES ******************************** */
+@media screen and (min-width: 768px) and (max-width: 970px) {
+    #sitemap h2{
+        font-size: 1.3em;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 768px) {
+    #sitemap h2{
+        font-size: 1.3em;
+    }
+}

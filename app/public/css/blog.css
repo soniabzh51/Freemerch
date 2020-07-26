@@ -1,0 +1,271 @@
+/* ***************************PAGE BLOG**************************** */
+#blogContent {
+    width: 77%;
+    margin-left: 3%;
+}
+
+#blogBanner {
+   display: flex;
+}
+
+#blogTitle {
+    width: 40%;
+    text-align: center;
+    background-color: #063630;
+    margin: auto;
+    padding: 1%;
+}
+
+#blogTitle h2 {
+    color: #ffffff;
+}
+
+#lienCnx,
+/* #disconnect, */
+#lienReg,
+#lienInfos{
+    width: 15%;
+    margin: 5% auto;
+    background-color: #063630;
+    text-align: center;
+    line-height: 3;
+}
+#lienCnx a ,
+#lienReg a,
+#lienInfos a{
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#lienCnx .modal,
+#lienReg .modal {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#introBlog{
+    font-size: 1.5em;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#introBlog p{
+    margin-bottom: 0;
+}
+
+#blogSearchBar {
+    width: 80%;
+    display: flex;
+    padding-top: 0;
+    margin-left: 11%;
+}
+
+#blogSearchBar form {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10%;
+}
+
+#blogSearchBar form input[type="text"] {
+    width: 60%;
+    font-size: 1.5em;
+    padding-left: 1%;
+    border: 3px solid rgb(220, 199, 176);
+    background-color: #E6D9CB;
+
+}
+
+#blogSearchBar form input[type="submit"i] {
+    background-color: #B46D51;
+    border: 3px solid rgb(160, 96, 71);
+    width: 16%;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-right: 3%;
+}
+
+#blogContent #articles {
+    width: 100%;
+    height: 600px;
+    margin-top: 5%;
+    display: block;
+    border: 3px solid rgb(220, 199, 176);
+}
+
+.rows {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+#blogContent .blogArticles {
+    width: 44%;
+    padding: 2%;
+    background-color: #E6D9CB;
+    border: 3px solid rgb(220, 199, 176);
+}
+
+.blogArticles img {
+    max-width: 395px;
+    width: 100%;
+    max-height: 320px;
+
+}
+
+.blogArticles a {
+    color: #000000;
+}
+
+/* *********************MODAL CONNEXION/ MODAL REGISTER**************** */
+.modal-wrapperCnx, 
+.modal-wrapperReg{
+    overflow: auto;
+    height: 80%; 
+    width: inherit; 
+    max-width: calc(100vw - 20px);
+    max-width: calc(100vh - 20px);
+    padding: 2%;
+    background-color: #E6D9CB;
+}
+
+#cnxForm h2{
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+#regForm h2{
+    font-size: 1.7em;
+    margin: 1% 0 4% 0;
+    line-height: 0;
+}
+#cnxForm form,
+#regForm form {
+    display: block;
+    text-align: center;
+}
+
+#cnxForm input[type="text"],
+#cnxForm input[type="password"]{
+    width: 60%;
+    margin-top: 7%;
+    border: 3px solid rgb(220, 199, 176);
+    font-size: 1.3em;
+
+}
+#regForm input[type="text"],
+#regForm input[type="password"] {
+    width: 60%;
+    margin-bottom: 4%;
+    background-color: #ffffff;
+    border: 3px solid rgb(220, 199, 176);
+    font-size: 1.3em;
+}
+
+.messageError {
+    font-size: 1.3em;
+    line-height: 2;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    background-color: rgb(243, 53, 40);
+    border: 3px solid rgb(204, 27, 14);
+}
+
+#cnxForm input[type="submit"],
+#regForm input[type="submit"] {
+    width: 60%;
+    background-color: #B46D51;
+    border: 3px solid rgb(160, 96, 71);
+    font-size: 1.3em;
+}
+
+#cnxForm input[type="submit"]{
+    margin: 12% auto;
+    }
+  
+#regForm input[type="submit"]{
+    margin: 12% 0 5% 0;
+}
+
+.js-modal-close{
+    left: 37%;
+    height: 8%;
+    width: 20%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-size: 1.3em;
+    color: #ffffff;
+    background-color: #000000;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+/* ********************************* MEDIAQUERIES ******************************** */
+@media screen and (min-width: 768px) and (max-width: 970px) {
+
+    #blogContent {
+        padding: 5% 0 5% 0;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 768px) {
+
+    #blogContent {
+        padding: 5% 0 5% 0;
+        width: 100%;
+    }
+
+    #blogTitle {
+        width: 80%;
+    }
+
+    #blogTitle h2 {
+        font-size: 1.3em;
+    }
+
+    #liensBlog {
+        width: 100%;
+    }
+
+    #liensBlog #lienCnx,
+    #liensBlog #disconnect,
+    #liensBlog #lienReg,
+    #liensBlog #lienInfos{
+        width: 23%;
+        margin: 2% 0;
+        font-size: 0.9em;
+    }
+
+    #introBlog {
+        font-size: 1.3em;
+    }
+    #blogSearchBar form input {
+        font-size: 1.2em;
+    }
+
+    .rows {
+        display: block;
+    }
+
+    .blogArticles {
+        width: 95%;
+    }
+
+    .rows :first-child {
+        margin-bottom: 5%;
+    }
+
+}

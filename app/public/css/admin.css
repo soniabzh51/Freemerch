@@ -1,0 +1,529 @@
+/* ************************** ADMIN ********************* */
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 16px;
+}
+#page {
+    max-width: 1400px;
+    min-width: 400px;
+    width: 90%;
+    margin: 2% auto;
+}
+li{
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+h1 {
+    color: #D59F33;
+    font-size: 4em;
+    font-weight: lighter;
+}
+/*------------------------ HeaderAdmin --------------------*/
+#homeAdminTitle, #introAdmin{
+    text-align: center;
+}
+#introAdmin p{
+    font-size: 1.2em;
+    margin: 5% auto;
+}
+/*------------------------PAGE LOGIN ADMIN--------------------*/
+#spaceAdmin{
+    display: flex;
+}
+#lienAdminCnx, #disconnectAdmin, #lienAdminReg{
+    width: 10%;
+    margin: 5% auto;
+    background-color: #063630;
+    text-align: center;
+    padding: 1%;
+    justify-content: space-between;
+}
+#cnxAdmin a, #disconnectAdmin a, #regAdmin a{
+    color: #ffffff;
+    line-height: 2;
+    font-weight: bold;
+}
+#lienAdminCnx .modal, #lienAdminReg .modal{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);    
+}
+/* *---------------------Modal connexion/ Modal register------------------*/
+.modal-wrapperCnx, 
+.modal-wrapperReg{
+    overflow: auto;
+    height: 80%; 
+    width: inherit; 
+    max-width: calc(100vw - 20px);
+    max-width: calc(100vh - 20px);
+    padding: 2%;
+    background-color: #E6D9CB;
+} 
+#cnxForm h2{
+    font-size: 1.7em;
+    font-weight: bold;
+}
+#regForm h2{
+    margin: 1% 0 5% 0;
+    line-height: 0;
+}
+#cnxForm form, 
+#regForm form{
+    display: block;
+    text-align: center;
+}
+#cnxForm input[type="text"], 
+#cnxForm input[type="password"]{
+    width: 60%;
+    margin-top: 7%;
+    border: 3px solid rgb(220, 199, 176);
+    font-size: 1.3em;
+}
+#regForm input[type="text"],
+#regForm input[type="password"]{ 
+    width: 60%;
+    margin-bottom: 5%;
+    background-color: #ffffff;
+    border: 3px solid rgb(220, 199, 176);
+    font-size: 1.3em;
+}
+.messageError {
+    font-size: 1.3em;
+    line-height: 2;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    background-color: rgb(243, 53, 40);
+    border: 3px solid rgb(204, 27, 14);
+}
+#cnxForm input[type="submit"],
+#regForm input[type="submit"]{
+    width: 60%;
+    background-color: #B46D51;
+    border: 3px solid rgb(160, 96, 71);
+    font-size: 1.3em;
+}
+#cnxForm input[type="submit"]{
+    margin: 12% auto;
+    }
+  
+#regForm input[type="submit"]{
+    margin: 12% 0 5% 0;
+}
+.js-modal-close{
+    left: 37%;
+    height: 8%;
+    width: 20%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-size: 1.3em;
+    color: #ffffff;
+    background-color: #000000;
+    opacity: 0.7;
+    cursor: pointer;
+}
+/*------------------------PAGE HOME ADMIN--------------------*/
+
+/* -------------------Menu homeAddmin------------------- */
+nav{
+    display: block;
+}
+.homeAdminMenu{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    background-color: #E6D9CB;
+    font-size: 1.5em;
+    line-height: 40px;
+    padding-inline-start: 0;
+}
+.homeAdminMenu li:last-child{
+    border-right: none;
+}
+.homeAdminMenu li{
+    width: 40%;
+    text-align: center;
+    border-right: 3px solid rgb(211, 162, 109);
+}
+.homeAdminMenu li a{
+    color: #000000;
+}
+h2{
+    text-align: center;
+    font-size: 1.7em;
+    line-height: 60px;
+}
+form{
+    display: block;
+}
+.messageConfirm, .messageError{
+    font-size: 1.1em;
+    line-height: 2;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+}
+.messageConfirm{
+    background-color: #2af501;
+    border: 3px solid #1dac00;
+}
+.messageError{
+    background-color: rgb(243, 53, 40);
+    border: 3px solid rgb(204, 27, 14); 
+}
+.formInput input[type="text"], input[type="file"]{
+    height: 30px;
+    width: 50%;
+    display: block;
+    margin: 5% auto;
+    font-size: 1em;
+    border: 2px solid #D59F33;
+}
+input[type="file"]{
+    padding-top: 1%;
+    color: red;
+}
+#homeAdminPost textarea{
+    display: block;
+    min-height: 200px;
+    width: 90%;
+    margin: auto;
+    padding: 1%;
+    border: 2px solid #D59F33;
+    font-size: 1em;
+}
+.brownBtn{
+    display: block;
+    width: 15%;
+    font-size: 1.2em;
+    margin: 5% auto;
+    background-color: #B46D51;
+    border: 3px solid rgb(160, 96, 71);
+    cursor: pointer;
+}
+/* *****************************PAGE POSTS ADMIN*************************** */
+#pagePosts{
+    width: 100%;
+}
+#posts{
+    width: 80%;
+    margin: 5%  auto;
+    text-align: center;
+}
+#posts h2{
+    background-color: #D59F33;
+    width: 50%;
+    margin: auto;
+}
+.articlesBack{
+    margin-top: 5%;
+}
+#posts h3{
+    background-color: #E6D9CB;
+    width: 30%;
+    margin: auto;
+    text-align: center;
+}
+#posts a{
+    color: black;
+    font-size: 0.8em;
+}
+/* ********************************* PAGE ARTICLEADMIN***************************** */
+#articleAdminMenu{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    padding-inline-start: 0;
+    position: static;
+}
+#articleAdminMenu ul{
+    background-color: #ffffff;
+    padding: 0; 
+    width: 100%;
+}
+#articleAdminMenu ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+#articleAdminMenu a{
+    display: block;
+    color: #000000;
+    font-size: 1.5em;
+}
+#articleAdminMenu a:hover{
+    color: #D59F33;
+}
+.sousMenuArticleAdmin{
+    float: left;
+    text-align: center;
+    justify-content: space-around;
+    background-color: #E6D9CB;
+    margin-bottom: 12%;
+    width: 49%;
+}
+.sousMenuArticleAdmin:first-child{
+    border-right: 3px solid #D59F33;
+}
+.sousMenuArticleAdmin > a::after{
+    content: "🔽";
+}
+.actionArticleAdmin{
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+.actionArticleAdmin li{
+    font-size: 0.8em;
+    width: 35%;
+    line-height: 1.8;
+}
+#articleAdminMenu > ul li:hover .actionArticleAdmin{
+    display: block;   
+}
+.blogAdminArticleContent{
+    width: 80%;
+    margin: 5% auto;
+    display: block;
+    background-color: #E6D9CB;
+    border: 3px solid rgb(220, 199, 176);
+}
+.imgArticleContent{
+    width: 50%; 
+    margin: auto;
+  }  
+.imgArticleContent img{
+    max-width: 526px;
+    width: 100%;
+    max-height: 394px;
+    margin-top: 10%;
+}
+.postArticleContent{
+    width: 90%;
+    margin: auto;
+}
+.postArticleContent .date, .postArticleContent h2{
+    text-align: center;
+}
+.articleP{
+    text-align: justify;
+}
+.comments{
+    width: 90%;
+    margin: auto;
+}
+.comments .date, .comments h2{
+    text-align: justify;
+}
+.blogAdminArticleContent form{
+    margin: 2% auto;
+    display: block;
+}
+.blogAdminArticleContent textarea{
+    min-height: 100px;
+    border: 3px solid rgb(220, 199, 176);
+    font-size: 1.5em;
+    text-align: justify;
+    margin: 2% auto;
+}
+.messageConfirm{
+    font-size: 1.1em;
+    line-height: 2;
+    text-align: center;
+    width: 60%;
+    background-color: #2af501;
+    border: 3px solid #1dac00;
+}
+
+/* ************************************MEDIAQUERIES******************************** */
+@media screen and (min-width: 970px) and (max-width: 1170px){
+
+    /* --------------------------------------Page homeAdmin-------------------------- */
+    #homeAdminBanner{
+        display: block;
+    }
+    #homeAdminTitle{
+        width: 80%;
+        margin: auto;
+    }
+    #homeAdminTitle h1{
+        text-align: center;
+    }
+    #liensBlog{
+        width: 80%;
+        margin: 5% auto;
+    }
+    .homeAdminMenu{
+        font-size: 1.3em;
+    }
+    .homeAdminMenu li{
+        width: 30%;
+    } 
+        /* --------------------------------------Page usersManagement-------------------------- */
+    #usersManagementSearchBar .brownBtn{
+        width: 20%;
+    }
+    #deleteUser .redBtn{
+        width: 25%;
+    }
+        /* --------------------------------------Page adminModify-------------------------- */
+    #contentArea{
+        min-height: 400px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 970px){
+    /* -----------------------------------Page homeAdmin------------------------------- */
+    #homeAdminBanner{
+        display: block;
+    }
+    #homeAdminTitle{
+        width: 80%;
+        margin: auto;
+    }
+    #homeAdminTitle h1{
+        text-align: center;
+    }
+    #liensBlog{
+        width: 80%;
+        margin: 5% auto;
+    }
+    .homeAdminMenu{
+        font-size: 1.3em;
+    }
+    .homeAdminMenu li{
+        width: 40%;
+    }
+    #homeAdminPost h2{
+        font-size: 1.5em;
+    }
+    /* --------------------------------------Page postsAdmin-------------------------- */
+    #posts h2{
+        width: 70%;
+    }
+    /* --------------------------------------Page adminModify-------------------------- */
+    #contentArea{
+        min-height: 400px;
+    }
+    /* --------------------------------------Page usersManagement-------------------------- */
+    .sousMenuUsersTri{
+        font-size: 1.1em;
+    }
+    #usersManagementSearchBar .brownBtn{
+        width: 25%;
+        margin-top: 10%;
+    }
+    #deleteUser .redBtn{
+        width: 30%;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 768px){
+    /* -----------------------------------Page homeAdmin------------------------------- */
+    #homeAdminBanner{
+        display: block;
+    }
+    #homeAdminTitle{
+        width: 80%;
+        margin: auto;
+    }
+    #homeAdminTitle h1{
+        text-align: center;
+        font-size: 2em;
+    }
+    #liensBlog{
+        width: 80%;
+        margin: 5% auto;
+    }
+    .homeAdminMenu{
+        width: 40%;
+        font-size: 1.1em;
+        display: block;
+        background-color: #ffffff;
+    }
+    .homeAdminMenu li{
+        width: 100%;
+        border: none;
+        background-color: #ffffff;
+        margin: 2% auto;
+    }
+    .homeAdminMenu li a{
+        background-color: rgb(186, 221, 153);
+        padding: 3%;
+    }
+    input[type="text"]{
+        font-size: 0.8em;
+    }
+    input[type="file"]{
+        font-size: 0.8em;
+        width: 65%;
+    }
+    #homeAdminPost textarea{
+        width: 90%;
+        margin: 2% 3% 2% 3%;
+    }
+    #homeAdminPost .brownBtn{
+        width: 22%;
+    }
+    /* --------------------------------------Page postsAdmin-------------------------- */
+    #posts h2{
+        width: 90%;
+        font-size: 1.5em;
+    }
+    #posts h3{
+        width: 50%;
+    }
+    .brownBtn{
+        width: 25%;
+    }
+    /* --------------------------------------Page AdminModify-------------------------- */
+
+    #titleArea, #contentArea{
+        width: 80%;
+    }
+    #contentArea{
+        min-height: 400px;
+    }
+    /* --------------------------------------Page usersManagement-------------------------- */
+    #usersManagementSearchBar form input [type='text'] {
+        width: 70%;
+    }
+    .orderBy{
+        width: 85%;
+    }
+    .sousMenuUsersTri{
+        font-size: 1em;
+    }
+    .usersTri li{
+        width: 15%;
+    }
+    #usersManagementSearchBar .brownBtn{
+        width: 35%;
+        margin-top: 18%;
+        font-size: 1em;
+    }
+    #showUser{
+        font-size: 1em;
+    }
+    #deleteUser .redBtn{
+        width: 45%;
+        font-size: 1em;
+    }
+}

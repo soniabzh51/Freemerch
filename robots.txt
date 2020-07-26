@@ -1,3 +1,3 @@
 User-agent: *
 Disallow:
-Sitemap: https://www.Freemerch.com/sitemap.xml
+Sitemap: https://www.freemerch.com/sitemap.xml

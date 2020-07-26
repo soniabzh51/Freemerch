@@ -15,7 +15,7 @@
                             56000 Vannes
                         </p>
                         <img src="app/public/logos/mail.svg" alt="logo mail" id="svgMail">
-                        <p><a href="mailto:ipstyleFreemerchr@gmail.com"> ipstyleFreemerch@gmail.com</a></p>
+                        <p><a href="mailto:ipstylefreemerchr@gmail.com"> ipstylefreemerch@gmail.com</a></p>
                     </div>
                     <div id="links">
                         <div id="bubble">

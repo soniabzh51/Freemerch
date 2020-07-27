@@ -1,6 +1,6 @@
 # freemerch
 
-![Screenshot website](./.github/image/screenshotfreemerch.png)
+![Screenshot website](./.github/image/screenshotFreemerch.png)
 
 ## Codeclimate
 
@@ -48,7 +48,7 @@ En l'état actuel du projet, vous touverez :
 
 composer install
 
-<<<<<<< HEAD
+
 3. Importez le fichier   sql -> [DataBase](app/public/sql/Freemerch.sql)    
 
 dans votre phpMyAdmin (ou autre application de gestion de base de données).
@@ -68,7 +68,7 @@ soit vous connecter avec les identifiants suivants :
 Pseudo : yza56
 Mot de passe : yza56freemerch
 
-Vous pouvez également voir le site à l'adresse : (https://freemerch.fr/)           
+Vous pouvez également voir le site à l'adresse : (https://freemerch_cp6.alwaysdata.net.fr/)           
 
 ### Auteure 
 

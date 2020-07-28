@@ -22,7 +22,7 @@ include_once 'app/views/front/layouts/nav.php';
                         <div class="modal-wrapperCnx js-modal-stop">
                             <div id="cnxForm">
                                 <h2>Connectez-vous !</h2>
-                                <form action="index.php?action=userCnc" method="POST">
+                                <form action="userCnc" method="POST">
                                     <input type="text" name="pseudo" placeholder="Pseudo *" value="<?php if (isset($_POST['pseudo'])) echo $_POST['pseudo'] ?>" required>
                                     <input type="password" name="password" placeholder="Mot de passe *" value="<?php if(isset($_POST['password'])) echo $_POST['password'] ?>" required>
 
@@ -53,7 +53,7 @@ include_once 'app/views/front/layouts/nav.php';
                         <div class="modal-wrapperReg js-modal-stop">
                             <div id="regForm">
                                 <h2>Inscrivez-vous !</h2>
-                                <form method="POST" action="index.php?action=userReg" >
+                                <form method="POST" action="userReg" >
                                     <input type="text" name="pseudo" placeholder="Pseudo *" value="<?php if(isset($_POST['pseudo'])) echo $_POST['pseudo'] ?>" required>
                                     <input type="text" name="email" placeholder="Adresse e-mail *" value="<?php if(isset($_POST['email'])) echo $_POST['email'] ?>" required>
                                     <input type="text" name="emailConf" placeholder="Confirmation e-mail *" required>
@@ -95,40 +95,8 @@ include_once 'app/views/front/layouts/nav.php';
             Inscrivez-vous, connectez-vous !
             </p>
         </div>
-        <!-- <div id="blogSearchBar">
-            <form method="POST" action="blog.php">
-                <input type="text" name="query" placeholder="Rechercher un article..." value="<?php if(isset($_POST['query'])) echo $_POST['query'] ?>">
-                <input type="submit" value="Go !">
-            </form>
-        </div> -->
-
-        <?php
-        if(isset($_POST['query'])):
-        ?>
-        <div>
-            <h1>Résultat de votre recherche : " <?= $_POST['query'] ?> " </h1>
-        </div>
-
-        <?php
-        endif
-        ?>
 
         <div id="articles">
-
-        <?php 
-        foreach($articles as $article) : ?>
-
-            <div class="rows">
-                <article class="blogArticles">
-                    <img src="img/<?=$article['image']?>" alt="">
-                    <P class="date">Posté le <time datetime" "><?=formatage_date($article['created_at']) ?></time></P>
-                    <h2><?=$article['title'] ?></h2>
-                    <p><?= $article['extract'] ?></p>
-                    <a href="article.php?id=<?= $article['id'] ?>">Lire l'article ></a>
-                </article>
-            </div>
-
-        <?php endforeach ?>
 
         </div>
     </section>

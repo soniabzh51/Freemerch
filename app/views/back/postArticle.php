@@ -2,9 +2,6 @@
 
 require_once 'app/views/back/layouts/headAdmin.php';
 include_once 'app/views/back/layouts/headerAdmin.php';
-// if(!empty($_POST)) {
-//     $errors = postArticleBack();
-// }
 ?>
 
         <nav id="navAdmin">

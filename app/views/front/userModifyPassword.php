@@ -12,7 +12,7 @@ if (!empty($_POST)) {
 <main>
     <section id="modifyPasswordBtn">
         <div class="backTop">
-            <a href="index.php?action=blog">Revenir à la page Blog</a>
+            <a href="blog">Revenir à la page Blog</a>
         </div>
     </section>
     <section id="modifyPassword">

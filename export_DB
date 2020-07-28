@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  sam. 25 juil. 2020 à 17:25
+-- Généré le :  lun. 27 juil. 2020 à 14:30
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.4.1
 
@@ -166,3 +166,4 @@ ALTER TABLE `articles`
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`);
+           

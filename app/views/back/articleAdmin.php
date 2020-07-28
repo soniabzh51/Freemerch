@@ -35,17 +35,8 @@ include_once 'app/views/back/layouts/headerArticleAdmin.php';
                     </div>
                 </article>
 
-                <!-- <div class="comments">
-                    <h2>Commentaires</h2>
-                    <p class="date">Posté par  le : </p>
-                    <form method="POST" action="">
-                        <textarea name="comment" placeholder="Votre commentaire *"> </textarea>                            <input type="submit" value="Valider !" class="brownBtn">
-                    </form>
-                    <div class="messageError">Error</div>
-                    <div class="messageConfirm">Modification / Suppression validée !</div>
-                </div> -->
-            <!-- </section>
-        </main> -->
+            </section>
+        </main>
 
 <?php
 include_once 'app/views/back/layouts/footerAdmin.php';

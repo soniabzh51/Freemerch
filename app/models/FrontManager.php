@@ -4,30 +4,12 @@ namespace Project\models;
 
 class FrontManager extends Manager{
 
-    public function viewFront(){
-        //Appel de la bdd par la fonction dbConnect()
-        $bdd = $this->dbConnect();  
-        // Le modèle prépare la requête serveur
-        $req = $bdd->prepare('SELECT title, extract, image FROM articles ORDER BY id DESC LIMIT 4');
-        $req->execute(array());
-        return $req;
-    }
-    // Get a single article
-    public function article(){
-        $bdd = $this->dbConnect();
-        $id = (int)$_GET['id'];
-        $article = $bdd->prepare('SELECT id, title, extract, content, image, created_at FROM articles WHERE id=? ');
-        $article->execute([$id]);
-        $article = $article->fetch();
-        if(empty($article)){
-            header('Location: index.php');
-        }else
-        return $article;
-    }
     // Get last 4 articles for page news.php
     public function getArticleNews(){
         $bdd = $this->dbConnect();
-        $articleNews = $bdd->query("SELECT articles.*, admins.pseudo FROM articles INNER JOIN admins ON articles.admin_id = admins.id ORDER BY created_at DESC LIMIT 4");
+        $articleNews = $bdd->prepare("SELECT articles.*, admins.pseudo FROM articles INNER JOIN admins ON articles.admin_id = admins.id ORDER BY created_at DESC LIMIT 4");
+        $articleNews->execute([]);
+        //$articleNews = $bdd->query("SELECT articles.*, admins.pseudo FROM articles INNER JOIN admins ON articles.admin_id = admins.id ORDER BY created_at DESC LIMIT 4");
         $articleNews = $articleNews->fetchAll();
         return $articleNews;
     }

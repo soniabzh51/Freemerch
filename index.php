@@ -108,6 +108,16 @@ try {
             // sitemapFront est défini dans ControllerFront.php
             $controllerFront->sitemapFront();
         }
+        else{
+            if($_GET['action'] == "")
+            {
+                $controllerFront->home();
+            }
+            else
+            {
+                $controllerFront->error404Front();  
+            } 
+        }
 
     } else{
         $controllerFront->home();

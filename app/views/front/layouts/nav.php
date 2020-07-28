@@ -8,7 +8,7 @@
     </label>
     <ul class="menu">
         <li>
-            <a href="index.php?action=home">
+            <a href="home">
                 <div class="menuContent">
                     <h2 class="menuTitle">ACCUEIL</h2>
                     <h3 class="menuSubtitle">Bonjour et bienvenue chez vous</h3>
@@ -16,7 +16,7 @@
             </a>
         </li>
         <li>
-            <a href="index.php?action=error404">
+            <a href="error404">
                 <div class="menuContent">
                     <h2 class="menuTitle">A PROPOS</h2>
                     <h3 class="menuSubtitle">Découvrez qui je suis...</h3>
@@ -33,10 +33,10 @@
         </li>
         <ul class="menu2">
             <li class="subMenu3">
-                <a href="index.php?action=error404">Visuel merchandising</a>
+                <a href="error404">Visuel merchandising</a>
             </li>
             <li class="subMenu3">
-                <a href="index.php?action=error404">Vitrine</a>
+                <a href="error404">Vitrine</a>
             </li>
         </ul>
         <li id="tools">
@@ -49,11 +49,11 @@
         </li>
         <ul class="menu2">
             <li class="subMenu4">
-                <a href="index.php?action=error404">Bookmerchandising</a>
+                <a href="error404">Bookmerchandising</a>
             </li>
         </ul>
         <li id="training"> 
-            <a href="index.php?action=error404">
+            <a href="error404">
                 <div class="menuContent">
                     <h2 class="menuTitle">FORMATION</h2>
                     <h3 class="menuSubtitle">Une équipe performante est gage de réussite</h3>
@@ -61,7 +61,7 @@
             </a>
         </li>
         <li>
-            <a href="index.php?action=error404">
+            <a href="error404">
                 <div class="menuContent">
                     <h2 class="menuTitle">PORTFOLIO</h2>
                     <h3 class="menuSubtitle">Toutes mes réalisations...</h3>
@@ -69,7 +69,7 @@
             </a>
         </li>
         <li>
-            <a href="index.php?action=news">
+            <a href="news">
                 <div class="menuContent">
                     <h2 class="menuTitle">NEWS</h2>
                     <h3 class="menuSubtitle">Le meilleur du merchandising</h3>
@@ -77,7 +77,7 @@
             </a>
         </li>
         <li>
-            <a href="index.php?action=blog">
+            <a href="blog">
                 <div class="menuContent">
                     <h2 class="menuTitle">BLOG</h2>
                     <h3 class="menuSubtitle">Postez vos commentaires !</h3>
@@ -85,7 +85,7 @@
             </a>
         </li>
         <li>
-            <a href="index.php?action=contact">
+            <a href="contact">
                 <div class="menuContent">
                     <h2 class="menuTitle">CONTACT</h2>
                     <h3 class="menuSubtitle">Je serai ravie de vous aider...</h3>

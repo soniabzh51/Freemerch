@@ -10,13 +10,6 @@ include_once 'app/views/front/layouts/nav.php';
 <!--  CONTENT -->
 
 <section id="newsContent">
-    <!-- <div id="newsSearchBar">
-        <form method="POST" action="">
-            <input type="text" name="query" placeholder="Rechercher un article...">
-            <input type="submit" value="Go !">
-        </form>
-    </div> -->
-
     <div id="articles">
         <div class="newsFront">
         

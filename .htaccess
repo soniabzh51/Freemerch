@@ -1,9 +1,9 @@
-#RewriteEngine On
-#RewriteRule ^([a-zA-Z0-9\-\_\/]*)$ index.php?actionp=$1 
+RewriteEngine On
+RewriteRule ^([a-zA-Z0-9\-\/]*)$ /freemerch/index.php?action=$1 [QSA,L]
 
 #RewriteEngine On
 #RewriteCond %{SERVER_PORT} ^80$ [OR]
 #RewriteCond %{HTTPS} =off
 #RewriteRule ^(.*)$ https://freemerch_cp6.alawysdata.net/$1 [R=301,L]
 
-ErrorDocument 404 /index.php?action=error404
+ErrorDocument 404 index.php?action=error404

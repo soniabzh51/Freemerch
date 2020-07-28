@@ -12,7 +12,7 @@ class ControllerFront
         méthode du modèle (bdd). Cette variable sera ensuite injectée
         dans la view pour afficher les données
         */
-        $accueil = $homeFront->viewFront();
+        
         require 'app/views/front/home.php';
     }
     public function aboutFront(){

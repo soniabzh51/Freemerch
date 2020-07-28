@@ -4,15 +4,6 @@ namespace Project\models;
 
 class BackManager extends Manager{
 
-    public function viewBack(){
-        //Appel de la bdd par la fonction dbConnect()
-        $bdd = $this->dbConnect();  
-        // Le modèle prépare la requête serveur
-        $req = $bdd->prepare('Methode sql');
-        $req->execute(array());
-        return $req;
-    }
-    // Register admin 
     public function register_admin($pseudo,$email,$password){
         $bdd = $this->dbConnect();
         $register_admin = $bdd->prepare('INSERT INTO admins(email, pseudo, password) VALUES (:email, :pseudo, :password)');
@@ -31,24 +22,10 @@ class BackManager extends Manager{
         $login = $login->fetch();
         return $login;        
     }
-    public function delete_admin(){
-        $bdd = $this->dbConnect();
-        $id = (int)$_GET['id'];
-        $delete_admin = $bdd->prepare("DELETE admins.* FROM admins WHERE id = ?");
-        $delete_admin->execute([$id]);
-        return $delete_admin;
-    }
     public function logout_admin(){
         unset($_SESSION['admins']);
         session_destroy();
         header('Location: loginAdmin.php');
-    }
-    public function infos_admin(){
-        $bdd = $this->dbConnect();
-        $infos_admin = $bdd->prepare('SELECT email, pseudo FROM admins WHERE id = ?');
-        $infos_admin->execute([$_SESSION["admins"]]);
-        $infos_admin = $infos_admin->fetch();
-        return $infos_admin;
     }
     // Post a single article
     public function post_article($title,$extract,$content,$upload_img){
@@ -68,24 +45,16 @@ class BackManager extends Manager{
         $bdd = $this->dbConnect();
         $id = (int)$_GET['id'];
         $$articleBack = $bdd->prepare("SELECT id, title, extract, content, image, crated_at FROM articles WHERE id = ?");
-        $articleBack ->execute['id'];
+        $articleBack->execute([$id]);
         $articleBack = $articleBack->fetch();
         return $articleBack;
     }
     // Get all articles
     public function get_articles(){
         $bdd = $this->dbConnect();
-        $id = (int)$_GET['id'];
         $articlesBack = $bdd->query("SELECT id, title, extract, content, image, created_at FROM articles ORDER BY created_at DESC");
         $articlesBack = $articlesBack->fetchAll();
         return $articlesBack;
-    }
-    // Get last 4 articles for page News
-    public function get_last_article(){
-        $bdd = $this->dbConnect();
-        $lastArticle = $bdd->query("SELECT articles.*, id, title, extract, content, image, created_at FROM articles ORDER BY created_at DESC LIMIT 1");
-        $lastArticle = $lastArticle->fetchAll();
-        return $lastArticle;
     }
     public function delete_article(){
         $bdd = $this->dbConnect();

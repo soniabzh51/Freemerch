@@ -354,7 +354,7 @@ input[type="file"]{
 }
 
 /* ************************************MEDIAQUERIES******************************** */
-@media screen and (min-width: 970px) and (max-width: 1170px){
+@media screen and (max-width: 1170px){
 
     /* --------------------------------------Page homeAdmin-------------------------- */
     #homeAdminBanner{
@@ -390,7 +390,7 @@ input[type="file"]{
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 970px){
+@media screen and (max-width: 970px){
     /* -----------------------------------Page homeAdmin------------------------------- */
     #homeAdminBanner{
         display: block;
@@ -435,7 +435,7 @@ input[type="file"]{
         width: 30%;
     }
 }
-@media screen and (min-width: 400px) and (max-width: 768px){
+@media screen and (max-width: 768px){
     /* -----------------------------------Page homeAdmin------------------------------- */
     #homeAdminBanner{
         display: block;

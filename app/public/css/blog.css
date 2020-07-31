@@ -94,9 +94,9 @@
 }
 
 #blogContent #articles {
-    width: 100%;
+    width: 80%;
     height: 600px;
-    margin-top: 5%;
+    margin: 5% auto;
     display: block;
     border: 3px solid rgb(220, 199, 176);
 }
@@ -113,6 +113,9 @@
     padding: 2%;
     background-color: #E6D9CB;
     border: 3px solid rgb(220, 199, 176);
+}
+#blogContent{
+    margin: auto;
 }
 
 .blogArticles img {
@@ -214,22 +217,24 @@
 }
 
 /* ********************************* MEDIAQUERIES ******************************** */
-@media screen and (min-width: 768px) and (max-width: 970px) {
+@media screen and (max-width: 970px) {
 
     #blogContent {
-        padding: 5% 0 5% 0;
         width: 100%;
     }
+    #blogTitle{
+        margin-top: 5%;
+    }
 }
-@media screen and (min-width: 400px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
     #blogContent {
-        padding: 5% 0 5% 0;
         width: 100%;
     }
 
     #blogTitle {
         width: 80%;
+        margin-top: 5%;
     }
 
     #blogTitle h2 {
@@ -240,15 +245,14 @@
         width: 100%;
     }
 
-    #liensBlog #lienCnx,
-    #liensBlog #disconnect,
-    #liensBlog #lienReg,
-    #liensBlog #lienInfos{
-        width: 23%;
-        margin: 2% 0;
+    #lienCnx,
+    /* #liensBlog #disconnect, */
+    #lienReg,
+    #lienInfos{
+        width: 30%;
+        margin: 5% auto;
         font-size: 0.9em;
     }
-
     #introBlog {
         font-size: 1.3em;
     }

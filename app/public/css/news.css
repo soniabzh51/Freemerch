@@ -57,7 +57,7 @@ form{
 
 /* ************************************MEDIAQUERIES******************************** */
 
-@media screen and (min-width: 768px) and (max-width: 970px){
+@media screen and (max-width: 970px){
 
     #newsContent{
     padding: 5% 0 5% 0;
@@ -65,7 +65,7 @@ form{
     }
 }
 
-@media screen and (min-width: 400px) and (max-width: 768px){
+@media screen and (max-width: 768px){
 
     #newsContent{
         padding: 5% 0 5% 0;

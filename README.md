@@ -68,7 +68,7 @@ Pseudo : yza56
 
 Mot de passe : yza56freemerch
 
-Vous pouvez également voir le site à l'adresse : (https://cp6.alwaysdata.net/freemerch//)           
+Vous pouvez également voir le site à l'adresse : (https://cp6.alwaysdata.net/freemerch/)           
 
 ### Auteure 
 

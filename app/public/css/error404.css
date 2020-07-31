@@ -12,6 +12,7 @@
 }
 .error404 h1{
     padding-top: 10%;
+    text-align: center;
 }
 .error404 p{
     font-size: 1.3em;
@@ -25,12 +26,12 @@
     color: #B46D51;
 }
 
-@media screen and (min-width: 768px) and (max-width: 970px) {
+@media screen and (max-width: 970px) {
     .error404 h1{
         font-size: 3.2em;
     }
 }
-@media screen and (min-width: 400px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .error404Content{
         padding: 1% 0;
     }

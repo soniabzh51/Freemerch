@@ -208,6 +208,7 @@ path {
     -moz-transition: all 300ms linear;
     -ms-transition: all 300ms linear;
     -o-transition: all 300ms linear;
+    list-style-type: disc;
 }
 
 .menu li:hover {
@@ -624,7 +625,7 @@ footer {
 
 /* ************************************MEDIAQUERIES******************************** */
 
-@media screen and (min-width: 970px) and (max-width: 1170px) {
+@media screen and (max-width: 1170px) {
 
     svg {
         width: 945px;
@@ -671,7 +672,7 @@ footer {
 
 }
 
-@media screen and (min-width: 768px) and (max-width: 970px) {
+@media screen and (max-width: 970px) {
 
     header {
         width: 100%;
@@ -683,7 +684,7 @@ footer {
     }
 
     .banner {
-        width: 100%;
+        width: 90%;
         margin: auto;
     }
 
@@ -692,7 +693,7 @@ footer {
     }
 
     .title {
-        padding: 0 5% 0 0;
+        /* padding: 0 5% 0 0; */
         line-height: 0.5;
     }
 
@@ -855,7 +856,7 @@ footer {
 
 }
 
-@media screen and (min-width: 400px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .banner {
         display: block;
         animation: none;

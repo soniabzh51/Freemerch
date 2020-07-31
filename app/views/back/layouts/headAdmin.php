@@ -8,8 +8,8 @@
     <title>Freelance merchandiser Admin - Accueil</title>
 
     <!------------------------ css --------------------------->
-    <!-- <link rel="stylesheet" href="app/public/css/admin.css"> -->
-    <link rel="stylesheet" href="app/public/css/minify.css">
+    <link rel="stylesheet" href="app/public/css/admin.css">
+    <!-- <link rel="stylesheet" href="app/public/css/minify.css"> -->
     <!----------------------- fonts -------------------------->
     <link href="https://fonts.googleapis.com/css?family=Alex+Brush&display=swap" rel="stylesheet">
     <!--Appel à Fontawsome pour l'icône du menu-->

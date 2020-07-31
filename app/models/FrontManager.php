@@ -3,7 +3,14 @@
 namespace Project\models;
 
 class FrontManager extends Manager{
-
+    public function viewFront(){
+        //Appel de la bdd par la fonction dbConnect()
+        $bdd = $this->dbConnect();  
+        // Le modèle prépare la requête serveur
+        $req = $bdd->prepare('SELECT title, extract, image FROM articles ORDER BY id DESC LIMIT 4');
+        $req->execute(array());
+        return $req;
+    }
     // Get last 4 articles for page news.php
     public function getArticleNews(){
         $bdd = $this->dbConnect();

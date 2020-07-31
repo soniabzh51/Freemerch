@@ -52,7 +52,7 @@ include_once 'app/views/front/layouts/nav.php';
                 <div id="adresse">
                     <p>
                         <label for="adresse">Votre adresse</label>
-                        <textarea name="address" id="address" placeholder="Votre adresse" rows="5" cols="50" value="<?php if(isset($_POST['address'])){
+                        <textarea name="address" id="address" placeholder="Votre adresse" rows="5" cols="" value="<?php if(isset($_POST['address'])){
                             echo $_POST['address'];
                         } ?>" onkeyup="getAddress()" required>
                         </textarea>
@@ -61,7 +61,7 @@ include_once 'app/views/front/layouts/nav.php';
                     </p>
                 </div>
             </fieldset>
-            <fieldset id="message">
+            <fieldset id="yourMessage">
                 <legend>Votre message</legend>
                 <p>
                     <label for="objet">Objet</label>
@@ -71,7 +71,7 @@ include_once 'app/views/front/layouts/nav.php';
                 </p>
                 <p>
                     <label for="message">Votre message</label>
-                    <textarea name="message" id="message" placeholder="Votre message" rows="10" cols="100" value="<?php if(isset($_POST['message'])) {
+                    <textarea name="message" id="message" placeholder="Votre message" rows="10" cols="" value="<?php if(isset($_POST['message'])) {
                         echo $_POST['message'];
                     } ?>" required>
                     </textarea>

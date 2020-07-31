@@ -13,11 +13,19 @@
 #contactForm ul li:hover{
     cursor: pointer;
 }
+#address{
+    width: 50%;
+}
+#message{
+    width: 100%;
+}
 .buttons{
 text-align: center;
 }
 .buttons input{
     font-size: 1.3em;
+    width: 20%;
+    margin: 2%;
 }
 #plan{
     width: 85%;
@@ -25,17 +33,13 @@ text-align: center;
 }
 
 /* ********************************* MEDIAQUERIES ******************************** */
-@media screen and (min-width: 970px) and (max-width: 1170px) {
+@media screen and (max-width: 1170px) {
   
     #plan iframe{
         width: 90%;
     }   
 }
-@media screen and (min-width: 768px) and (max-width: 970px) {
-    #contactContent{
-        width: 90%;
-        margin: 0 auto;
-    }
+@media screen and (max-width: 970px) {
     #contactContent{
         width: 90%;
         margin: 0 auto;
@@ -43,19 +47,19 @@ text-align: center;
     #contactForm form{
         display: block;
     }
-    #civilities, #message{
+    #civilities, #yourMessage{
         width: 100%;
     }  
     #plan iframe{
         width: 100%
     }  
 }
-@media screen and (min-width: 400px) and (max-width: 768px) {
+@media screen and (max-width: 768px){
     #contactContent{
         width: 95%;
         margin: 0 auto;
     }
-    #civilities, #message{
+    #civilities, #yourMessage{
         width: 90%;
         margin: 0 auto;
     }  
